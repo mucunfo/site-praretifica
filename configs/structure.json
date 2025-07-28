@@ -1,0 +1,764 @@
+[
+	{
+		"label": "Configurações Gerais",
+		"icon": "cog",
+		"sessions": [
+      {
+        "label": "Redes Sociais",
+        "fields": [
+          {
+            "label": "",
+            "type": "text",
+            "description": "",
+            "placeholder": "https://www.facebook.com/traytecnologia/",
+            "icon": "facebook",   
+            "field": "social_facebook",
+            "validation": "required:false"
+          },
+          {
+            "label": "",
+            "type": "text",
+            "description": "",
+            "placeholder": "https://twitter.com/tray",
+            "icon": "twitter",
+            "field": "social_twitter",
+            "validation": "required:false"
+          },
+          {
+            "label": "",
+            "type": "text",
+            "description": "",
+            "placeholder": "https://www.instagram.com/tray",
+            "icon": "instagram",
+            "field": "social_instagram",
+            "validation": "required:false"
+          },
+          {
+            "label": "",
+            "type": "text",
+            "description": "",
+            "placeholder": "https://www.youtube.com/user/TraySistemas",
+            "icon": "youtube",
+            "field": "social_youtube",
+            "validation": "required:false"
+          },
+          {
+            "label": "",
+            "type": "text",
+            "description": "",
+            "placeholder": "https://www.pinterest.com/tray",
+            "icon": "pinterest",
+            "field": "social_pinterest",
+            "validation": "required:false"
+          },
+          {
+            "label": "",
+            "type": "text",
+            "description": "",
+            "placeholder": "(99) 99999-9999",
+            "icon": "whatsapp",
+            "field": "whatsapp",
+            "validation": "required:false"
+          }
+        ]
+      },
+      {
+        "label": "Estrutura",
+        "fields": [
+          {
+            "label": "",
+            "type": "radio",
+            "description": "",
+            "field": "structure",
+            "options": [
+              {
+                "value": "1",
+                "content": "Menu na lateral Esquerda",
+                "description": "",
+                "url": "https://images1.tcdn.com.br/assets/store/img/structure/structure-1.png"
+              },
+              {
+                "value": "2",
+                "content": "Menu na lateral Direita",
+                "description": "",
+                "url": "https://images1.tcdn.com.br/assets/store/img/structure/structure-2.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Fundo da Loja",
+        "fields": [
+          {
+            "label": "Imagem de Fundo",
+            "type": "file",
+            "description": "A imagem inserida nesse campo será exibida como imagem de fundo da loja",
+            "field": "background_image",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de fundo",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_background",
+            "validation": "required:false"
+          },
+          {
+            "label": "Disposição da imagem",
+            "type": "select",
+            "description": "",
+            "field": "bg_attachment",
+            "options": [
+              {
+                "value": "fixed",
+                "content": "Fixa"
+              },
+              {
+                "value": "initial",
+                "content": "Livre"
+              }
+            ]
+          },
+          {
+            "label": "Repetição da imagem",
+            "type": "select",
+            "description": "",
+            "field": "bg_repeat",
+            "options": [
+              {
+                "value": "no-repeat",
+                "content": "Não repetir"
+              },
+              {
+                "value": "repeat-x",
+                "content": "Repetir apenas na horizontal"
+              },
+              {
+                "value": "repeat-y",
+                "content": "Repetir apenas na vertical"
+              },
+              {
+                "value": "repeat",
+                "content": "Repetir na horizontal e vertical"
+              }
+            ]
+          },
+          {
+            "label": "Posição da imagem no eixo X",
+            "type": "select",
+            "description": "",
+            "field": "bg_position_x",
+            "options": [
+              {
+                "value": "left",
+                "content": "Esquerda"
+              },
+              {
+                "value": "right",
+                "content": "Direita"
+              },
+              {
+                "value": "center",
+                "content": "Centralizada"
+              }
+            ]
+          },
+          {
+            "label": "Posição da imagem no eixo Y",
+            "type": "select",
+            "description": "",
+            "field": "bg_position_y",
+            "options": [
+              {
+                "value": "top",
+                "content": "Topo"
+              },
+              {
+                "value": "bottom",
+                "content": "Baixo"
+              },
+              {
+                "value": "center",
+                "content": "Centralizada"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Recursos",
+        "fields": [
+          {
+            "label": "",
+            "type": "alert",
+            "description": "Para mais opções vá até as configurações do recurso em Painel/Marketing/Avaliações da loja,",
+            "field": "alert_recursos",
+            "link": "clique aqui para saber mais",
+            "url": "https://atendimento.tray.com.br/hc/pt-br/articles/211175238-Depoimentos-da-Loja-Virtual"
+          },
+          {
+            "label": "Avaliações da loja",
+            "type": "toggle",
+            "description": "Ativa a exibição das Avaliações na Home da Loja",
+            "field": "store_rating"
+          },
+          {
+            "label": "Filtro Inteligente",
+            "type": "toggle",
+            "description": "Ativa a exibição do filtro inteligente",
+            "field": "enable_filter"
+          },
+          {
+            "label": "Cache no infopreço",
+            "type": "toggle",
+            "description": "Será exibindo 'carregando...' no preço do produto.",
+            "field": "cache_infopreco"
+          }
+            
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Cores e Layout",
+    "icon": "swatchbook",
+    "sessions": [
+      {
+        "label": "Geral",
+        "fields": [
+          {
+            "label": "Cor Primária",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_primary",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do botão Comprar",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_buybutton",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor dos ícones",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_icons",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor dos preços na vitrine",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_price",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do fundo da tag de desconto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_bg_discount",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do texto da tag de desconto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_txt_discount",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do título da newsletter",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_title_news",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do texto Palavras mais buscas",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_words",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do texto Avaliações",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_avaliacoes",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do texto das abas de produto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_abas",
+            "validation": "required:false"
+          }
+        ]
+      },
+      {
+        "label": "Cabeçalho",
+        "fields": [
+          {
+            "label": "Cor do Texto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_font_header",
+            "validation": "required:false"
+          }
+        ]
+      },
+      {
+        "label": "Menu",
+        "fields": [
+          {
+            "label": "Exibir título do menu",
+            "type": "toggle",
+            "description": "",
+            "field": "show_menu_title"
+          },
+          {
+            "type": "showcase",
+            "field": "niveis",
+            "options": [
+              {
+                "value": "nivel_1",
+                "content": "Nivel 1"
+              },
+              {
+                "value": "nivel_2",
+                "content": "Nivel 2"
+              },
+              {
+                "value": "nivel_3",
+                "content": "Nivel 3"
+              }
+            ]
+          },
+          {
+            "label": "Cor de fundo",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_bg_menu_1",
+            "showcase": "nivel_1",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do Texto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_font_1",
+            "showcase": "nivel_1",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do titulo",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_title_font_1",
+            "showcase": "nivel_1",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de fundo ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_bg_hover_1",
+            "showcase": "nivel_1",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de texto ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_font_hover_1",
+            "showcase": "nivel_1",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de fundo",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_bg_menu_2",
+            "showcase": "nivel_2",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do Texto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_font_2",
+            "showcase": "nivel_2",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de fundo ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_bg_hover_2",
+            "showcase": "nivel_2",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de texto ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_font_hover_2",
+            "showcase": "nivel_2",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de fundo",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_bg_menu_3",
+            "showcase": "nivel_3",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor do Texto",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_font_3",
+            "showcase": "nivel_3",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de fundo ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_bg_hover_3",
+            "showcase": "nivel_3",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de texto ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_menu_font_hover_3",
+            "showcase": "nivel_3",
+            "validation": "required:false"
+          }
+        ]
+      },
+      {
+        "label": "Rodapé",
+        "fields": [
+          {
+            "label": "Cor do Fundo do Rodapé",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_footer",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor de Fonte do Rodapé",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_font_footer",
+            "validation": "required:false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+	"label": "Banners",
+	"icon": "image",
+	"sessions": [
+      {
+        "label": "Configurações",
+        "fields": [
+          {
+            "label": "",
+            "type": "alert",
+            "description": "Este banner substitui o plugin padrão da plataforma, não seguindo as configurações de efeito, tempo e etc definidas no cadastro de banner.",
+            "field": "alert_banners"
+          },
+          {
+            "label": "Banners Responsivo",
+            "type": "toggle",
+            "description": "Habilita Banners Responsivo",
+            "field": "home_slick"
+          },
+          {
+            "label": "Setas",
+            "type": "toggle",
+            "description": "Exibe as setas de navegação nas laterais do banner. Por motivos de usabilidade as setas não são exibidas na versão mobile, apenas os Dots.",
+            "field": "banner_arrows"
+          },
+          {
+            "label": "Efeito Fade",
+            "type": "toggle",
+            "description": "A troca das fases é feita por opacidade, o primeiro vai sumindo até aparecer o segundo e assim por diante.",
+            "field": "banner_effect_fade"
+          },
+          {
+            "label": "Altura Adaptável",
+            "type": "toggle",
+            "description": "Caso você possua imagens de tamanhos diferentes entre as fases o banner irá ajustar sua altura, isto afeta o conteúdo abaixo do banner, podendo aumentar ou diminuir dependendo da imagem.",
+            "field": "banner_adaptive_height"
+          },
+          {
+            "label": "Dots",
+            "type": "toggle",
+            "description": "Exibe indicadores de navegação centralizados na parte de baixo do banner",
+            "field": "banner_dots"
+          },
+          {
+            "label": "Infinito",
+            "type": "toggle",
+            "description": "Ao chegar na última fase o carrossel se repete.",
+            "field": "banner_infinite"
+          },
+          {
+            "label": "Autoplay",
+            "type": "toggle",
+            "description": "A troca das fases será automática, não sendo necessário utilizar as Setas ou os Dots.",
+            "field": "banner_autoplay"
+          },
+          {
+            "label": "Intervalo entre as fases",
+            "type": "select",
+            "description": "Funciona apenas quando o Autoplay estiver ativo, define o tempo de exibição entre uma fase e outra.",
+            "field": "banner_interval",
+            "options": [
+              {
+                "value": "3000",
+                "content": "3 segundos"
+              },
+              {
+                "value": "4000",
+                "content": "4 segundos"
+              },
+              {
+                "value": "5000",
+                "content": "5 segundos"
+              },
+              {
+                "value": "6000",
+                "content": "6 segundos"
+              },
+              {
+                "value": "7000",
+                "content": "7 segundos"
+              },
+              {
+                "value": "8000",
+                "content": "8 segundos"
+              },
+              {
+                "value": "9000",
+                "content": "9 segundos"
+              },
+              {
+                "value": "10000",
+                "content": "10 segundos"
+              }
+            ]
+          },
+          {
+            "label": "Lazy Load",
+            "type": "select",
+            "description": "Também conhecido como carregamento sob demanda, possui duas opções: On-Demand: carrega a primeira imagem e as outras apenas quando forem entrar na tela. Progressive: carrega a primeira imagem e as outras quando o site termina de carregar.",
+            "field": "banner_lazyload",
+            "options": [
+              {
+                "value": "ondemand",
+                "content": "On-Demand"
+              },
+              {
+                "value": "progressive",
+                "content": "Progressive"
+              } 
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Cores",
+        "fields": [
+          {
+            "label": "Cor das setas",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_slick_arrow",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor das setas ao passar o mouse",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_slick_arrow_hover",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor dos Dots",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_slick_dot",
+            "validation": "required:false"
+          },
+          {
+            "label": "Cor dos Ativos",
+            "type": "color",
+            "description": "",
+            "placeholder": "",
+            "field": "color_slick_dot_active",
+            "validation": "required:false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+		"label": "Vitrines",
+		"icon": "store",
+		"sessions": [
+      {
+        "label": "Geral",
+        "fields": [
+          {
+            "label": "",
+            "type": "alert",
+            "description": "Produtos sem estoque podem não ser removidos através dessa configuração, é aplicado o filtro de acordo com as configurações do painel administrativo da loja.",
+            "field": "alert_vitrines"
+          },
+          {
+            "label": "Exibir apenas produtos disponiveis",
+            "type": "toggle",
+            "description": "Remove da listagem os produtos indisponiveis na home",
+            "field": "show_available_products"
+          },
+          {
+            "label": "Direcionar direto para o carrinho",
+            "type": "toggle",
+            "description": "Esta opção não verifica produtos que possuem variações.",
+            "field": "buy_to_cart"
+          },
+          {
+            "label": "Exibir tag de desconto",
+            "type": "toggle",
+            "description": "",
+            "field": "discount"
+          },
+          {
+            "label": "O que exibir na primeira vitrine?",
+            "type": "radio",
+            "description": "",
+            "field": "showcase",
+            "options": [
+              {
+                "value": "featured",
+                "content": "Destaques"
+              },
+              {
+                "value": "new",
+                "content": "Lançamentos"
+              },
+              {
+                "value": "free_shipping",
+                "content": "Frete Grátis"
+              },
+              {
+                "value": "promotion",
+                "content": "Promoções"
+              },
+              {
+                "value": "top_seller",
+                "content": "Mais Vendidos"
+              }
+            ]
+          },
+          {
+            "label": "Escolha a forma que será exibido preços anteriores à promoção",
+            "type": "radio",
+            "description": "",
+            "field": "price_before_style",
+            "options": [
+              {
+                "value": "strike",
+                "content": "R$ 0,00",
+                "style": true
+              },
+              {
+                "value": "depor",
+                "content": "De: R$ 0,00"
+              },
+              {
+                "value": "strike-depor",
+                "content": "De: R$ 0,00",
+                "style": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+		"label": "Selo Adicional",
+		"icon": "window-minimize",
+		"sessions": [
+      {
+        "label": "Selo",
+        "fields": [
+          {
+            "label": "Selo Adicional",
+            "type": "toggle",
+            "description": "O selo adicional será exibido no rodapé da loja.",
+            "field": "enable_seal"
+          },
+          {
+            "label" : "Adicione abaixo o código do selo adicional",
+            "type" : "textarea",
+            "description": "",
+            "placeholder": "",
+            "field": "seal_code",
+            "validation": "required:false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "info": {
+      "documentation": "https://tray-editor-temas.gitbook.io/tema-padrao/",
+      "version": "11.0.2",
+      "support": "https://atendimento.tray.com.br/hc/pt-br/requests/new"
+    }
+  }
+]
