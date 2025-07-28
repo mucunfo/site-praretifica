@@ -1,0 +1,128 @@
+/**
+ * Newsletter
+ */
+.news-full {
+    background: #4b8cdc;
+    margin-top: 30px;
+    width: 100%;
+}
+.newsletter-1{
+    padding: 30px 15px; 
+    text-align: center;
+        
+    > *{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    h2{
+        color: #fff000;
+        text-transform: uppercase;
+        padding-bottom: 0;
+        @include typo(2.2rem, 400, $font, 2.4rem);
+        
+        span{
+            color: #fff;
+        }
+        
+        @media screen and (max-width: $md){
+            @include typo(1.4rem, 400, $font, 1.4rem);    
+        }
+        
+        @media screen and (max-width: $sm){
+            @include typo(1.3rem, 400, $font, 1.3rem);    
+        }
+    }
+    
+    .newsletter-title{
+        
+        @media screen and (max-width: $sm){
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+    
+    i{
+        border: 1px solid #fff000;
+        border-radius: 55px;
+        height: 55px;
+        margin: 0 30px;
+        padding: 18px 0;
+        text-align: center;
+        width: 55px;
+        
+        @media screen and (max-width: $md){
+            border-radius: 42px;
+            height: 42px;
+            margin: 0 15px;
+            padding: 12px 0;
+            width: 42px;    
+        }
+        
+        @media screen and (max-width: $sm){
+            border-radius: 32px;
+            height: 32px;
+            margin: 0 10px 0 0;
+            padding: 7px 0;
+            width: 32px;
+            
+            & + h2{
+                display: none;
+            }
+        }
+    }
+    
+    form{
+        margin-left: 10px;
+        width: 35%;
+        
+        @media screen and (max-width: $sm){
+            margin: 0;
+            width: 80%;
+        }
+        
+        div{
+            overflow: hidden;
+            
+            input{
+                background: #f6f7f8;
+                border: none;
+                color: #6d6d6d;
+                padding: 10px;
+                width: 100%;
+                @include typo(1.3rem, 400, $font, 1.3rem);
+                
+                @media screen and (max-width: $md){
+                    padding: 7px;
+                    @include typo(1.1rem, 400, $font, 1.3rem);    
+                }
+                
+                @media screen and (max-width: $sm){
+                    padding: 7px;
+                    @include typo(1.1rem, 400, $font, 1.3rem);    
+                }
+            }
+        }
+        
+        button{
+            background: #366bab;
+            border: none;
+            color: #fff;
+            margin-left: 10px;
+            padding: 0 24px;
+            text-align: center;
+            text-transform: uppercase;
+            @include typo(1.5rem, 400, $font, 3.5rem);
+            
+            @media screen and (max-width: $md){
+                padding: 0 6px;
+                @include typo(1.1rem, 400, $font, 2.7rem);
+            }
+            
+            @media screen and (max-width: $sm){
+                padding: 0 6px;
+                @include typo(1.1rem, 400, $font, 2.7rem);
+            }
+        }
+    }
+}

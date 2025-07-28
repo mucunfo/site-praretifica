@@ -3,21 +3,7 @@
  */
 
 .banner{
-    border: 2px solid #e2e2e2;
-}
-
-.banner-ruler{
-    background: #fff;
-    margin-bottom: 30px;
-    width: 849px;
-    @media screen and (max-width: 1200px){ 
-        width: auto;
-    }
-
-}
-
-.banner-sidebar{
-    margin-top: 30px;
+    text-align: center;
 }
 
 .banner-js {
@@ -37,13 +23,24 @@
     	bottom: 0;
     	padding: 20px;
     }
-
+    
 }
 
+
 .banner-home{
-    margin-bottom: 30px;
     position: relative;
     z-index: 10;
+    display: inline-block; 
+    width: 568px;
+    margin-left: 15px;
+    vertical-align: top;
+    
+    @media screen and (max-width: 992px){
+        max-width: 360px;
+        min-width: 10px;
+        display: inline;
+        max-height: 100px;
+    }
     
     .prev_button, 
     .next_button {
@@ -64,6 +61,14 @@
             display: inline-block;
             border-radius: 0;
         }
+    }
+    
+    .box_skitter {
+        max-width: 568px;
+    }
+    
+    img {
+        max-width: 100%!important;
     }
     
     .slick-slide{
@@ -109,8 +114,70 @@
     }
 }
 
-.banner-bottom{ margin-top: 15px; }
+.banner-ruler{
+    margin-bottom: 30px;
+}
+
+.banner-widget{
+    
+    @media screen and (max-width: $sm){
+        .mini-banner{
+            margin: 10px 0;
+        }
+    }
+}
+
+.box-banners {
+    float: right;
+}
+
+
+.mini-banner2 {
+    margin-top: 25px;
+}
+
+.mini-banner {
+    max-width: 271px;
+    
+    @media screen and (max-width: 992px){
+        display: inline-block;
+        margin: 0;
+        max-width: 50%;
+        vertical-align: top;
+    }
+}
+
+.mini-banner-mobile {
+    max-width: 271px;
+    
+    @media screen and (max-width: 992px){
+        display: inline-block;
+        margin: 0;
+        margin-top: 10px;
+        max-width: 50%;
+        vertical-align: top;
+    }
+}
+
+.mini-banner2-mobile {
+    max-width: 271px;
+    
+    @media screen and (max-width: 992px){
+        display: inline-block;
+        margin: 0;
+        margin-top: 10px;
+        max-width: 50%;
+        vertical-align: top;
+    }
+}
+
+.mini-banner3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .mobile-off{
-    @media screen and (max-width: $sm){ display: none; }
+    @media screen and (max-width: $sm){
+        display: none;
+    }
 }

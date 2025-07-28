@@ -1,11 +1,10 @@
 <div class="catalog-header">
-
     {% if banner.title %}
-    <div class="banner banner-title ">
-        {{ banner.title }}
-    </div>
-    {% endif %}	
-
+        <div class="banner banner-title ">
+            {{ banner.title }}
+        </div>
+    {% endif %}
+    
     {% if search.word %}
         <h2 class="catalog-name">Exibindo resultados para: {{ search.word }}</h2>
     {% else %}
@@ -27,24 +26,29 @@
         </div>
     
         <div class="pagination">
-            {% element 'snippets/paginate' %}
+            {% element 'snippets/pagination' %}
         </div>
         
     {% endif %}
     
 </div>
 
-
 {% if products|length > 0 %}
 
     <div class="catalog-content row">
+            {% if settings.enable_filter %}
+                <div class="col-md-3">
+                    {% element 'sidebar-left' %}
+                </div>
+            {% endif %}
+
         {% element 'showcase-catalog' {
             "products": products
         } %}
     </div>
 
-    <div class="catalog-footer pagination">
-        {% element 'snippets/paginate' %}
+    <div class="catalog-footer">
+        {% element 'snippets/pagination' %}
     </div>
 
 {% else %}

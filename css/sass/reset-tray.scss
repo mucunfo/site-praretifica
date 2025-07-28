@@ -21,30 +21,20 @@ a{
 	}
 }
 
-input{
-    border-radius: 0;
-    font-size: 1.6rem;
-}
-
-// .catalogo-comparator{
-//     background: none;
-//     border: none;
-//     float: none;
-//     font-size: inherit;
-//     margin: 0;
-//     padding: 0;
-//     text-align: left;
-//     width: auto;
+.catalogo-comparator{
+    background: none;
+    border: none;
+    float: none;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: auto;
     
-//     &:hover{
-//         background: none;
-//         color: inherit;
-//     }
-// }
-
-// lazy
-.lazy[src*=loading]{
-    padding: 30px;
+    &:hover{
+        background: none;
+        color: inherit;
+    }
 }
 
 // cross sell
@@ -217,8 +207,7 @@ html{
     .botao-commerce,
     .botao-commerce:hover,
     .botao-commerce:link,
-    .remove-bg .botao-comprar,
-    .news.implantation .news-botao{
+    .remove-bg .botao-comprar{
         background: #3d4445;
         border-radius: 0;
         border: none;
@@ -234,17 +223,11 @@ html{
     .botao-frete,
     .botao-indisponivel,
     .botao-lancamento{
-        display: inline-block;
-        margin: 15px 1%;
-        width: 30%;
-        
-        @media (max-width: 767px){
-            margin: 5px 0;
-            width: 100%;
-        }
+        display: block;
+        margin: 5px 0;
         
         &:hover{
-            display: inline-block;
+            display: block;
         }
     }
 }
@@ -468,40 +451,11 @@ html{
     > *{
         margin: 0 !important;
     }
-    
-    ul{
-        
-        li{
-            background: none;
-            border: none;
-            margin: 9px 0 0;
-            padding: 0;
-        }
-    }
-}
-
-.productAdditionalInformation{
-    display: block;
-    margin: 0 0 15px;
-    
-    strong{
-        font-weight: 400;
-    }
-    
-    .varCont{
-        margin-bottom: 10px;
-    }
-    
-    input{
-        border: 1px solid #e2e2e2;
-        padding: 10px;
-    }
 }
 
 .texto_variacao {
     padding: 0;
     overflow: hidden;
-    margin-top: 15px;
     
     h2{
         float: none;
@@ -626,6 +580,10 @@ html{
 #foto_p{
     border: none;
     padding: 0;
+}
+
+#foto_a{
+    border-top: 1px solid #ccc;
 }
 
 .cloud-zoom img{
@@ -1091,133 +1049,133 @@ html{
 }
 
 // comparator
-// .comparatorTabs{
+.comparatorTabs{
     
-//     ul{
-//         border-bottom: none;
-//         display: table;
-//         list-style: none;
-//         margin: 0;
-//         padding: 0;
-//         text-transform: none;
-//         width: 100%;
-//     }
+    ul{
+        border-bottom: none;
+        display: table;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-transform: none;
+        width: 100%;
+    }
     
-//     li{
-//         background: none;
-//         float: none;
-//         margin: 0;
-//         padding: 0;
-//         top: 0;
+    li{
+        background: none;
+        float: none;
+        margin: 0;
+        padding: 0;
+        top: 0;
         
-//         &.aberta{
+        &.aberta{
             
-//             a{
-//                 font-size: inherit;
-//                 font-weight: 400;
-//                 padding: 0;
-//             }
+            a{
+                font-size: inherit;
+                font-weight: 400;
+                padding: 0;
+            }
             
-//             .closeCat{
-//                 border: none;
-//                 font-size: inherit;
-//                 padding: 0;
-//                 position: static;
+            .closeCat{
+                border: none;
+                font-size: inherit;
+                padding: 0;
+                position: static;
                 
-//                 &:hover{
-//                     background: none;
-//                     color: inherit;
-//                     text-decoration: underline;
-//                 }
-//             }
-//         }
+                &:hover{
+                    background: none;
+                    color: inherit;
+                    text-decoration: underline;
+                }
+            }
+        }
         
-//         .closeCat{
-//             border: none;
-//             font-size: inherit;
-//             padding: 0;
-//             position: static;
+        .closeCat{
+            border: none;
+            font-size: inherit;
+            padding: 0;
+            position: static;
             
-//             &:hover{
-//                 background: none;
-//                 color: inherit;
-//                 text-decoration: underline;
-//             }
-//         }
-//     }
+            &:hover{
+                background: none;
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
     
-//     a{
-//         background: none;
-//         color: inherit;
-//         padding: 0;
-//     }
-// }
+    a{
+        background: none;
+        color: inherit;
+        padding: 0;
+    }
+}
 
-// .comparator{
+.comparator{
     
-//     ul{
-//         padding: 0;
+    ul{
+        padding: 0;
         
-//         // colum that describes each row
-//         li.Labels{
-//             border: none;
-//             float: none;
-//             font: inherit;
-//             margin: 0;
-//             overflow: visible;
-//             width: auto;
+        // colum that describes each row
+        li.Labels{
+            border: none;
+            float: none;
+            font: inherit;
+            margin: 0;
+            overflow: visible;
+            width: auto;
             
-//             ul{
+            ul{
                 
-//                 li{
-//                     background: none;
-//                     border: none;
-//                     height: auto;
-//                     overflow: visible;
-//                     padding: 0;
-//                     position: static;
-//                     text-align: left;
+                li{
+                    background: none;
+                    border: none;
+                    height: auto;
+                    overflow: visible;
+                    padding: 0;
+                    position: static;
+                    text-align: left;
                     
-//                     &.comparsionFoto{
-//                         background: none;
-//                     }
+                    &.comparsionFoto{
+                        background: none;
+                    }
                     
-//                     &:hover{
-//                         background: none;
-//                     }
-//                 }
-//             }
-//         }
+                    &:hover{
+                        background: none;
+                    }
+                }
+            }
+        }
         
         
-//         li{
-//             border: none;
-//             float: none;
-//             font: inherit;
-//             margin: 0;
-//             overflow: visible;
-//             width: auto;
+        li{
+            border: none;
+            float: none;
+            font: inherit;
+            margin: 0;
+            overflow: visible;
+            width: auto;
             
-//             ul{
+            ul{
                 
-//                 li,
-//                 .comparsionFoto,
-//                 .comparsionInfoPreco{
-//                     background: none;
-//                     border: none;
-//                     height: auto;
-//                     overflow: visible;
-//                     padding: 0;
-//                     text-align: left;
+                li,
+                .comparsionFoto,
+                .comparsionInfoPreco{
+                    background: none;
+                    border: none;
+                    height: auto;
+                    overflow: visible;
+                    padding: 0;
+                    text-align: left;
                     
-//                     &:hover{
-//                         background: none;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+                    &:hover{
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
 
 .lista-produtos {
     border: 0;

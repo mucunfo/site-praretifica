@@ -1,226 +1,106 @@
-[
-	{
-		"label": "Configurações Gerais",
-		"icon": "cog",
-		"sessions": [
+[  
+  {
+   "label": "Configura\u00E7\u00F5es Gerais",
+   "icon": "cog", 
+   "sessions": [   
       {
         "label": "Redes Sociais",
-        "fields": [
+        "fields": [ 
           {
-            "label": "",
+            "label": "Facebook",
             "type": "text",
-            "description": "",
-            "placeholder": "https://www.facebook.com/traytecnologia/",
-            "icon": "facebook",   
+            "description": "Insira o link completo",
+            "placeholder": "https://www.facebook.com/traytecnologia",
+            "icon": "facebook",
             "field": "social_facebook",
             "validation": "required:false"
-          },
+          },  
           {
-            "label": "",
+            "label": "X",
             "type": "text",
-            "description": "",
-            "placeholder": "https://twitter.com/tray",
+            "description": "Insira o link completo",
+            "placeholder": "https://x.com/tray",
             "icon": "twitter",
             "field": "social_twitter",
             "validation": "required:false"
           },
-          {
-            "label": "",
+          { 
+            "label": "Instagram",
             "type": "text",
-            "description": "",
+            "description": "Insira o link completo",
             "placeholder": "https://www.instagram.com/tray",
             "icon": "instagram",
             "field": "social_instagram",
             "validation": "required:false"
           },
           {
-            "label": "",
+            "label": "Youtube",
             "type": "text",
-            "description": "",
+            "description": "Insira o link completo",
             "placeholder": "https://www.youtube.com/user/TraySistemas",
             "icon": "youtube",
             "field": "social_youtube",
             "validation": "required:false"
           },
           {
-            "label": "",
+            "label": "Pinterest",
             "type": "text",
-            "description": "",
+            "description": "Insira o link completo",
             "placeholder": "https://www.pinterest.com/tray",
             "icon": "pinterest",
             "field": "social_pinterest",
             "validation": "required:false"
-          },
+          },    
           {
-            "label": "",
+            "label": "Telefone",
             "type": "text",
             "description": "",
             "placeholder": "(99) 99999-9999",
             "icon": "whatsapp",
             "field": "whatsapp",
             "validation": "required:false"
-          }
-        ]
-      },
-      {
-        "label": "Estrutura",
-        "fields": [
-          {
-            "label": "",
-            "type": "radio",
-            "description": "",
-            "field": "structure",
-            "options": [
-              {
-                "value": "1",
-                "content": "Menu na lateral Esquerda",
-                "description": "",
-                "url": "https://images1.tcdn.com.br/assets/store/img/structure/structure-1.png"
-              },
-              {
-                "value": "2",
-                "content": "Menu na lateral Direita",
-                "description": "",
-                "url": "https://images1.tcdn.com.br/assets/store/img/structure/structure-2.png"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "label": "Fundo da Loja",
-        "fields": [
-          {
-            "label": "Imagem de Fundo",
-            "type": "file",
-            "description": "A imagem inserida nesse campo será exibida como imagem de fundo da loja",
-            "field": "background_image",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor de fundo",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_background",
-            "validation": "required:false"
-          },
-          {
-            "label": "Disposição da imagem",
-            "type": "select",
-            "description": "",
-            "field": "bg_attachment",
-            "options": [
-              {
-                "value": "fixed",
-                "content": "Fixa"
-              },
-              {
-                "value": "initial",
-                "content": "Livre"
-              }
-            ]
-          },
-          {
-            "label": "Repetição da imagem",
-            "type": "select",
-            "description": "",
-            "field": "bg_repeat",
-            "options": [
-              {
-                "value": "no-repeat",
-                "content": "Não repetir"
-              },
-              {
-                "value": "repeat-x",
-                "content": "Repetir apenas na horizontal"
-              },
-              {
-                "value": "repeat-y",
-                "content": "Repetir apenas na vertical"
-              },
-              {
-                "value": "repeat",
-                "content": "Repetir na horizontal e vertical"
-              }
-            ]
-          },
-          {
-            "label": "Posição da imagem no eixo X",
-            "type": "select",
-            "description": "",
-            "field": "bg_position_x",
-            "options": [
-              {
-                "value": "left",
-                "content": "Esquerda"
-              },
-              {
-                "value": "right",
-                "content": "Direita"
-              },
-              {
-                "value": "center",
-                "content": "Centralizada"
-              }
-            ]
-          },
-          {
-            "label": "Posição da imagem no eixo Y",
-            "type": "select",
-            "description": "",
-            "field": "bg_position_y",
-            "options": [
-              {
-                "value": "top",
-                "content": "Topo"
-              },
-              {
-                "value": "bottom",
-                "content": "Baixo"
-              },
-              {
-                "value": "center",
-                "content": "Centralizada"
-              }
-            ]
-          }
-        ]
+          }         
+        ] 
       },
       {
         "label": "Recursos",
         "fields": [
           {
-            "label": "",
-            "type": "alert",
-            "description": "Para mais opções vá até as configurações do recurso em Painel/Marketing/Avaliações da loja,",
-            "field": "alert_recursos",
-            "link": "clique aqui para saber mais",
-            "url": "https://atendimento.tray.com.br/hc/pt-br/articles/211175238-Depoimentos-da-Loja-Virtual"
+            "label": "Avalia\u00E7\u00F5es da loja",
+            "type": "toggle",
+            "description": "Ativa a exibi\u00E7\u00E3o das Avalia\u00E7\u00F5es na Home da Loja",
+            "field": "store_rating"
           },
           {
-            "label": "Avaliações da loja",
-            "type": "toggle",
-            "description": "Ativa a exibição das Avaliações na Home da Loja",
-            "field": "store_rating"
+            "label": "Importante!",
+            "type": "alert",
+            "description": "Para mais op\u00E7\u00F5es v\u00E1 at\u00E9 as configura\u00E7\u00F5es do recurso em Painel / Marketing / Avalia\u00E7\u00F5es da loja",
+            "field": "alert_avaliacoes"
+          },
+          {
+            "label":"",
+            "type":"alert",
+            "description":"Essa funcionalidade depende do plano da loja. Para maiores detalhes acesse:",
+            "field":"alert_avaliacao_loja_two",
+            "link":"https://www.tray.com.br/planos-precos",
+            "url":"https://www.tray.com.br/planos-precos"
           },
           {
             "label": "Filtro Inteligente",
             "type": "toggle",
-            "description": "Ativa a exibição do filtro inteligente",
+            "description": "Ativa a exibi\u00E7\u00E3o do filtro inteligente",
             "field": "enable_filter"
           },
           {
-            "label": "Cache no infopreço",
+            "label": "Cache no info pre\u00E7o",
             "type": "toggle",
-            "description": "Será exibindo 'carregando...' no preço do produto.",
+            "description": "Ser\u00E1 exibido 'carregando...' no pre\u00E7o do produto.",
             "field": "cache_infopreco"
           }
-            
         ]
       }
     ]
-  },
+  },  
   {
     "label": "Cores e Layout",
     "icon": "swatchbook",
@@ -229,282 +109,180 @@
         "label": "Geral",
         "fields": [
           {
-            "label": "Cor Primária",
+            "label": "Cor principal",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_primary",
-            "validation": "required:false"
+            "field": "color_bg_primaria",
+            "validation": "required:true"
           },
           {
-            "label": "Cor do botão Comprar",
+            "label": "Cor Secund\u00E1ria",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_buybutton",
-            "validation": "required:false"
+            "field": "color_bg_secundaria",
+            "validation": "required:true"
           },
           {
-            "label": "Cor dos ícones",
+            "label": "Cor de Texto das Avalia\u00E7\u00F5es",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_icons",
-            "validation": "required:false"
+            "field": "color_texto_avaliacao",
+            "validation": "required:true"
           },
           {
-            "label": "Cor dos preços na vitrine",
+            "label": "Cor de Texto das Palavras Mais Buscadas",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_price",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor do fundo da tag de desconto",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_bg_discount",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor do texto da tag de desconto",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_txt_discount",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor do título da newsletter",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_title_news",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor do texto Palavras mais buscas",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_words",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor do texto Avaliações",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_avaliacoes",
-            "validation": "required:false"
-          },
-          {
-            "label": "Cor do texto das abas de produto",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_abas",
-            "validation": "required:false"
-          }
-        ]
-      },
-      {
-        "label": "Cabeçalho",
-        "fields": [
-          {
-            "label": "Cor do Texto",
-            "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_font_header",
-            "validation": "required:false"
+            "field": "color_texto_tags",
+            "validation": "required:true"
           }
         ]
       },
       {
         "label": "Menu",
-        "fields": [
+        "fields": [         
           {
-            "label": "Exibir título do menu",
-            "type": "toggle",
-            "description": "",
-            "field": "show_menu_title"
-          },
-          {
-            "type": "showcase",
-            "field": "niveis",
-            "options": [
-              {
-                "value": "nivel_1",
-                "content": "Nivel 1"
-              },
-              {
-                "value": "nivel_2",
-                "content": "Nivel 2"
-              },
-              {
-                "value": "nivel_3",
-                "content": "Nivel 3"
-              }
-            ]
-          },
-          {
-            "label": "Cor de fundo",
+            "label": "Link Menu",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_bg_menu_1",
-            "showcase": "nivel_1",
-            "validation": "required:false"
+            "field": "color_link_menu_lvl1",
+            "validation": "required:true"
           },
           {
-            "label": "Cor do Texto",
+            "label": "Link Menu ao passar o mouse",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_font_1",
-            "showcase": "nivel_1",
-            "validation": "required:false"
+            "field": "color_link_menu_lvl1_hover",
+            "validation": "required:true"
           },
           {
-            "label": "Cor do titulo",
+            "label": "Link Menu nivel 2",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_title_font_1",
-            "showcase": "nivel_1",
-            "validation": "required:false"
+            "field": "color_link_menu_lvl2",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de fundo ao passar o mouse",
+            "label": "Link Menu nivel 2 ao passar o mouse",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_bg_hover_1",
-            "showcase": "nivel_1",
-            "validation": "required:false"
+            "field": "color_link_menu_lvl2_hover",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de texto ao passar o mouse",
+            "label": "Link Menu nivel 3",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_font_hover_1",
-            "showcase": "nivel_1",
-            "validation": "required:false"
+            "field": "color_link_menu_lvl3",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de fundo",
+            "label": "Link Menu nivel 3 ao passar o mouse",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_bg_menu_2",
-            "showcase": "nivel_2",
-            "validation": "required:false"
+            "field": "color_link_menu_lvl3_hover",
+            "validation": "required:true"
           },
           {
-            "label": "Cor do Texto",
+            "label": "Cor do fundo",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_font_2",
-            "showcase": "nivel_2",
-            "validation": "required:false"
+            "field": "color_bg_menu",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de fundo ao passar o mouse",
+            "label": "Cor do fundo ao passar o mouse",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_bg_hover_2",
-            "showcase": "nivel_2",
-            "validation": "required:false"
+            "field": "color_bg_menu_hover",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de texto ao passar o mouse",
+            "label": "Cor do fundo nivel 2",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_font_hover_2",
-            "showcase": "nivel_2",
-            "validation": "required:false"
+            "field": "color_bg_menu_level_2",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de fundo",
+            "label": "Cor do fundo ao passar o mouse nivel 2",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_bg_menu_3",
-            "showcase": "nivel_3",
-            "validation": "required:false"
+            "field": "color_bg_menu_level_2_hover",
+            "validation": "required:true"
           },
           {
-            "label": "Cor do Texto",
+            "label": "Cor do fundo nivel 3",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_font_3",
-            "showcase": "nivel_3",
-            "validation": "required:false"
+            "field": "color_bg_menu_level_3",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de fundo ao passar o mouse",
+            "label": "Cor do fundo ao passar o mouse nivel 3",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_bg_hover_3",
-            "showcase": "nivel_3",
-            "validation": "required:false"
-          },
+            "field": "color_bg_menu_level_3_hover",
+            "validation": "required:true"
+          }              
+        ]
+      },
+      {
+        "label": "Vitrine",
+        "fields": [         
           {
-            "label": "Cor de texto ao passar o mouse",
+            "label": "Cor de fundo bot\u00E3o comprar",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_menu_font_hover_3",
-            "showcase": "nivel_3",
-            "validation": "required:false"
+            "field": "color_cta",
+            "validation": "required:true"
           }
         ]
       },
       {
-        "label": "Rodapé",
-        "fields": [
+        "label": "Newsletter",
+        "fields": [         
           {
-            "label": "Cor do Fundo do Rodapé",
+            "label": "Cor do t\u00EDtulo",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_footer",
-            "validation": "required:false"
+            "field": "color_news_texto1",
+            "validation": "required:true"
           },
           {
-            "label": "Cor de Fonte do Rodapé",
+            "label": "Cor do subt\u00EDtulo",
             "type": "color",
-            "description": "",
-            "placeholder": "",
-            "field": "color_font_footer",
-            "validation": "required:false"
+            "field": "color_news_texto2",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de fundo do bot\u00E3o",
+            "type": "color",
+            "field": "color_news_bgbotao",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de texto do bot\u00E3o",
+            "type": "color",
+            "field": "color_news_textobotao",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de fundo",
+            "type": "color",
+            "field": "color_bg_news",
+            "validation": "required:true"
           }
         ]
-      }
-    ]
-  },
-  {
-	"label": "Banners",
-	"icon": "image",
-	"sessions": [
+      },
       {
-        "label": "Configurações",
-        "fields": [
+        "label": "Rodap\u00E9",
+        "fields": [  
           {
-            "label": "",
-            "type": "alert",
-            "description": "Este banner substitui o plugin padrão da plataforma, não seguindo as configurações de efeito, tempo e etc definidas no cadastro de banner.",
-            "field": "alert_banners"
+            "label": "Cor dos T\u00EDtulos",
+            "type": "color",
+            "field": "color_title_rodape",
+            "validation": "required:true"
           },
+          {
+            "label": "Cor dos textos",
+            "type": "color",
+            "field": "color_txt_rodape",
+            "validation": "required:true"
+          }
+        ]
+      }   
+    ]
+  },   
+  {
+    "label": "Banners",
+    "icon": "image",
+    "sessions": [
+      {
+        "label": "Configura\u00E7\u00F5es",
+        "fields": [
           {
             "label": "Banners Responsivo",
             "type": "toggle",
@@ -512,45 +290,51 @@
             "field": "home_slick"
           },
           {
+            "label": "Observa\u00E7\u00E3o!",
+            "type": "alert",
+            "description": "Este banner substitui o plugin padr\u00E3o da plataforma, n\u00E3o seguindo as configura\u00E7\u00F5es de efeito, tempo e etc definidas no cadastro de banner.",
+            "field": "alert_banner"
+          },
+          {
             "label": "Setas",
             "type": "toggle",
-            "description": "Exibe as setas de navegação nas laterais do banner. Por motivos de usabilidade as setas não são exibidas na versão mobile, apenas os Dots.",
+            "description": "Exibe as setas de navega\u00E7\u00E3o nas laterais do banner. Por motivos de usabilidade as setas n\u00E3o s\u00E3o exibidas na vers\u00E3o mobile, apenas os Dots.",
             "field": "banner_arrows"
-          },
-          {
-            "label": "Efeito Fade",
-            "type": "toggle",
-            "description": "A troca das fases é feita por opacidade, o primeiro vai sumindo até aparecer o segundo e assim por diante.",
-            "field": "banner_effect_fade"
-          },
-          {
-            "label": "Altura Adaptável",
-            "type": "toggle",
-            "description": "Caso você possua imagens de tamanhos diferentes entre as fases o banner irá ajustar sua altura, isto afeta o conteúdo abaixo do banner, podendo aumentar ou diminuir dependendo da imagem.",
-            "field": "banner_adaptive_height"
           },
           {
             "label": "Dots",
             "type": "toggle",
-            "description": "Exibe indicadores de navegação centralizados na parte de baixo do banner",
+            "description": "Exibe indicadores de navega\u00E7\u00E3o centralizados na parte de baixo do banner",
             "field": "banner_dots"
+          },
+          {
+            "label": "Efeito Fade",
+            "type": "toggle",
+            "description": "A troca das fases \u00E9 feita por opacidade, o primeiro vai sumindo at\u00E9 aparecer o segundo e assim por diante.",
+            "field": "banner_effect_fade"
           },
           {
             "label": "Infinito",
             "type": "toggle",
-            "description": "Ao chegar na última fase o carrossel se repete.",
+            "description": "Ao chegar na \u00FAltima fase o carrossel se repete.",
             "field": "banner_infinite"
+          },
+          {
+            "label": "Altura Adapt\u00E1vel",
+            "type": "toggle",
+            "description": "Caso voc\u00EA possua imagens de tamanhos diferentes entre as fases o banner ir\u00E1 ajustar sua altura, isto afeta o conte\u00FAdo abaixo do banner, podendo aumentar ou diminuir dependendo da imagem.",
+            "field": "banner_adaptive_height"
           },
           {
             "label": "Autoplay",
             "type": "toggle",
-            "description": "A troca das fases será automática, não sendo necessário utilizar as Setas ou os Dots.",
+            "description": "A troca das fases ser\u00E1 autom\u00E1tica, n\u00E3o sendo necess\u00E1rio utilizar as Setas ou os Dots.",
             "field": "banner_autoplay"
           },
           {
             "label": "Intervalo entre as fases",
             "type": "select",
-            "description": "Funciona apenas quando o Autoplay estiver ativo, define o tempo de exibição entre uma fase e outra.",
+            "description": "Funciona apenas quando o Autoplay estiver ativo, define o tempo de exibi\u00E7\u00E3o entre uma fase e outra.",
             "field": "banner_interval",
             "options": [
               {
@@ -590,7 +374,7 @@
           {
             "label": "Lazy Load",
             "type": "select",
-            "description": "Também conhecido como carregamento sob demanda, possui duas opções: On-Demand: carrega a primeira imagem e as outras apenas quando forem entrar na tela. Progressive: carrega a primeira imagem e as outras quando o site termina de carregar.",
+            "description": "Tamb\u00E9m conhecido como carregamento sob demanda, possui duas op\u00E7\u00F5es: On-Demand: carrega a primeira imagem e as outras apenas quando forem entrar na tela. Progressive: carrega a primeira imagem e as outras quando o site termina de carregar.",
             "field": "banner_lazyload",
             "options": [
               {
@@ -600,63 +384,49 @@
               {
                 "value": "progressive",
                 "content": "Progressive"
-              } 
+              }
             ]
           }
         ]
       },
       {
-        "label": "Cores",
-        "fields": [
+       "label": "Cores",
+       "fields": [
           {
             "label": "Cor das setas",
             "type": "color",
-            "description": "",
-            "placeholder": "",
             "field": "color_slick_arrow",
-            "validation": "required:false"
+            "validation": "required:true"
           },
           {
             "label": "Cor das setas ao passar o mouse",
             "type": "color",
-            "description": "",
-            "placeholder": "",
             "field": "color_slick_arrow_hover",
-            "validation": "required:false"
+            "validation": "required:true"
           },
           {
             "label": "Cor dos Dots",
             "type": "color",
-            "description": "",
-            "placeholder": "",
             "field": "color_slick_dot",
-            "validation": "required:false"
+            "validation": "required:true"
           },
           {
             "label": "Cor dos Ativos",
             "type": "color",
-            "description": "",
-            "placeholder": "",
             "field": "color_slick_dot_active",
-            "validation": "required:false"
+            "validation": "required:true"
           }
         ]
       }
     ]
-  },
+  }, 
   {
-		"label": "Vitrines",
-		"icon": "store",
-		"sessions": [
+    "label": "Vitrines",
+    "icon": "columns",
+    "sessions": [
       {
         "label": "Geral",
         "fields": [
-          {
-            "label": "",
-            "type": "alert",
-            "description": "Produtos sem estoque podem não ser removidos através dessa configuração, é aplicado o filtro de acordo com as configurações do painel administrativo da loja.",
-            "field": "alert_vitrines"
-          },
           {
             "label": "Exibir apenas produtos disponiveis",
             "type": "toggle",
@@ -664,9 +434,15 @@
             "field": "show_available_products"
           },
           {
+            "label": "Observa\u00E7\u00E3o",
+            "type": "alert",
+            "description": "Produtos sem estoque podem n\u00E3o ser removidos atrav\u00E9s dessa configura\u00E7\u00E3o, \u00E9 aplicado o filtro de acordo com as configura\u00E7\u00F5es do painel administrativo da loja.",
+            "field": "alert_produtos"
+          },
+          {
             "label": "Direcionar direto para o carrinho",
             "type": "toggle",
-            "description": "Esta opção não verifica produtos que possuem variações.",
+            "description": "Esta op\u00E7\u00E3o n\u00E3o verifica produtos que possuem varia\u00E7\u00F5es.",
             "field": "buy_to_cart"
           },
           {
@@ -676,10 +452,29 @@
             "field": "discount"
           },
           {
-            "label": "O que exibir na primeira vitrine?",
+            "type": "tab",
+            "field": "vitrine",
+            "options": [
+              {
+                "value": "vitrine_1",
+                "content": "Vitrine 1"
+              },
+              {
+                "value": "vitrine_2",
+                "content": "Vitrine 2"
+              },
+              {
+                "value": "vitrine_3",
+                "content": "Vitrine 3"
+              }
+            ]
+          },
+          {
+            "label": "Vitrine 1",
             "type": "radio",
-            "description": "",
-            "field": "showcase",
+            "tab": "vitrine_1",
+            "description": "O que exibir na primeira vitrine?",
+            "field": "showcase_1",
             "options": [
               {
                 "value": "featured",
@@ -687,15 +482,15 @@
               },
               {
                 "value": "new",
-                "content": "Lançamentos"
+                "content": "Lan\u00E7amentos"
               },
               {
                 "value": "free_shipping",
-                "content": "Frete Grátis"
+                "content": "Frete Gr\u00E1tis*"
               },
               {
                 "value": "promotion",
-                "content": "Promoções"
+                "content": "Promo\u00E7\u00F5es"
               },
               {
                 "value": "top_seller",
@@ -704,15 +499,73 @@
             ]
           },
           {
-            "label": "Escolha a forma que será exibido preços anteriores à promoção",
+            "label": "Vitrine 2",
+            "type": "radio",
+            "tab": "vitrine_2",
+            "description": "O que exibir na segunda vitrine?",
+            "field": "showcase_2",
+            "options": [
+              {
+                "value": "featured",
+                "content": "Destaques"
+              },
+              {
+                "value": "new",
+                "content": "Lan\u00E7amentos"
+              },
+              {
+                "value": "free_shipping",
+                "content": "Frete Gr\u00E1tis*"
+              },
+              {
+                "value": "promotion",
+                "content": "Promo\u00E7\u00F5es"
+              },
+              {
+                "value": "top_seller",
+                "content": "Mais Vendidos"
+              }
+            ]
+          },
+          {
+            "label": "Vitrine 3",
+            "type": "radio",
+            "tab": "vitrine_3",
+            "description": "O que exibir na terceira vitrine?",
+            "field": "showcase_3",
+            "options": [
+              {
+                "value": "featured",
+                "content": "Destaques"
+              },
+              {
+                "value": "new",
+                "content": "Lan\u00E7amentos"
+              },
+              {
+                "value": "free_shipping",
+                "content": "Frete Gr\u00E1tis*"
+              },
+              {
+                "value": "promotion",
+                "content": "Promo\u00E7\u00F5es"
+              },
+              {
+                "value": "top_seller",
+                "content": "Mais Vendidos"
+              }
+            ]
+          },
+          {
+            "label": "Escolha a forma que ser\u00E1 exibido pre\u00E7os anteriores \u00E0 promo\u00E7\u00E3o",
             "type": "radio",
             "description": "",
             "field": "price_before_style",
             "options": [
               {
                 "value": "strike",
-                "content": "R$ 0,00",
-                "style": true
+                "style": true,
+                "content": "R$ 0,00"
               },
               {
                 "value": "depor",
@@ -720,45 +573,51 @@
               },
               {
                 "value": "strike-depor",
-                "content": "De: R$ 0,00",
-                "style": true
+                "style": true,
+                "content": "De: R$ 0,00"
               }
             ]
+          },
+          {
+            "label": "",
+            "type": "alert",
+            "description": "* Disponível em alguns planos.",
+            "field": "alert_banners"
           }
         ]
-      }
-    ]
+      } 
+    ]  
   },
   {
-		"label": "Selo Adicional",
-		"icon": "window-minimize",
-		"sessions": [
+    "label": "Selo Adicional",
+    "icon": "star",
+    "sessions": [
       {
         "label": "Selo",
         "fields": [
           {
-            "label": "Selo Adicional",
+            "label": "Exibir o selo adicional",
             "type": "toggle",
-            "description": "O selo adicional será exibido no rodapé da loja.",
             "field": "enable_seal"
           },
           {
-            "label" : "Adicione abaixo o código do selo adicional",
-            "type" : "textarea",
-            "description": "",
+            "label": "Adicione abaixo o c\u00F3digo do selo adicional",
+            "type": "textarea",
+            "description": "O selo adicional ser\u00E1 exibido no rodap\u00E9 da loja, ao lado de pagamento",
             "placeholder": "",
+            "icon": "",
             "field": "seal_code",
             "validation": "required:false"
           }
         ]
       }
     ]
-  },
+  },   
   {
     "info": {
-      "documentation": "https://tray-editor-temas.gitbook.io/tema-padrao/",
-      "version": "11.0.2",
+      "version": "7.4.13",
+      "documentation": "https://manuais.tray.com.br/v/eletronic-ii-novo-painel",      
       "support": "https://atendimento.tray.com.br/hc/pt-br/requests/new"
     }
-  }
+  }    
 ]

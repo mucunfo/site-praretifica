@@ -1,6 +1,7 @@
-.cart{
+.cart-1{
     color: #3d4445;
     display: block;
+    padding: 37px 0;
     
     &:active,
     &:link,
@@ -19,32 +20,22 @@
     }
     
     .cart-icon{
-        background: #a2a2a2;
-        height: 55px;
-        padding: 16px 0;
+        background: #4b8cdc;
+        height: 43px;
+        padding: 11px 0;
         text-align: center;
         width: 43px;
         
         @media screen and (max-width: $sm){
-            background: #a2a2a2;
-            height: 55px;
-            padding: 15px 0;
-            width: 100%;
-            
-            svg{
-                height: 25px;
-                width: 25px;
-            }
+            background: #dbdbdb;
+            height: 40px;
+            padding: 9px 0;
+            width: 40px;
         }
     }
     
     .cart-info{
-        background: #fff;
-        border: 1px solid #e2e2e2;
-        border-left: none;
-        height: 55px;
         overflow: hidden;
-        padding: 5px 0 4px 15px;
         
         b{
             display: block;
@@ -61,11 +52,8 @@
     }
     
     .cart-total{
-        @include typo(1.4rem, 400, $font, 2.2rem);
         padding: 0;
+        text-align: right;
+        @include typo(1.4rem, 400, $font, 2.2rem);
     }
-}
-
-.wrapp-cart{
-    padding-left: 0;
 }

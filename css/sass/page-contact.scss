@@ -9,11 +9,8 @@
     }
     
     .page-content{
-        
-        > *{
-            background: #fff;
-            padding: 15px;
-        }
+        background: #fff;
+        margin-top: 30px;
         
         h1{
             color: #3d4445;
@@ -25,13 +22,9 @@
         .formulario-contato button,
         .formulario-contato input,
         .formulario-contato textarea{
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-top: 3px;
             padding: 7px;
-        }
-        
-        #texto_captcha{
-            width: 130px;
         }
         
         .Seguro,
@@ -92,10 +85,10 @@
         }
         
         > .board{
-            padding: 0 45px;
+            padding: 0 30px;
             
             @media screen and (max-width: $sm){
-                padding: 0 15px;
+                padding: 0;
             }
             
             p{
@@ -182,5 +175,6 @@
         .page-content{
             padding: 15px;
         }
+        
     }
 }

@@ -1,0 +1,59 @@
+<div class="vertical-nav" style="background-color: {{ settings.color_bg_menu }};">  
+    <h5>Categorias</h5>
+    <ul class="level1">
+        {% for level1 in categories %}
+            {% if loop.index < 13 %}
+                <li class="item-level1">
+                    <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                    {% if level1.children %}
+                        <div class="level2">
+                            <div class="wrapper-list">
+                                <ul>
+                                    {% for level2 in level1.children %}
+                                        <li class="item-level2">
+                                            <a href="{{ level2.link }}" class="link-level2" data-tray-tst="categoria_lvl_2">{{ level2.name }}</a>
+                                            
+                                            {% if level2.children %}
+                                                <div class="level3">
+                                                    <div class="wrapper-list">
+                                                        <ul>
+                                                            {% for level3 in level2.children %}
+                                                                <li class="item-level3">
+                                                                    <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+        
+        {% if categories|length > 13 %}
+        <hr>
+        <li class="item-level1">
+            <a href="javascript:void(0)" class="link-level1 all-dep">+ Categorias</a>
+            <div class="level2">
+                <div class="wrapper-list">
+                    <ul>
+                        {% for level1 in categories %}
+                            {% if loop.index >= 13 %}
+                            <li class="item-level2">
+                                <a href="{{ level1.link }}" class="link-level2" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                            </li>
+                            {% endif%}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </li>
+        {% endif%}
+    </ul>
+</div>

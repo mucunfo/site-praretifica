@@ -5,8 +5,7 @@
 // tabs
 .carrinho-tabs{
     background: #fff;
-    border: 1px solid #e2e2e2;
-    margin: 0 0 30px;
+    margin: 30px 0;
     padding: 20px 0;
         
     ol{
@@ -15,7 +14,8 @@
     
     li{
         display: inline-block;
-        margin-left: 50px;
+        margin-left: 6%;
+        vertical-align: top;
         opacity: 0.5;
         @include prefix('filter', 'grayscale(100%)');
         
@@ -27,10 +27,6 @@
             }
         }
         
-        @media (min-width: 768px) and (max-width: 1200px){
-            margin-left: 30px;
-        }
-        
         &.active{
             opacity: 1;
             @include prefix('filter', 'none');
@@ -40,6 +36,38 @@
         &:first-child{
             margin-left: 0;
         }
+        
+        &:nth-child(1){
+            
+            .passo-num:before{
+                background-position: 0 0;
+                content: '';
+            }
+        }
+        
+        &:nth-child(2){
+            
+            .passo-num:before{
+                background-position: -25px 0;
+                content: '';
+            }
+        }
+        
+        &:nth-child(3){
+            
+            .passo-num:before{
+                background-position: -47px 0;
+                content: '';
+            }
+        }
+        
+        &:nth-child(4){
+            
+            .passo-num:before{
+                background-position: -73px 0;
+                content: '';
+            }
+        }
     }
     
     .passo-desc{
@@ -47,13 +75,19 @@
     }
     
     .passo-num{
-        color: #000;
+        color: #00468b;
         display: inline;
         font-size: 14px;
         font-weight: 400;
         
-        @media (min-width: 768px) and (max-width: 1200px){
-            font-size: 10px;
+        &:before{
+            background: url('../img/cart-tab.png');
+            background-repeat: no-repeat;
+            display: inline-block;
+            height: 17px;
+            margin-right: 5px;
+            vertical-align: top;
+            width: 20px;
         }
         
         &:after{
@@ -64,14 +98,10 @@
     }
     
     .passo-text{
-        color: #000;
+        color: #00468b;
         display: inline;
         font-size: 14px;
         font-weight: 400;
-        
-        @media (min-width: 768px) and (max-width: 1200px){
-            font-size: 10px;
-        }
     }
 }
 
@@ -97,15 +127,6 @@
         }
     }
     
-    .light_altura{
-        
-        p{
-            font-size: 2rem;
-            line-height: 2.4rem;
-            margin-top: 15px;
-        }
-    }
-    
     .caixa-produto{
         padding: 0;
         width: 100%;
@@ -121,7 +142,6 @@
     
     #tabela_carrinho{
         background: #fff;
-        border: 1px solid #e2e2e2;
         border-radius: 3px 3px 3px 3px;
         margin: 0;
         
@@ -149,53 +169,34 @@
         }
         
         th{
-            border-bottom: 1px solid #eee;
+            border: none;
             font-size: 14px;
-            padding: 10px 30px;
-            vertical-align: top;
+            padding: 0 30px;
             white-space: nowrap;
             
             @media screen and (max-device-width: 1024px){
                 padding: 0 15px;
             }
             
-            @media (min-width: 768px) and (max-width: 991px){
-                padding: 10px 0;
-            }
-            
             &:first-child{
-                padding-left: 94px;
-                padding-right: 40px;
+                padding: 10px 40px 17px 160px;
             }
             
             &:last-child{
-                padding-left: 32px;
-                padding-right: 10px;
-                
-                @media (min-width: 768px) and (max-width: 991px){
-                    padding-left: 0;
-                }
+                padding: 17px 40px 17px 32px;
             }
         }
         
         td{
             border-top: none;
-            border-bottom: solid 1px #e8e8e8;
-            padding: 20px 0;
+            border-bottom: dotted 1px #e8e8e8;
+            padding: 25px 0 30px;
             
             &:first-child{
-                padding: 0;
-                vertical-align: middle;
-                
-                a{
-                    display: block;
-                    padding: 0 5px 5px;
-                }
-                
+                padding: 10px 40px 17px 32px;
+                    
                 img{
                     border: none;
-                    max-height: 100%;
-                    max-width: 100%;
                 }
             }
             
@@ -212,7 +213,7 @@
                 
                 &:nth-child(1){
                     float: left;
-                    padding: 0 0 10px;
+                    padding: 10px 0;
                     text-align: center;
                     width: 40%;
                 }
@@ -287,7 +288,7 @@
         }
         
         .refresh{
-            background: url("../img/reload.svg?1") no-repeat center top;
+            background: url("../img/refresh.png?1") no-repeat center top;
             cursor: pointer;
             display: block;
             height: 20px;
@@ -304,9 +305,7 @@
         }
         
         .bt-excluir{
-            background: url('../img/close.svg?1') no-repeat center top;
-            -webkit-background-size: 10px;
-            background-size: 10px;
+            background: url('../img/remove.png?1') no-repeat center top;
             cursor: pointer;
             display: block;
             height: 12px;
@@ -337,7 +336,6 @@
             color: #3d4445 !important;
             font-size: 14px;
             font-weight: 400;
-            margin: 0;
         }
     }
     
@@ -356,6 +354,11 @@
             float: none;
             font-size: 14px;
         }
+    
+        
+        img{
+            display: block;
+        }
     }
     
     .caixa-frete{
@@ -364,27 +367,28 @@
     
     .caixa-forma-frete{
         margin-top: 20px;
-        background-color: #fff;
         
         tr{
             display: block;
             overflow: hidden;
-            
-            &:nth-child(3){
-                th, span{
-                    font-size: 16px;
-                }
-            }
-            
-            td{
-                h3 { display: none; }
-            }
         }
         
         th{
             display: block;
         }
         
+        td{
+            float: left;
+            
+            // prazo de entrega
+            @media screen and (max-device-width: 1024px){
+                &:nth-child(3){
+                    display:block !important;
+                }
+            }            
+        }
+        
+        input[type="text"],
         input[type="tel"]{
             border: solid 1px #bcc0bd;
             color: #3d4445;
@@ -412,11 +416,6 @@
             margin-left: 10px;
             padding: 9px;
             vertical-align: top;
-            
-            @media screen and (max-width: 480px){
-                margin-left: 0;
-                padding: 9px 5px;
-            }
         }
         
         .carFretePara{
@@ -425,9 +424,8 @@
         }
         
         #formas_envio_frete{
-            display: block;
-            overflow: hidden;
             padding-left: 30px;
+            width: 800px;
             
             @media screen and (max-device-width: 1024px){
                 padding-left: 0;
@@ -447,14 +445,7 @@
             
             @media screen and (max-width: $sm){
                 input{
-                    font-size: 1.6rem;
                     margin: 0 3px;
-                    padding: 0 3px;
-                    width: 70px;
-                    
-                    &#cep2{
-                        width: 40px;
-                    }
                 }
             }
         }
@@ -475,7 +466,8 @@
             
             .botao-cupom-desconto{
                 display: inline-block;
-                margin: 0 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
                 padding: 9px;
                 vertical-align: top;
             }
@@ -493,7 +485,6 @@
                 line-height: 14px;
                 padding: 5px;
                 vertical-align: top;
-                font-style: normal;
                 
                 &:first-child{
                     min-width: 150px;
@@ -531,7 +522,7 @@
             
             label{
                 color: #3d4445;
-                // display: inline-block;
+                display: inline-block;
                 font-size: 14px;
                 vertical-align: top;
             }
@@ -541,8 +532,7 @@
     .frete-wrapper,
     .cupom-wrapper{
         clear: both;
-        float: left;
-        text-align: left;
+        float: right;
         
         @media screen and (max-width: $sm){
             float: none;
@@ -551,75 +541,9 @@
     }
     
     .cupom-wrapper{
-        background: #fff;
-        border: 1px solid #e2e2e2;
-        margin-top: 30px;
-        padding: 15px 30px;
-        width: 100%;
         
         @media screen and (max-width: $sm){
-            padding: 15px;
-        }
-        
-        th{
-            float: left;
-            text-align: left;
-            
-            &:nth-child(2){
-                line-height: 30px;
-            }
-        }
-        
-        @media screen and (max-width: $sm){
-            
-            th{
-                
-                &:nth-child(2){
-                    line-height: 12px;
-                    padding: 30px;
-                    padding-right: 0;
-                }
-            }
-            
-            .botao-cupom-desconto{
-                margin: 0 !important;
-                width: 100%;
-            }
-            
-            #cupon{
-                display: block;
-                font-size: 1.6rem;
-                margin: 5px 0 10px;
-                width: 100%;
-            }
-        }
-        
-        #cupon{
-            border: solid 1px #bcc0bd;
-            color: #3d4445;
-            font-size: 1.5rem;
-            font-weight: 400;
-            height: 30px;
-            padding: 0 10px;
-            text-align: center;
-            
-            @media screen and (max-width: $sm){
-                padding: 0;
-            }
-        }
-        
-        input[type="tel"]{
-            border: solid 1px #bcc0bd;
-            color: #3d4445;
-            font-size: 1.5rem;
-            font-weight: 400;
-            height: 30px;
-            padding: 0 10px;
-            text-align: center;
-            
-            @media screen and (max-width: $sm){
-                padding: 0;
-            }
+            padding-top: 30px;
         }
         
         @media screen and (max-width: 404px){            
@@ -630,18 +554,12 @@
     }
     
     .margem_imagem_frete{
-        display: block;
+        display: none;
     }
     
     .frete-wrapper{
-        padding: 0 30px;
-        
-        @media screen and (max-width: 404px){            
-            padding: 0;
-        }
         
         + tr{
-            clear: both;
             
             > td > h3{
                 display: none;
@@ -651,7 +569,6 @@
     
     .caixa-total{
         margin-bottom: 20px;
-        background-color: #fff;
         
         .tit-total{
             display: none;
@@ -703,6 +620,10 @@
     .caixa-botoes{
         margin-bottom: 30px;
         
+        .botao-commerce-img{
+            color: #fff !important;
+        }   
+        
         .botao-commerce{
             font-size: 1.4rem;
             padding: 9px 25px;
@@ -711,112 +632,6 @@
                 text-align: center;
                 width: 100%;
             }
-            
-            &.botao-prosseguir-compra{
-                background: #3d4445;
-                border: none;
-                color: #fff;
-                height: 57px;
-                padding: 18px 0;
-                text-align: center;
-                width: 200px;
-                @include typo(2rem, 400, $font, 2rem);
-                
-                @media screen and (max-width: $sm){
-                    text-align: center;
-                    width: 100%;
-                }
-                
-                .botao-commerce-img {
-                    color: #fff !important;
-                }
-            }
-            
-            &.botao-continuar-comprando{
-                background: #ccc;
-            }
         }
-    }
-    
-    
-    // cart without items
-    .Seguro + .board{
-        background: #fff;
-        font-size: 1rem;
-        padding: 30px 0 15px;
-        text-align: center;
-        
-        h2{
-            
-            &:before{
-                background: url('../img/cart-empty.svg');
-                background-size: 100%;
-                content: '';
-                display: block;
-                height: 100px;
-                margin: 0 auto 15px;
-                width: 100px;
-            }
-        }
-        
-        br{
-            display: none;
-        }
-        
-        a{
-            background: #a2a2a2;
-            color: #fff;
-            display: inline-block;
-            font-size: 1.5rem;
-            margin: 15px;
-            padding: 15px;
-        }
-    }
-    
-    
-    // resource gift list
-    .bloco-lista{
-        background: #fff;
-        margin-bottom: 30px;
-        padding: 15px;
-    }
-    
-    .imagem-alerta-lista{
-        float: left;
-        margin-right: 15px;
-        
-        &:before{
-            background: url('../img/gift.svg');
-            content: '';
-            display: block;
-            height: 50px;
-            width: 50px;
-        }
-        
-        img{
-            display: none;
-        }
-    }
-    
-    .msg-alerta-lista{
-        overflow: hidden;
-        font-size: 1.2rem;
-        
-        strong{
-            font-size: 1.2rem !important;
-            
-            u{
-                color: red;
-            }
-        }
-        
-        #atencao-lista{
-            font-weight: 700;
-        }
-    }
-    
-    .imagem-sair-lista{
-        margin-top: 15px;
-        text-align: center;
     }
 }
