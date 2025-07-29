@@ -1,0 +1,31 @@
+# Regras para Relatório de Arquivos Modificados
+
+Após finalizar todas as alterações solicitadas, SEMPRE gere uma lista final contendo apenas:
+
+1. **Lista dos arquivos modificados** - Nome e caminho completo de cada arquivo que foi alterado
+2. **Resumo das alterações** - Breve descrição do que foi modificado em cada arquivo
+
+## Formato da Lista Final:
+
+```
+## 📋 Arquivos Modificados
+
+### [Nome do Arquivo] (caminho/relativo/do/arquivo)
+- Descrição da alteração realizada
+
+### [Nome do Arquivo] (caminho/relativo/do/arquivo)  
+- Descrição da alteração realizada
+
+...
+```
+
+## Instruções Específicas:
+
+- Inclua TODOS os arquivos que foram criados, modificados ou deletados
+- Use caminhos relativos ao workspace
+- Seja específico sobre o que foi alterado em cada arquivo
+- Organize a lista de forma clara e legível
+- Inclua esta lista como parte final da sua resposta após completar as alterações
+
+alwaysApply: true
+---
