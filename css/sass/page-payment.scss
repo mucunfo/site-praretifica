@@ -58,16 +58,20 @@
             padding: 30px 30px 15px;
             white-space: nowrap;
             
+            @media screen and (min-width: 768px) and (max-width: 991px){
+                padding: 30px 10px 15px;
+            }
+            
             @media screen and (max-width: $sm){
                 display: block;
             }
             
             &:first-child{
-                padding-left: 110px;
+                padding-left: 15px;
             }
             
             &:last-child{
-                padding: 0 90px 0 0;
+                padding: 0 15px 0 0;
             }
         }
         
@@ -126,7 +130,7 @@
             }
             
             &:first-child{
-                padding-left: 110px;
+                padding-left: 15px;
                 
                 @media screen and (max-width: $sm){
                     padding: 0;
@@ -148,11 +152,6 @@
         
         .caixa-frete{
             border-top: 1px solid #eee !important;
-            display: block;
-            margin-right: -1140px;
-            padding-top: 35px;
-            text-align: center;
-            width: 1140px;
             
             @media screen and (max-width: $sm){
                 border: none !important;
@@ -163,9 +162,8 @@
         
             th{
                 color: #666;
-                display: inline-block;
                 font: 300 18px/18px $font;
-                padding: 0;
+                padding: 15px 15px 0;
                 text-transform: none;
                 vertical-align: top;
                 
@@ -188,6 +186,19 @@
                 display: block;
                 margin: 0;
             }
+            
+            .tit-valor-frete{
+                @media screen and (max-width: $sm){
+                    text-align: left;
+                }
+            }
+            
+            + tr{
+                
+                td{
+                    padding: 0;
+                }
+            }
         }
         
         // blank space
@@ -199,10 +210,6 @@
         
         // detail total
         .caixa-frete + tr + tr {
-            display: block;
-            margin-right: -1140px;
-            text-align: center;
-            width: 1140px;
             
             @media screen and (max-width: $sm){
                 border: none;
@@ -212,9 +219,8 @@
         
             th{
                 color: #666;
-                display: inline-block;
                 font: 300 18px/18px $font;
-                padding: 0;
+                padding: 0 15px 15px;
                 text-transform: none;
                 vertical-align: baseline;
                 
@@ -232,7 +238,7 @@
                 
                 // value total
                 h3{
-                    color: #c2a26f;
+                    color: #000;
                     @include typo(2.3rem, 700, $font, 2.3rem);
                 }
             }
@@ -240,10 +246,6 @@
         
         // change buy title
         .tit-altera-compra{
-            display: block;
-            margin-right: -1140px;
-            text-align: center;
-            width: 1140px;
             
             @media screen and (max-width: $sm){
                 border: none;
@@ -253,9 +255,7 @@
             
             th{
                 border-top: 1px solid #eee;
-                display: block;
-                margin: 20px auto 0;
-                padding: 20px 0 0;
+                padding: 15px 0 0;
                 width: 260px;
                 
                 @media screen and (max-width: $sm){
@@ -352,12 +352,23 @@
     
     // title shipping address
     .tit-dados-entrega{
+        
         // box shipping address wrapper
         + .board{
             background: #fff;
             margin-top: 30px;
             padding: 30px;
         }
+    }
+    
+    td.tit-dados-entrega,
+    th.tit-entrega{
+        padding-right: 60px;
+        width: 50%;
+    }
+    
+    .bt-altera-entrega{
+        width: 50px;
     }
     
     // shipping address details
@@ -401,6 +412,29 @@
         .tit-entrega h3,
         .tit-cobranca h3{
             margin-top: 30px;
+        }
+        
+        .bt-altera-entrega{
+            
+            a{
+                background: url('../img/refresh.png') no-repeat center top;
+                display: inline-block;
+                height: 18px;
+                margin-top: 10px;
+                width: 18px;
+                
+                @media screen and (max-width: $sm){
+                    margin: 0;
+                }
+                
+                &:hover{
+                    @include prefix('transform', 'rotate(-360deg)');
+                }
+                
+                img{
+                    display: none;
+                }
+            }
         }
     }
     

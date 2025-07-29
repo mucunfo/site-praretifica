@@ -3,21 +3,25 @@
 @import "reset-tray";
 @import "base";
 @import "typo";
+@import "styleguide";
 
 //pages
-@import "page-catalog";
-@import "page-product";
-@import "page-login";
-@import "page-register";
-@import "page-comparador";
-@import "page-depoimentos";
-@import "page-visitados";
-@import "page-central_cliente";
 @import "page-cart"; 
+@import "page-catalog";
+@import "page-central_cliente";
+@import "page-comparador";
 @import "page-contact"; 
-@import "page-payment";
+@import "page-depoimentos";
+@import "page-extra";
+@import "page-implantacao";
 @import "page-listas";
-@import "page-newsletter";    
+@import "page-login";
+@import "page-newsletter"; 
+@import "page-noticia";
+@import "page-payment";
+@import "page-product";
+@import "page-register";
+@import "page-visitados";
 
 // organisms
 @import "header";
@@ -28,13 +32,16 @@
 @import "breadcrumb";
 @import "customer";
 @import "cart";
-@import "horizontal-nav"; 
-@import "vertical-nav";  
+@import "sidebar"; 
 @import "menu-mobile";
 @import "slick";
 @import "banners"; 
-@import "news";
+@import "newsletter";
 @import "product";
-@import "search"; 
+@import "store-rating";
+@import "search";
 @import "showcase"; 
+@import "tagcloud";
+@import "suggestion";
+@import "tray-kit";
 @import "new-filter";

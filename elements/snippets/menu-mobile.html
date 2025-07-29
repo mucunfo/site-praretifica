@@ -1,6 +1,7 @@
 <div class="menu-mobile-backdrop visible-xs-block"></div>
 <div class="menu-mobile visible-xs-block">  
-    <h5>Categorias</h5>
+    <div class="close-menu">X</div>
+    <h5>{{ Translation('categorias') }}</h5>
     <ul class="categories-mobile level1">
         {% for level1 in categories %}
             {% if loop.index <= limit or not limit %}
@@ -27,6 +28,8 @@
                                                     {% for level3 in level2.children %}
                                                         <li class="item-level3">
                                                             <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                            {% if level3.children %}
+                                                            {% endif %}
                                                         </li>
                                                     {% endfor %}
                                                 </ul>

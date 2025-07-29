@@ -1,6 +1,6 @@
 <div class="catalog-header">
     
-    {% if banner.title %} 
+    {% if banner.title %}
         <div class="banner banner-title ">
             {{ banner.title }}
         </div>
@@ -15,15 +15,18 @@
         {% endif %}
         
         <div class="system-filter">
+            {% if settings.compare %}
+                <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button-compare">{{ Translation("comparar_produto") }}</a>
+            {% endif %}
+            
             {% element 'snippets/filter' {
                 'brands': category.brands
             } %}
         </div>
     
         <div class="pagination">
-            {% element 'snippets/pagination' %}
+            {% element 'snippets/paginate' %}
         </div>
-        
     {% endif %} 
     
     {% if category.small_description %}
@@ -31,32 +34,25 @@
         {{ category.small_description }}
     </div>
     {% endif %}    
-    
 </div>
-
 
 {% if products|length > 0 %}
 
     <div class="catalog-content row">
-        {% if settings.enable_filter %}
-            <div class="col-md-3">
-                {% element 'sidebar-left' %}
-            </div>
-        {% endif %}
         {% element 'showcase-catalog' {
             "products": products
         } %}
     </div>
 
-    <div class="catalog-footer">
-        {% element 'snippets/pagination' %}
+    <div class="catalog-footer pagination">
+        {% element 'snippets/paginate' %}
     </div>
 
 {% else %}
-
+    
     <div class="catalog-empty">
         <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
-        <p>Nenhum produto encontrado nessa categoria.</p>
+        <p>{{ Translation('nenhum_resultado') }}</p>
     </div>
 
 {% endif %}

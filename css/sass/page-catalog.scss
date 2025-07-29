@@ -1,36 +1,6 @@
 .page-catalog,
 .page-search{
     
-    .product{
-        margin-top: 30px;
-    }
-    
-    .showcase-catalog > ul:first-child > li{
-        
-        .product{
-            margin-top: 0;
-        }
-        
-        @media screen and (max-width: $sm){
-            
-            .product{
-                margin-top: 30px;
-            }
-            
-            &:first-child .product{
-                margin-top: 0;
-            }
-        }
-    }
-    
-    .vertical-nav {
-        width: 100%;
-        
-        @media screen and (max-width: $sm){ 
-            display: none;
-        }
-    }
-    
     .catalogo-comparator{
         background: #3d4445;
         color: #fff;
@@ -64,28 +34,20 @@
         }
     }
     
-    .sidebar{
+    .smart-filter{
         background: #fff;
+        border: 1px solid #e2e2e2;
         padding: 15px;
+        margin-bottom: 30px;
         
-        @media screen and (max-device-width: 1024px){
-            margin-bottom: 30px;
-        }
-        
-        h2{
-            color: #a0a2a3;
-            text-transform: uppercase;
-            @include typo(2rem, 700, $font);
+        a,
+        label{
+            color: #3d4445;
+            text-decoration: none;
+            @include typo(1.2rem, 400, $font, 1.7rem);
             
-            &:after {
-                background: #fff;
-                border-bottom: 1px solid #a0a2a3;
-                border-top: 1px solid #a0a2a3;
-                content: '';
-                display: block;
-                height: 4px;
-                margin-top: 10px;
-                width: 100%;
+            &:hover{
+                text-decoration: underline;
             }
         }
         
@@ -101,22 +63,29 @@
             margin-bottom: 5px;
         }
         
-    }
+        .smartfilter-button {
+            border: none;
+            color: #000;
+            font-size: 2rem;
+            text-transform: uppercase;
+            width: 100%;
+            
+            span,
+            svg{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            
+            svg{
+                margin-right: 10px;
+            }
+        }
+    }    
     
     .catalog-menu.vertical-nav {
         border: none;
         height: auto;
         margin: -15px;
-    }
-    
-    .smart-filter{
-        
-        a,
-        label{
-            color: #3d4445;
-            text-decoration: none;
-            @include typo(1.2rem, 400, $font, 1.7rem);
-        }
     }
     
     // checkbox
@@ -143,26 +112,38 @@
         }
     }
     
+    #open-filter:checked ~ .filters-list{
+        display: block;
+        margin-top: 30px;
+    }
+    
     .filters-list{
-        @media screen and (max-device-width: 1024px){
+        @media screen and (max-width: 767px){
             display: none;
+        }
+        
+        > div:first-child h3,
+        > h3:first-child{
+            margin-top: 0;
         }
         
         .applied-filters{
             a:hover{
                 text-decoration: line-through;
             }
-        }
-        
-        .filter-button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            font-size: 1.7rem;
-            background-color: #525252;
-            color: #fff;
-        }  
-        
+        }    
+    }
+    
+    .filter-button{
+        background: #9e9e9e;
+        border: none;
+        color: #fff;
+        display: block;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+        @include typo(1.5rem, 400, $font, 3.5rem);
     }
     
     .banner-title{
@@ -171,7 +152,7 @@
     
     .catalog-header{
         background: #fff;
-        margin-top: 30px;
+        border: 1px solid #e2e2e2;
         padding: 15px;
         
         .catalogo-pagination{
@@ -181,12 +162,13 @@
     }
     
     .catalog-content{
-        margin-top: 30px;
+        margin-top: 15px;
     }
     
     .catalog-footer{
         background: #fff;
-        margin-top: 30px;
+        border: 1px solid #e2e2e2;
+        margin-top: 15px;
         padding: 15px;
         
         .catalogo-comparator{
@@ -213,9 +195,12 @@
         }
     }
     
-    .catalogo-pages{
-        font-size: 1.4rem;
+    .catalogo-pages,
+    .pagination{
         color: #3d4445;
+        font-size: 1.4rem;
+        line-height: 22px;
+        margin-top: 15px;
         
         @media screen and (max-width: $sm){
             float: none;
@@ -223,19 +208,49 @@
         }
     }
     
-    .btns-paginator {
+    .paginate-links{
+        text-align: right;
+        
+        .page-current{
+            border-color: #3d4445;
+            color: #3d4445;            
+        }
+        
+        @media screen and (max-width: $sm){
+            float: none;
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+    
+    .btns-paginator,
+    .page-link{
         border: 1px solid #aaa;
-        color: #aaa;
+        color: #a2a2a2;
         display: inline-block;
         line-height: 2rem;
         margin: 0 5px;
         vertical-align: top;
+        
+        
+        &.page-current{
+            padding: 0 5px;    
+        }
+        
+        &:hover{
+            border-color: #000;
+        }
         
         a{
             color: #aaa;
             display: block;
             line-height: 2rem;
             padding: 0 5px;
+            
+            &:hover{
+                color: #000;
+                text-decoration: none;
+            }
         }
         
         &.selectedPg{
@@ -264,9 +279,17 @@
     .system-filter{
         
         .filtros{
+            display: inline-block;
             float: none;
             margin-right: 15px;
+            vertical-align: top;
             @include typo(1.4rem, 400, $font);
+            
+            @media screen and (min-width: 768px) and (max-width: 1199px){
+                display: block;
+                margin: 0 0 15px;
+                width: 100%;
+            }
             
             @media screen and (max-width: $sm){
                 display: block;
@@ -280,6 +303,10 @@
             }
         
             .select{
+                display: block;
+                margin-top: 3px;
+                padding: 8px;
+                width: 150px;
                 @include typo(1.4rem, 400, $font);
             }
         }
@@ -310,12 +337,34 @@
             font-size: 1.4rem;
             padding: 30px;
             
+            @media screen and (max-width: $sm){
+                text-align: left;
+            }
+            
             input[type="text"]{
                 padding: 5px;
+                
+                @media screen and (max-width: $sm){
+                    border: 1px solid #e2e2e2;
+                    display: block;
+                    margin: 3px 0 15px;
+                    width: 100%;
+                    
+                    &[name="palavra_busca"]{
+                        margin-bottom: 3px;
+                    }
+                }
             }
             
             .select{
                 padding: 5px;
+                
+                @media screen and (max-width: $sm){
+                    border: 1px solid #e2e2e2;
+                    display: block;
+                    margin-top: 3px;
+                    width: 100%;
+                }
             }
             
             form p{
@@ -340,7 +389,6 @@
         }
         
         #div_erro{
-            margin-top: 30px;
             
             a h3{
                 font-size: 1.6rem;
@@ -349,6 +397,24 @@
     }
     
     // comparator
+    .button-compare{
+        background: #000;
+        color: #fff;
+        float: right;
+        margin-top: 18px;
+        padding: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include typo(1.6rem, 400, $font, 1.6rem);
+        
+        @media screen and (max-width: $sm){
+            display: block;
+            float: none;
+            margin: 15px 0;
+            text-align: center;
+        }
+    }
+    
     .compare-buttons{
         margin-top: 15px;
         
@@ -373,6 +439,7 @@
     // visited
     .products-visited{
         background: #fff;
+        border: 1px solid #e2e2e2;
         margin-top: 30px;
         padding: 30px;
         
@@ -388,6 +455,7 @@
         }
         
         > h3{
+            color: #3d4445;
             text-transform: uppercase;
             @include typo(2.5rem, 400, $font, 2.5rem);
         }
@@ -417,7 +485,7 @@
         }
         
         .clearVisiteds{
-            background: #4b8cdc;
+            background: #9e9e9e;
             bottom: 0;
             color: #fff;
             padding: 0 10px;
@@ -429,15 +497,16 @@
             @media screen and (max-width: $sm){
                 position: static;
                 width: 100%;
+                right: 0;
             }
             
-            @media screen and (max-device-width: 1024px){
-                bottom: 35px;
+            @media screen and (max-width: 1200px){
+                right: 0;
             }
         }
         
         .myNavigation{
-            background: #4b8cdc;
+            background: #9e9e9e;
             color: #fff;
             display: block;
             text-align: center;
@@ -474,7 +543,7 @@
                 }    
                 
                 .pageON{
-                    background: #4b8cdc;
+                    background: #9e9e9e;
                     color: #fff !important;
                 }
             }
@@ -484,11 +553,11 @@
             border-left: 1px solid #eee;
             float: right;
             min-height: 360px;
-            min-width: 280px;
+            // min-width: 280px;
             padding-left: 15px;
             line-height: 2;
-            
-            @media screen and (max-width: $sm){
+                
+            @media screen and (max-width: 1199px){
                 border: none;
                 float: none;
                 min-width: 100%;
@@ -513,7 +582,7 @@
                 }
                 
                 &:nth-child(2){
-                    margin-bottom: 0;
+                    margin-bottom: 25px;
                     padding-bottom: 0;
                     padding-top: 15px;
                 }
@@ -526,12 +595,18 @@
         
         #produtos{
             
+            @media screen and (max-width: 1199px){
+                margin-bottom: 100px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #eee;
+            }
+            
             > ul{
                 float: left;
-                padding: 0 15px;
+                padding: 0 5px;
                 width: 33%;
                 
-                @media screen and (max-width: $sm){
+                @media screen and (max-width: 1199px){
                     float: none;
                     padding: 0;
                     width: 100%;
@@ -570,14 +645,14 @@
             text-transform: none;
             @include typo(1.5rem, 400, $font, 1.8rem);
             
-            @media screen and (max-width: $sm){
+            @media screen and (max-width: 1199px){
                 margin-bottom: 7px;
-                @include typo(1.2rem, 400, $font, 1.3rem);
+                @include typo(1.5rem, 400, $font, 1.3rem);
             }
         }
         
         .ValoresLista{
-            color: #aaa;
+            color: #000;
             @include typo(1.2rem, 400, $font, 1.4rem);
             
             .oculta_destaque{
@@ -585,7 +660,7 @@
             }
             
             .precoAvista{
-                color: #aaa;
+                color: #000;
                 display: block;
                 height: 18px;
                 overflow: hidden;
@@ -595,13 +670,13 @@
                     display: none;
                 }
             }
-
+            
             span,
             strong{
-                color: #aaa;
+                color: #000;
                 @include typo(1.2rem, 400, $font, 1.4rem);
                 
-                @media screen and (max-width: $sm){
+                @media screen and (max-width: 1199px){
                     @include typo(1rem, 400, $font, 1rem);
                 }
             }
@@ -610,6 +685,5 @@
         .precode{
             color: #aaa;
         }
-    }   
-    
+    }    
 }

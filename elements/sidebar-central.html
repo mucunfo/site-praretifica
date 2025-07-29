@@ -1,6 +1,6 @@
 <aside class="sidebar-central col-sm-3">
     <div>
-        <h2>Central do Cliente</h2>
+        <h2>{{ Translation('central_cliente') }}</h2>
         <ul>
             <li>
                 <h4>{{ Translation('pedidos') }}</h4>
@@ -22,6 +22,7 @@
                 <h4>{{ Translation('atendimento') }}</h4>
                 <ul>
                     <li><a href="{{ links.contact }}">{{ Translation('fale_conosco') }}</a></li>
+                    <li><a href="{{ links.logout }}">{{ Translation('sair_central') }}</a></li>
                 </ul>
             </li>
         </ul>

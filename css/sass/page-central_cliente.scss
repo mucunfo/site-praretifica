@@ -10,13 +10,25 @@
 .page-central_troca,
 .page-central_detalhe_pedido,
 .page-central_senha,
-.page-central_lista_espera{
+.page-central_lista_espera,
+.page-rastreio,
+.page-navegacao_visitados,
+.page-map,
+.page-central_bonus,
+.page-central_premiacao,
+.page-central_premiacao_ativas,
+.page-central_premiacao_classificacao,
+.page-central_premiacao_historico,
+.page-central_premiacao_indique,
+.page-central_comentarios{
     
     // content
     .page-content{
-        background: #fff;
-        margin-top: 30px;
-        padding: 15px 30px 30px;
+        
+        > *{
+            background: #fff;
+            padding: 15px;
+        }
         
         @media screen and (max-width: $sm){
             padding: 15px;
@@ -42,11 +54,15 @@
                 width: 100%;
             }
         }
+        
+        h5{
+            color: #a0a2a3;
+            text-transform: uppercase;
+            @include typo(1.5rem, 700, $font);
+        }
     }
     
     .central-menu {
-        border: 1px solid #ccc;
-        margin-top: 30px;
         
         + .container,
         > br,
@@ -70,17 +86,11 @@
     
     // sidebar
     .sidebar-central{
-        margin-top: 30px;
         
         > div{
             background: #fff;
-            margin-left: -15px;
-            margin-right: 15px;
+            border: 1px solid #e2e2e2;
             padding: 15px;
-            
-            @media screen and (max-width: $sm){
-                margin: 0 -15px;
-            }
             
             h2{
                 color: #a0a2a3;
@@ -207,7 +217,7 @@
 }
 
 // track order
-.page-central_rastrear{
+.page-central_rastrear{ 
     
     table{
         margin-top: 0;

@@ -1,0 +1,57 @@
+<ul class="social-list">
+    {% if settings.social_facebook %}
+    <li>
+        <a href="https://www.facebook.com/{{ settings.social_facebook }}" target="_blank">
+            <img src="{{ asset('img/facebook.svg') }}" alt="Facebook" width="20" height="20">
+            Facebook
+        </a>
+    </li>
+    {% endif %}
+
+    {% if settings.social_twitter %}
+    <li class="social-list-x">
+        <a href="https://www.x.com/{{ settings.social_twitter }}" target="_blank">
+            <i class="icon-x">
+                <svg width="14" height="14" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 462.799"><path fill-rule="nonzero" d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"/></svg>
+            </i>
+            X
+        </a>
+    </li>
+    {% endif %}
+
+    {% if settings.whatsapp %}
+    <li>
+        <a href="https://api.whatsapp.com/send?phone=55{{ settings.whatsapp|replace({'(': '', ')': '', '-': '', ' ': ''}) }}" target="_blank" rel="noopener">
+            <img src="{{ asset('img/whatsapp.svg') }}" alt="Whatsapp" width="20" height="20">
+            {{ settings.whatsapp }}
+        </a>
+    </li>
+    {% endif %}
+
+    {% if settings.social_youtube %}
+    <li>
+        <a href="https://www.youtube.com/{{ settings.social_youtube }}" target="_blank">
+            <img src="{{ asset('img/youtube.svg') }}" alt="Youtube" width="20" height="20">
+            YouTube
+        </a>
+    </li>
+    {% endif %}
+
+    {% if settings.social_pinterest %}
+    <li>
+        <a href="https://br.pinterest.com/{{ settings.social_pinterest }}" target="_blank">
+            <img src="{{ asset('img/pinterest.svg') }}" alt="Pinterest" width="20" height="20">
+            Pinterest
+        </a>
+    </li>
+    {% endif %}
+
+    {% if settings.social_instagram %}
+    <li>
+        <a href="https://www.instagram.com/{{ settings.social_instagram }}" target="_blank">
+            <img src="{{ asset('img/instagram.svg') }}" alt="Instagram" width="20" height="20">
+            Instagram
+        </a>
+    </li>
+    {% endif %}
+</ul>

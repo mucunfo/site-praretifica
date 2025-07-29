@@ -1,17 +1,10 @@
 !function(e) {
     e(document).on("ready", function() {
-        e("html"),
-        new Image,
-        Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        e(".botao-simular-frete, #shippingSimulatorButton").on("click", function() {
-            e(".shipping-result").html(""),
-            function s(o, t) {
-                null == document.querySelector(o) ? setTimeout(function() {
-                    s(o, t)
-                }, t) : e(".shipping-result").html(e(".page-simula-frete"))
-            }(".page-simula-frete", 1e3)
-        }),
-        "1.6.2" != e.fn.jquery && (e(".banner-home-slide").slick({
+        document.getElementById("news-name").required,
+        document.getElementById("news-email").required,
+        e(".caixa-cupom").length && e(".caixa-cupom").parents("tr").addClass("cupom-wrapper"),
+        e("#calculoFrete").length && e("#calculoFrete").parents("tr").addClass("frete-wrapper"),
+        "1.6.2" != e.fn.jquery && e(".banner-home-slide").slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             prevArrow: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="165.116 0 369.767 700" width="50" height="50" class="slick-arrow arrow-prev"><path d="M170.965,363.918l330.214,330.214c3.814,3.961,8.948,5.868,13.937,5.868c4.987,0,10.122-2.054,13.936-5.868c7.775-7.774,7.775-20.244,0-28.019L212.92,349.981L529.051,33.85c7.775-7.775,7.775-20.244,0-28.019\tc-7.774-7.775-20.244-7.775-28.019,0L170.819,336.045C163.19,343.674,163.19,356.289,170.965,363.918z"/></svg>',
@@ -22,72 +15,24 @@
                     arrows: !1
                 }
             }]
-        }),
-        e(".showcase > ul").slick({
-            lazyLoad: "ondemand",
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [{
-                breakpoint: 922,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                }
-            }, {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    arrows: !1,
-                    dots: !0
-                }
-            }]
-        }),
-        e(".slider-for").slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: !1,
-            fade: !0,
-            asNavFor: ".slider-nav"
-        }),
-        e(".slider-nav").slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: ".slider-for",
-            dots: !1,
-            arrows: !0,
-            focusOnSelect: !0,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1
-                }
-            }]
-        })),
-        e(".caixa-cupom").length && e(".caixa-cupom").parents("tr").addClass("cupom-wrapper"),
-        e("#calculoFrete").length && e("#calculoFrete").parents("tr").addClass("frete-wrapper"),
-        e(".open-filters").on("click", function() {
-            e(".filters-list").slideToggle()
         })
-    });
-    var s = e(".floating");
-    e(window).scroll(function() {
-        e(window).scrollTop() > 212 ? s.addClass("fixed") : s.removeClass("fixed")
     }),
-    e("header").find(".login-resp").on("click", function() {
-        var s = e('input[name="loja"]').val();
-        document.location.href = "login_layout.php?loja=" + s + "&origem=central&f="
+    e(".page-lista, .page-print_lista").length && e(".lista-produtos").wrapAll("<div class='wrap-gifts'></div>"),
+    e("img.lazy").lazyload({
+        threshold: 200
     })
 }(jQuery),
 function() {
     var e = document.getElementsByClassName("trigger-menu")[0]
+      , t = document.getElementsByClassName("close-menu")[0]
       , s = document.getElementsByTagName("html")[0]
-      , o = document.getElementsByClassName("menu-mobile-backdrop")[0];
+      , a = document.getElementsByClassName("menu-mobile-backdrop")[0];
     e.addEventListener("click", function() {
         s.classList.add("menu-open")
     }),
     s.addEventListener("click", function(e) {
-        e.target == o && (this.className = this.className.replace(new RegExp("(^|\\b)" + "menu-open".split(" ").join("|") + "(\\b|$)","gi"), " "))
+        e.target == a && (this.className = this.className.replace(new RegExp("(^|\\b)" + "menu-open".split(" ").join("|") + "(\\b|$)","gi"), " ")),
+        e.target == t && (this.className = this.className.replace(new RegExp("(^|\\b)" + "menu-open".split(" ").join("|") + "(\\b|$)","gi"), " "))
     })
 }();
 

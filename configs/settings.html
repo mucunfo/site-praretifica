@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Abel|Montserrat|Open+Sans|Playfair+Display|Raleway|Roboto|Sarabun"
     rel="stylesheet">
 
-<style> 
+<style>
     /* Reset */
     a,
     abbr,
@@ -875,8 +875,8 @@
                         <div> <small class="uk-align-center">Informa&#231;&#245;es do tema</small> </div>
                         <div uk-drop="pos: right-center">
                             <div class="uk-card uk-card-body uk-card-default">
-                                <p><strong> Tema: </strong> Eletronic II </p>
-                                <p><strong> Vers&#227;o: </strong> v7.4.13</p>
+                                <p><strong> Tema: </strong> Tema Padr&#227;o </p>
+                                <p><strong> Vers&#227;o: v11.0.11</strong></p>
                             </div>
                         </div>
                     </div>
@@ -925,7 +925,7 @@
                         <div id="modal-media-image" class="uk-flex-top" uk-modal>
                             <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
                                 <button class="uk-modal-close-outside" type="button" uk-close></button>
-                                <iframe src="https://drive.google.com/file/d/1a7XQGUx-7bLv68FDEW0t8M2lDh-Cf78r/preview"
+                                <iframe src="https://manuais.tray.com.br/tema-padrao"
                                     width="900px" height="700px"></iframe>
                             </div>
                         </div>
@@ -935,6 +935,8 @@
                 <article class="editor-main">
                     <ul class="uk-flex-center" uk-tab>
                         <li class="uk-active"><a href="">Redes Sociais</a></li>
+                        <li> <a href=""> Estrutura</a></li>
+                        <li> <a href=""> Fundo da Loja</a></li>
                         <li><a href="">Recursos</a></li>
                     </ul>
                     <ul class="uk-switcher uk-margin">
@@ -1033,8 +1035,7 @@
                             <!-- Whatsapp -->
                             <div class="editor-item">
                                 <div class="editor-field">
-                                    <input class="editor-input" id="whatsapp" 
-                                    name="whatsapp" type="text"
+                                    <input class="editor-input" id="whatsapp" name="whatsapp" type="text"
                                         placeholder="(99) 99999-9999">
                                     <i class="editor-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
@@ -1044,9 +1045,96 @@
                                             </svg>
                                     </i>
                                 </div>
-
                             </div>
 
+                        </li>
+
+                        <!--Estrutura-->
+                        <li uk-switcher-item="0">
+                            <div class="uk-flex-wrap uk-flex uk-flex-center uk-child-width-auto">
+                                <div class="uk-width-large uk-margin-left uk-margin-bottom uk-text-center">
+                                    <label class="f-400" style="display: block;">
+                                        <div>
+                                            <img src="https://images1.tcdn.com.br/assets/store/img/structure/structure-1.png"
+                                            alt="wireframe-header-1">
+                                        </div>
+
+                                        <input class="uk-radio" type="radio" name="structure" value="1"> Menu na lateral Esquerda
+                                    </label>
+                                </div>
+
+                                <div class="uk-width-large uk-margin-left uk-margin-bottom uk-text-center">
+                                    <label class="f-400" style="display: block;">
+                                        <div>
+                                            <img src="https://images1.tcdn.com.br/assets/store/img/structure/structure-2.png"
+                                            alt="wireframe-header-2">
+                                        </div>
+
+                                        <input class="uk-radio" type="radio" name="structure" value="2"> Menu na lateral Direita
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+    
+                        <!--Fundo da loja-->
+                        <li uk-switcher-item="0">
+                            <fieldset class="uk-fieldset">
+                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
+                                    <div class="uk-width-large uk-margin-left uk-margin-bottom">
+                                        <fieldset class="uk-fieldset uk-margin">
+                                            <legend class="uk-legend">Imagem de Fundo</legend>
+                                            <div uk-form-custom>
+                                                <p class="uk-text-meta">Tamanho recomendado: </p>
+                                                <input type="file" name="background_image" id="background_image">
+                                                <button class="uk-button uk-button-default" type="button" tabindex="-1">Selecionar</button>
+                                                <button class="btn-remove uk-button uk-button-danger" name="background_image">Remover</button>
+                                                <span class="error-message-background_image"></span>
+                                            </div>
+                                        </fieldset>
+                                                                
+                                        <div class="uk-alert-warning" uk-alert>
+                                            <p>A imagen inserida nesse campo ser&#225; exibida como imagem de fundo da loja</p>
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                 
+                                        <h4 class="space-title">Cor de fundo</h4>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i style="background: #f1f1f1;"></i></span>
+                                            <input name="color_background" placeholder="#f1f1f1" class="form-control" type="text">
+                                        </div>
+
+                                        <h4 class="space-title">Disposi&#231;&#227;o da imagem</h4>
+                                        <select name="bg_attachment" class="form-control">
+                                            <option>Selecione uma op&#231;&#227;o</option>
+                                            <option value="fixed">Fixa</option>
+                                            <option value="initial">Livre</option>
+                                        </select>
+                                        <h4 class="space-title">Repeti&#231;&#227;o da imagem</h4>
+                                        <select name="bg_repeat" class="form-control">
+                                            <option>Selecione uma op&#231;&#227;o</option>
+                                            <option value="no-repeat">N&#227;o repetir</option>
+                                            <option value="repeat-x">Repetir apenas na horizontal</option>
+                                            <option value="repeat-y">Repetir apenas na vertical</option>
+                                            <option value="repeat">Repetir na horizontal e vertical</option>
+                                        </select>
+                                        <h4 class="space-title">Posi&#231;&#227;o da imagem no eixo X</h4>
+                                        <select name="bg_position_x" class="form-control">
+                                            <option>Selecione uma op&#231;&#227;o</option>
+                                            <option value="left">Esquerda</option>
+                                            <option value="right">Direita</option>
+                                            <option value="center">Centralizada</option>
+                                        </select>
+                                        <h4 class="space-title">Posi&#231;&#227;o da imagem no eixo Y</h4>
+                                        <select name="bg_position_y" class="form-control">
+                                            <option>Selecione uma op&#231;&#227;o</option>
+                                            <option value="top">Topo</option>
+                                            <option value="bottom">Baixo</option>
+                                            <option value="center">Centralizada</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </li>
 
                         <!-- Recursos  -->
@@ -1064,11 +1152,12 @@
                                         </div>
                                         <p class="editor-tip">Ativa a exibi&ccedil;&atilde;o das Avalia&#231;&#245;es na
                                             Home da Loja</p>
-                                        <div class="editor-tip" style="font-size: 12px; margin-top: 8px;">
+                                        <div class="editor-tip" style="font-size: 12px; margin-top: 8px">
                                             Essa funcionalidade depende do plano da loja. Para maiores detalhes acesse: <a href="https://www.tray.com.br/planos-precos" target="_blank">https://www.tray.com.br/planos-precos</a>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="uk-width-1-2">
                                     <div class="uk-alert-warning uk-margin-medium-left" uk-alert>
                                         <h3>Importante</h3>
@@ -1079,6 +1168,7 @@
                                                 aqui</a> para saber mais</p>
                                     </div>
                                 </div>
+                                
                                 <div class="uk-width-1-2">
                                     <div class="editor-field change">
                                         <div class="editor-label">
@@ -1091,6 +1181,7 @@
                                         <p class="editor-tip">Ativa a exibi&ccedil;&atilde;o do filtro inteligente</p>
                                     </div>
                                 </div>
+                                
                                 <div class="uk-width-1-2">
                                     <div class="editor-field uk-margin-medium-left change">
                                         <div class="editor-label">
@@ -1103,6 +1194,7 @@
                                         <p class="editor-tip">Ser&#225; exibindo &#34; carregando...&#34;  no pre&#231;o do produto.</p>
                                     </div>
                                 </div>
+                                
                             </div>
                         </li>
                     </ul>
@@ -1116,9 +1208,8 @@
                 <article class="editor-main">
                     <ul class="uk-flex-center" uk-tab>
                         <li><a href="uk-active">Geral</a></li>
+                        <li><a href="">Cabe&#231;alho</a></li>
                         <li><a href="">Menu</a></li>
-                        <li><a href="">Vitrine</a></li>
-                        <li><a href="">Newsletter</a></li>
                         <li><a href="">Rodap&#233;</a></li>
 
 
@@ -1126,223 +1217,133 @@
                     <ul class="uk-switcher uk-margin">
 
                         <!--Geral-->
-                        <li uk-switcher-item="1">
-                            <fieldset class="uk-fieldset">
-                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor principal</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_primaria" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor Secund&#225;ria</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_secundaria" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor de Texto das Avalia&#231;&#245;es</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_texto_avaliacao" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor de Texto das Palavras Mais Buscadas</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_texto_tags" class="form-control" type="text">
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </fieldset>
-                        </li>
-
-                        <!--Menu-->
-                        <li uk-switcher-item="2">
-                            <fieldset class="uk-fieldset">
-                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Link Menu</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_link_menu_lvl1" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Link Menu ao passar o mouse</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_link_menu_lvl1_hover" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Link Menu nivel 2</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_link_menu_lvl2" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Link Menu nivel 2 ao passar o mouse</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_link_menu_lvl2_hover" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Link Menu nivel 3</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_link_menu_lvl3" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Link Menu nivel 3 ao passar o mouse</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_link_menu_lvl3_hover" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Fundo do fundo</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_menu" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Fundo do fundo ao passar o mouse</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_menu_hover" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Fundo do fundo nivel 2</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_menu_level_2" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Fundo do fundo ao passar o mouse nivel 2</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_menu_level_2_hover" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Fundo do fundo nivel 3</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_menu_level_3" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Fundo do fundo ao passar o mouse nivel 3</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_menu_level_3_hover" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </li>
-                        <!-- Vitrine -->
                         <li uk-switcher-item="0">
                             <fieldset class="uk-fieldset">
                                 <div class="uk-flex-wrap uk-flex uk-child-width-auto">
                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor de fundo do bot&#227;o comprar</label>
+                                        <label>Cor Prim&#225;ria</label>
                                         <div class="input-group colorPicker colorpicker-element">
                                             <span class="input-group-addon"><i
                                                     style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_cta" class="form-control" type="text">
+                                            <input name="color_primary" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do bot&#227;o Comprar</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_buybutton" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor dos &#237;cones</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_icons" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor dos pre&ccedil;o na vitrine</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_price" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor dos fundo da tag de desconto</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_bg_discount" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do texto da tag de desconto</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_txt_discount" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do titulo da newsletter</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_title_news" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do texto Palavras mais buscas</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_words" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do texto Avalia&ccedil;&otilde;es</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_avaliacoes" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do texto das abas de produto</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_abas" class="form-control" type="text">
                                         </div>
                                     </div>
                                 </div>
                             </fieldset>
                         </li>
-                        <!-- Newsletter -->
+
+                        <!--Cabe&#231;alho-->
                         <li uk-switcher-item="0">
                             <fieldset class="uk-fieldset">
+                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">                               
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do Texto</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_font_header" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </li>
+                        
+                         <!--Menu-->
+                        <li uk-switcher-item="0">
+                            <div class="uk-flex-wrap uk-flex uk-child-width-auto">
+                                <div class="editor-field uk-margin-medium change">
+                                    <div class="editor-label">
+                                        <h5 class="editor-switcher-title">Exibir t&#237;tulo do menu</h5>
+                                        <div class="switcher">
+                                            <input type="checkbox" id="show_menu_title" name="show_menu_title" class="check-switcher">
+                                            <label for="show_menu_title" class="green"></label>
+                                        </div>
+                                    </div>
+                                    <p class="editor-tip"></p>
+                                </div>
+                            </div>
+                            <fieldset class="uk-fieldset">
+                                <legend class="uk-legend uk-margin-left">Nivel 1</legend>
+
                                 <div class="uk-flex-wrap uk-flex uk-child-width-auto">
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor do t&#237;tulo</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_news_texto1" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor do subt&#237;tulo</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_news_texto2" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor de fundo  do bot&#227;o</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_news_bgbotao" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor de texto  do bot&#227;o</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_news_textobotao" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <div class="uk-width-medium uk-margin-left uk-margin-bottom">
                                         <label>Cor de fundo</label>
                                         <div class="input-group colorPicker colorpicker-element">
                                             <span class="input-group-addon"><i
                                                     style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_bg_news" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </li>
-                        <!-- Rodap&#233; -->
-                        <li uk-switcher-item="0">
-                            <fieldset class="uk-fieldset">
-                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
-                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
-                                        <label>Cor dos T&#237;tulos</label>
-                                        <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_title_rodape" class="form-control" type="text">
+                                            <input name="color_bg_menu_1" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
@@ -1350,13 +1351,137 @@
                                         <div class="input-group colorPicker colorpicker-element">
                                             <span class="input-group-addon"><i
                                                     style="background: rgb(255,255,255);"></i></span>
-                                            <input name="color_txt_rodape" class="form-control" type="text">
+                                            <input name="color_menu_font_1" class="form-control" type="text">
                                         </div>
                                     </div>
-                                  
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do titulo</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_title_font_1" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de fundo ao passar o mouse</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_bg_hover_1" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de texto ao passar o mouse</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_font_hover_1" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <legend class="uk-legend uk-margin-left">Nivel 2</legend>
+
+                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
+                                        <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de fundo</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_bg_menu_2" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do Texto</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_font_2" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de fundo ao passar o mouse</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_bg_hover_2" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de texto ao passar o mouse</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_font_hover_2" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <legend class="uk-legend uk-margin-left">Nivel 3</legend>
+
+                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
+                                        <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de fundo</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_bg_menu_3" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do Texto</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_font_3" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de fundo ao passar o mouse</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_bg_hover_3" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de texto ao passar o mouse</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_menu_font_hover_3" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </fieldset>
+                        </li>
+
+                        <!-- Rodape -->
+                        <li uk-switcher-item="0">
+                            <fieldset class="uk-fieldset">
+                                <div class="uk-flex-wrap uk-flex uk-child-width-auto">
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor do Fundo do Rodap&#233;</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_footer" class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium uk-margin-left uk-margin-bottom">
+                                        <label>Cor de Fonte do Rodap&#233;</label>
+                                        <div class="input-group colorPicker colorpicker-element">
+                                            <span class="input-group-addon"><i
+                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <input name="color_font_footer" class="form-control" type="text">
+                                        </div>
+                                    </div>                                  
                                 </div>
                             </fieldset>
                         </li>
+
                     </ul>
                 </article>
             </section>
@@ -1369,11 +1494,10 @@
                     <ul class="uk-flex-center" uk-tab>
                         <li class="uk-active"><a href="">Configura&ccedil;&otilde;es</a></li>
                         <li><a href="">Cores</a></li>
-
                     </ul>
                     <ul class="uk-switcher uk-margin">
                         <li uk-switcher-item="1">
-                            <fieldset class="uk-fieldset" >
+                            <fieldset class="uk-fieldset">
                                 <div class="uk-flex-wrap uk-flex uk-child-width-auto">
                                     <div class="uk-padding-small uk-width-1-2">
                                         <div class="editor-item">
@@ -1381,8 +1505,7 @@
                                                 <div class="editor-label">
                                                     <h5 class="editor-switcher-title">Banners Responsivo</h5>
                                                     <div class="switcher">
-                                                        <input type="checkbox" id="home_slick" name="home_slick"
-                                                            class="check-switcher">
+                                                        <input type="checkbox" id="home_slick" name="home_slick" class="check-switcher">
                                                         <label for="home_slick" class="green"></label>
                                                     </div>
                                                 </div>
@@ -1393,11 +1516,10 @@
                                     <div class="uk-padding-small uk-width-1-2">
                                         <div class="uk-alert-warning uk-alert" uk-alert="">
                                             <h3>Observa&#231;&#227;o</h3>
-                                            <p>Este banner substitui o plugin padr&#227;o da plataforma, n&#227;o seguindo as
-                                            configura&#231;&#245;es de efeito, tempo e etc definidas no cadastro de banner.
-                                            </p>
+                                            <p>Este banner substitui o plugin padr&#227;o da plataforma, n&#227;o seguindo as configura&#231;&#245;es de efeito, tempo e etc definidas no cadastro de banner.</p>
                                         </div>
                                     </div>
+
                                     <div class="uk-padding-small uk-width-1-2">
                                         <div class="editor-item">
                                             <div class="editor-field change">
@@ -1405,13 +1527,11 @@
                                                     <h5 class="editor-switcher-title">Setas</h5>
                                                     <div class="switcher">
                                                         <input type="checkbox" id="banner_arrows" name="banner_arrows"
-                                                            class="check-switcher switcher-banner">
+                                                            class="check-switcher">
                                                         <label for="banner_arrows" class="green"></label>
                                                     </div>
                                                 </div>
-                                                <p class="editor-tip">Exibe as setas de navega&#231;&#227;o nas laterais do
-                                                    banner. Por motivos de usabilidade as setas n&#227;o s&#227;o exibidas na
-                                                    vers&#227;o mobile, apenas os Dots.</p>
+                                                <p class="editor-tip">Exibe as setas de navega&#231;&#227;o nas laterais do banner. Por motivos de usabilidade as setas n&#227;o s&#227;o exibidas na vers&#227;o mobile, apenas os Dots.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1422,12 +1542,11 @@
                                                     <h5 class="editor-switcher-title">Dots</h5>
                                                     <div class="switcher">
                                                         <input type="checkbox" id="banner_dots" name="banner_dots"
-                                                            class="check-switcher switcher-banner">
+                                                            class="check-switcher">
                                                         <label for="banner_dots" class="green"></label>
                                                     </div>
                                                 </div>
-                                                <p class="editor-tip">Exibe indicadores de navega&#231;&#227;o centralizados na
-                                                    parte de baixo do banner</p>
+                                                <p class="editor-tip">Exibe indicadores de navega&#231;&#227;o centralizados na parte de baixo do banner</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1438,13 +1557,12 @@
                                                 <div class="editor-label">
                                                     <h5 class="editor-switcher-title">Efeito Fade</h5>
                                                     <div class="switcher">
-                                                        <input type="checkbox" id="banner_effect_fade"
-                                                            name="banner_effect_fade" class="check-switcher switcher-banner">
+                                                        <input type="checkbox" id="banner_effect_fade" name="banner_effect_fade"
+                                                            class="check-switcher">
                                                         <label for="banner_effect_fade" class="green"></label>
                                                     </div>
                                                 </div>
-                                                <p class="editor-tip">A troca das fases &#233; feita por opacidade, o
-                                                    primeiro vai sumindo at&#233; aparecer o segundo e assim por diante.</p>
+                                                <p class="editor-tip">A troca das fases &#233; feita por opacidade, o primeiro vai sumindo at&#233; aparecer o segundo e assim por diante.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1454,13 +1572,12 @@
                                                 <div class="editor-label">
                                                     <h5 class="editor-switcher-title">Infinito</h5>
                                                     <div class="switcher">
-                                                        <input type="checkbox" id="banner_infinite"
-                                                            name="banner_infinite" class="check-switcher switcher-banner">
+                                                        <input type="checkbox" id="banner_infinite" name="banner_infinite"
+                                                            class="check-switcher">
                                                         <label for="banner_infinite" class="green"></label>
                                                     </div>
                                                 </div>
-                                                <p class="editor-tip">Ao chegar na &#250;ltima fase o carrossel se repete.
-                                                </p>
+                                                <p class="editor-tip">Ao chegar na &#250;ltima fase o carrossel se repete.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1471,15 +1588,12 @@
                                                 <div class="editor-label">
                                                     <h5 class="editor-switcher-title">Altura Adapt&#225;vel</h5>
                                                     <div class="switcher">
-                                                        <input type="checkbox" id="banner_adaptive_height"
-                                                            name="banner_adaptive_height" class="check-switcher switcher-banner">
+                                                        <input type="checkbox" id="banner_adaptive_height" name="banner_adaptive_height"
+                                                            class="check-switcher">
                                                         <label for="banner_adaptive_height" class="green"></label>
                                                     </div>
                                                 </div>
-                                                <p class="editor-tip">Caso voc&ecirc; possua imagens de tamanhos diferentes
-                                                    entre as fases o banner ir&#225; ajustar sua altura, isto afeta o
-                                                    conte&#250;do abaixo do banner, podendo aumentar ou diminuir dependendo
-                                                    da imagem.</p>
+                                                <p class="editor-tip">Caso voc&#234; possua imagens de tamanhos diferentes entre as fases o banner ir&#225; ajustar sua altura, isto afeta o conte&#250;do abaixo do banner, podendo aumentar ou diminuir dependendo da imagem.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1489,13 +1603,12 @@
                                                 <div class="editor-label">
                                                     <h5 class="editor-switcher-title">Autoplay</h5>
                                                     <div class="switcher">
-                                                        <input type="checkbox" id="banner_autoplay"
-                                                            name="banner_autoplay" class="check-switcher switcher-banner">
+                                                        <input type="checkbox" id="banner_autoplay" name="banner_autoplay"
+                                                            class="check-switcher">
                                                         <label for="banner_autoplay" class="green"></label>
                                                     </div>
                                                 </div>
-                                                <p class="editor-tip">A troca das fases ser&#225; autom&#225;tica, n&#227;o sendo
-                                                    necess&#225;rio utilizar as Setas ou os Dots.</p>
+                                                <p class="editor-tip">A troca das fases ser&#225; autom&#225;tica, n&#227;o sendo necess&#225;rio utilizar as Setas ou os Dots.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1503,10 +1616,9 @@
                                     <div class="uk-padding-small editor-item">
                                         <div class="editor-field change">
                                             <div class="editor-label">
-                                                <h5 class="editor-switcher-title">Intervalo entre as fases </h5>
+                                                <h5 class="editor-switcher-title">Intervalo entre as fases	</h5>
                                                 <div class="uk-form-controls">
-                                                    <select class="uk-select switcher-banner" id="banner_interval"
-                                                        name="banner_interval">
+                                                    <select class="uk-select" id="banner_interval" name="banner_interval">
                                                         <option value="3000">3 segundos</option>
                                                         <option value="4000">4 segundos</option>
                                                         <option value="5000">5 segundos</option>
@@ -1519,36 +1631,31 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <p class="editor-tip">Funciona apenas quando o Autoplay estiver ativo,
-                                                define o tempo de exibi&#231;&#227;o entre uma fase e outra.</p>
+                                            <p class="editor-tip">Funciona apenas quando o Autoplay estiver ativo, define o tempo de exibi&#231;&#227;o entre uma fase e outra.</p>
                                         </div>
                                     </div>
 
                                     <div class="uk-padding-small editor-item">
                                         <div class="editor-field change">
                                             <div class="editor-label">
-                                                <h5 class="editor-switcher-title">Lazy Load </h5>
+                                                <h5 class="editor-switcher-title">Lazy Load		</h5>
                                                 <div class="uk-form-controls">
-                                                    <select class="uk-select switcher-banner" id="banner_lazyload"
-                                                        name="banner_lazyload">
+                                                    <select class="uk-select" id="banner_lazyload" name="banner_lazyload">
                                                         <option value="ondemand">On-Demand</option>
-                                                        <option value="progressive">Progressive</option>
+                                                        <option value="progressive">Progressive</option>   
                                                     </select>
                                                 </div>
                                             </div>
-                                            <p class="editor-tip">Tamb&#233;m conhecido como carregamento sob demanda, possui
-                                                duas op&#231;&#245;es:
-                                                On-Demand: carrega a primeira imagem e as outras apenas quando forem
-                                                entrar na tela.
-                                                Progressive: carrega a primeira imagem e as outras quando o site termina
-                                                de carregar.</p>
+                                            <p class="editor-tip">Tamb&#233;m conhecido como carregamento sob demanda, possui duas op&#231;&#245;es:
+                                                    On-Demand: carrega a primeira imagem e as outras apenas quando forem entrar na tela.
+                                                    Progressive: carrega a primeira imagem e as outras quando o site termina de carregar.</p>
                                         </div>
                                     </div>
                                 </div>
                             </fieldset>
-
                         </li>
-                        <li uk-switcher-item="2" class="banner-options" >
+
+                        <li uk-switcher-item="3">
                             <fieldset class="uk-fieldset">
                                 <legend class="uk-legend">Op&#231;&#245;es de cores</legend>
 
@@ -1556,32 +1663,28 @@
                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
                                         <label>Cor das setas</label>
                                         <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <span class="input-group-addon"><i style="background: rgb(255,255,255);"></i></span>
                                             <input name="color_slick_arrow" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
                                         <label>Cor das setas ao passar o mouse</label>
                                         <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <span class="input-group-addon"><i style="background: rgb(255,255,255);"></i></span>
                                             <input name="color_slick_arrow_hover" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
                                         <label>Cor dos Dots</label>
                                         <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <span class="input-group-addon"><i style="background: rgb(255,255,255);"></i></span>
                                             <input name="color_slick_dot" class="form-control" type="text">
                                         </div>
                                     </div>
                                     <div class="uk-width-medium uk-margin-left uk-margin-bottom">
                                         <label>Cor dos Ativos</label>
                                         <div class="input-group colorPicker colorpicker-element">
-                                            <span class="input-group-addon"><i
-                                                    style="background: rgb(255,255,255);"></i></span>
+                                            <span class="input-group-addon"><i style="background: rgb(255,255,255);"></i></span>
                                             <input name="color_slick_dot_active" class="form-control" type="text">
                                         </div>
                                     </div>
@@ -1596,7 +1699,7 @@
             <!-- Showcases -->
             <section id="showcase" class="editor-section">
                 <h2 class="editor-section-title">Vitrines</h2>
-    
+
                 <article class="editor-main">
                     <ul class="uk-flex-center" uk-tab>
                         <li class="uk-active"><a href="">Geral</a></li>
@@ -1669,136 +1772,74 @@
                                     <div class="uk-padding-small uk-width-1-2">
                                             <ul class="uk-flex-center" uk-tab>
                                                 <li class="uk-active"><a href="">Vitrine 1</a></li>
-                                                <li><a href="">Vitrine 2</a></li>
-                                                <li><a href="">Vitrine 3</a></li>
-
-
                                             </ul>
                                             <ul class="uk-switcher uk-margin">
                                                 <!--General -->
                                                 <li uk-switcher-item="0">
                                                     <legend class="uk-legend">O que exibir na primeira vitrine?</legend>
-            
+
                                                     <div class="uk-margin">
                                                         <div class="uk-child-width-auto">
                                                             <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_1" value="featured"> Destaques</label>
+                                                                    name="showcase" value="featured"> Destaques</label>
                                                         </div>
                                                         <div class="uk-child-width-auto">
                                                             <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_1" value="new"> Lan&ccedil;amentos</label>
+                                                                    name="showcase" value="new"> Lan&ccedil;amentos</label>
                                                         </div>
                                                         <div class="uk-child-width-auto">
                                                             <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_1" value="free_shipping"> Frete
+                                                                    name="showcase" value="free_shipping"> Frete
                                                                 Gr&aacute;tis*</label>
                                                         </div>
                                                         <div class="uk-child-width-auto">
                                                             <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_1" value="promotion">
+                                                                    name="showcase" value="promotion">
                                                                 Promo&ccedil;&otilde;es</label>
                                                         </div>
                                                         <div class="uk-child-width-auto">
                                                             <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_1" value="top_seller"> Mais Vendidos</label>
+                                                                    name="showcase" value="top_seller"> Mais Vendidos</label>
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li uk-switcher-item="0">
-                                                        <legend class="uk-legend">O que exibir na segunda vitrine?</legend>
-                
-                                                        <div class="uk-margin">
-                                                            <div class="uk-child-width-auto">
-                                                                <label class="f-400"><input class="uk-radio" type="radio"
-                                                                        name="showcase_2" value="featured"> Destaques</label>
-                                                            </div>
-                                                            <div class="uk-child-width-auto">
-                                                                <label class="f-400"><input class="uk-radio" type="radio"
-                                                                        name="showcase_2" value="new"> Lan&ccedil;amentos</label>
-                                                            </div>
-                                                            <div class="uk-child-width-auto">
-                                                                <label class="f-400"><input class="uk-radio" type="radio"
-                                                                        name="showcase_2" value="free_shipping"> Frete
-                                                                    Gr&aacute;tis*</label>
-                                                            </div>
-                                                            <div class="uk-child-width-auto">
-                                                                <label class="f-400"><input class="uk-radio" type="radio"
-                                                                        name="showcase_2" value="promotion">
-                                                                    Promo&ccedil;&otilde;es</label>
-                                                            </div>
-                                                            <div class="uk-child-width-auto">
-                                                                <label class="f-400"><input class="uk-radio" type="radio"
-                                                                        name="showcase_2" value="top_seller"> Mais Vendidos</label>
-                                                            </div>
-                                                        </div>
-                                                </li>
-                                                <li uk-switcher-item="0">
-                                                    <legend class="uk-legend">O que exibir na terceira vitrine?</legend>
-                                                            
-                                                    <div class="uk-margin">
-                                                        <div class="uk-child-width-auto">
-                                                            <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_3" value="featured"> Destaques</label>
-                                                        </div>
-                                                        <div class="uk-child-width-auto">
-                                                            <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_3" value="new"> Lan&ccedil;amentos</label>
-                                                        </div>
-                                                        <div class="uk-child-width-auto">
-                                                            <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_3" value="free_shipping"> Frete
-                                                                Gr&aacute;tis*</label>
-                                                        </div>
-                                                        <div class="uk-child-width-auto">
-                                                            <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_3" value="promotion">
-                                                                Promo&ccedil;&otilde;es</label>
-                                                        </div>
-                                                        <div class="uk-child-width-auto">
-                                                            <label class="f-400"><input class="uk-radio" type="radio"
-                                                                    name="showcase_3" value="top_seller"> Mais Vendidos</label>
-                                                        </div>
-                                                    </div>
-                                            </li>
                                             </ul>
-                                            <a href="https://www.tray.com.br/" target="_blank" style="font-size: 12px; color: #333333">* Disponível em alguns planos.</a>
                                     </div>
                                     <div class="uk-padding-small uk-width-1-2">
-                                        <div class="uk-width-large uk-margin-left uk-margin-bottom">                                                    
-                                            <div class="uk-margin">
-                                                <label>Escolha a forma que ser&aacute; exibido pre&ccedil;os anteriores &agrave; promo&ccedil;&atilde;o</label>
-                                                    
-                                                <div class="uk-child-width-auto">
-                                                    <label class="f-400">
-                                                        <input class="uk-radio" type="radio" name="price_before_style" value="strike"><span style="text-decoration: line-through;"> R$ 0,00</span>
-                                                    </label>
-                                                </div>
+                                            <div class="uk-width-large uk-margin-left uk-margin-bottom">                                                    
+                                                <div class="uk-margin">
+                                                    <label>Escolha a forma que ser&aacute; exibido pre&ccedil;os anteriores &agrave; promo&ccedil;&atilde;o</label>
+                                                        
+                                                    <div class="uk-child-width-auto">
+                                                        <label class="f-400">
+                                                            <input class="uk-radio" type="radio" name="price_before_style" value="strike"><span style="text-decoration: line-through;"> R$ 0,00</span>
+                                                        </label>
+                                                    </div>
 
-                                                <div class="uk-child-width-auto">
-                                                    <label class="f-400">
-                                                        <input class="uk-radio" type="radio" name="price_before_style" value="depor"> De: R$ 0,00
-                                                    </label>
-                                                </div>
+                                                    <div class="uk-child-width-auto">
+                                                        <label class="f-400">
+                                                            <input class="uk-radio" type="radio" name="price_before_style" value="depor"> De: R$ 0,00
+                                                        </label>
+                                                    </div>
 
-                                                <div class="uk-child-width-auto">
-                                                    <label class="f-400">
-                                                        <input class="uk-radio" type="radio" name="price_before_style" value="strike-depor"><span style="text-decoration: line-through;"> De: R$ 0,00</span>
-                                                    </label>
+                                                    <div class="uk-child-width-auto">
+                                                        <label class="f-400">
+                                                            <input class="uk-radio" type="radio" name="price_before_style" value="strike-depor"><span style="text-decoration: line-through;"> De: R$ 0,00</span>
+                                                        </label>
+                                                    </div>
+                            
                                                 </div>
-                        
                                             </div>
-                                        </div>
+                                    </div>
                                 </div>
-
-                                </div>
+                                <a href="https://www.tray.com.br/" target="_blank" style="font-size: 12px; color: #333333">* Disponível em alguns planos.</a>
                             </fieldset>
                         </li>
                     </ul>
                 </article>
             </section>
-                
 
-            <!-- Rodap&eacute; -->
+            <!-- Rodape -->
             <section id="footer" class="editor-section">
                 <h2 class="editor-section-title">Selo Adicional</h2>
 
@@ -1827,7 +1868,7 @@
                                 </div>
                                 <div class="uk-form-controls uk-padding-small uk-width-1-2">
                                     <div class="uk-alert-warning uk-margin-medium-left" uk-alert>
-                                        <p>O selo adicional ser&#225; exibido no rodap&#233; da loja, ao lado de PAGAMENTO</p>
+                                        <p>O selo adicional ser&#225; exibido no rodap&#233; da loja.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1836,6 +1877,11 @@
                     </ul>
                 </article>
             </section>
+
+            <div style="display:none">
+                <textarea name="custom_css" class="form-control" rows="10"></textarea>
+                <input type="text" name="extension_id">
+            </div>
 
         </div>
 

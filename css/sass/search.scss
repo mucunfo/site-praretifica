@@ -2,17 +2,16 @@
  * Search
  */
 
-.search-1{
-    padding: 40px 0;
+.search{
     
     @media screen and (max-width: $sm){
         padding: 10px 0;
     }
     
     form{
-        background: #f9f9f9;
-        border: 1px solid #eaeaea;
-        height: 40px;
+        position: relative;
+        background: #fff;
+        height: 55px;
         
         > div{
             overflow: hidden;
@@ -20,19 +19,28 @@
     }
     
     .search-button{
-        background: #f9f9f9;
+        background: #a2a2a2;
         border: none;
-        height: 30px;
-        margin: 4px;
-        width: 30px;
+        border-right: none;
+        height: 55px;
+        padding: 0 11px;
     }
     
     .search-key{
         background: none;
-        border: none;
-        height: 38px;
+        border: 1px solid #e2e2e2;
+        border-right: none;
         font-size: 1.3rem;
-        padding: 12px 25px;
+        height: 55px;
+        padding: 19px 25px;
         width: 100%;
+        
+        @media screen and (max-width: $sm){
+            border: 1px solid #a2a2a2;
+            border-right: none;
+            font-size: 1.6rem;
+            height: 55px;
+            padding: 17px 25px;
+        }
     }
 }

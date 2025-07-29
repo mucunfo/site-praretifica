@@ -10,12 +10,13 @@
     
     a, 
     .icon-breadcrumb{
-        color: #9c9c9c !important;
+        color: #9c9c9c;
         @include typo(1.2rem, 400, $font, 1.2rem);
     }
 }
 
 .breadcrumb-item{
+    @include typo(1.2rem, 400, $font, 1.2rem);
     
     &:last-child{
         

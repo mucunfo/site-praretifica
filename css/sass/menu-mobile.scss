@@ -1,14 +1,16 @@
 .menu-mobile{
+    background: #3d4445;
     height: 100%;
     left: 0;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     padding: 1em;
     position: fixed;
     top: 0;
-    width: 90vw;
+    width: 80vw;
     z-index: 20;
     
-    @include prefix('transform', 'translateX(-100vw)');
+    // @include prefix('transform', 'translateX(-100vw)');
+    left: -100vw;
     @extend .transition;
     
     > h5{
@@ -32,7 +34,8 @@
     
     .level1{
         position: relative;
-        overflow: hidden;
+        height: 90vh;
+        overflow-y: scroll;
     }
     
     .level2{
@@ -106,6 +109,33 @@
     }
 }
 
+.trigger-menu{
+    background: #a2a2a2;
+    border: none;
+    height: 55px;
+    margin: 10px 0;
+    width: 100%;
+    
+    @media screen and (max-width: 480px){
+        padding: 0;
+    }
+}
+
+.close-menu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 15vw;
+    padding: 15px;
+    border-left: 1px solid #000;
+    font-size: 14px;
+    text-align: center;
+    z-index: 99999;
+    transition: all 1.5s;
+    background: #3d4445;
+    color: #fff;
+}
+
 html{
     
     .menu-mobile-backdrop{
@@ -140,14 +170,14 @@ html{
         } 
         
         .menu-mobile{
-            @include prefix('transform', 'translateX(0)');
+            // @include prefix('transform', 'translateX(0)');
+            left: 0;
         }
-        
+
         .menu-mobile-backdrop {
             background: rgba(0, 0, 0, 0.85);
             opacity: 1;
             visibility: visible;
-            
         }
         
         .backdrop-icon{

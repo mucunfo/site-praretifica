@@ -10,15 +10,17 @@
 {% endif %}
 {% endfor %}
 
+
 <section id="product-container" class="produto-wrapper product-detail" itemscope itemtype="http://schema.org/Product">
-    {% element 'schema/product' {'product': product} %}
+    {% element 'snippets/schema-product' %}
     <div class="clearfix">
-        
-        <div class="col-md-6">
-            {% element 'snippets/breadcrumb' { "class": 'breadcrumb'} %}
+
+        {% element 'snippets/breadcrumb' { "class": 'breadcrumb'} %}
+
+        <div class="col-md-6 product-colum-left">
 
             {% if product.images %}
-                <div id="visualBlock" class="product-gallery">
+                <div id="visualBlock" class="product-gallery {{ product.images|length  <= 1 and not product.video ? 'hide-carousel' }}">
                     {{ productHelper.gallery() }}
                 </div>
             {% else %}
@@ -26,22 +28,46 @@
                     <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada">
                 </div>
             {% endif %}
-            
+
 			{% if settings.social_position == 0 %}
 				<div class="product-social sidepicture">
 					{{ productHelper.social() }}
 				</div>
-			{% endif %}            
-            
-        </div>
-        
-        <div class="col-md-6">
-            {% if productHelper.banner() %}{{ productHelper.banner() }}{% endif %}
-            <h1 class="product-name" itemprop="name">{{ product.name }}</h1>
-            {% element 'product/rating' %}
+			{% endif %}
+
             <div class="product-labels">
                 {{ productHelper.labels() }}
             </div>
+
+            <ul class="product-links">
+                <li class="product-links-item">
+                    <a class="botao_indique_amigo" data-url="{{ links.product_recommend }}&IdProd={{ product.id }}" data-title="{{ product.name }}" data-toggle="modal" data-target="#modal-form" data-modal-width="600px" href="#">{{ Translation('indique_amigo') }}</a>
+                </li>
+
+                <li class="product-links-item">
+                    <a class="botao_tire_duvidas" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" data-toggle="modal" data-target="#modal-form" data-modal-width="600px" href="#">{{ Translation('tire_duvidas') }}</a>
+                </li>
+
+                <li class="product-links-item">
+                    <span class="product-compare" id="product-compare">
+                    {% if settings.compare %}
+                        <span id="comparar">
+                            {% element 'product/compare' {
+                                'product': product,
+                                'links': links
+                            } %}
+                        </span>
+                    {% endif %}
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6 product-colum-right">
+            {% if productHelper.banner() %}{{ productHelper.banner() }}{% endif %}
+
+            <h1 class="product-name" itemprop="name">{{ product.name }}</h1>
+            {% element 'product/rating' %}
 
             {% for discount in ProgressiveDiscounts %}
             {% if discount.tag %}
@@ -53,14 +79,14 @@
             <p class="product-details">
                 {% if settings.show_product_stock %}
                     <span>Estoque: <b>{{ product.stock }}</b></span>
-                {% endif %}                
+                {% endif %}
                 {{ productHelper.details() }}
                 {{ productHelper.icons() }}
             </p>
             {{ productHelper.bonus() }}
             <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+                
                 {% if settings.cache_infopreco %}
-
                 <div data-module="pricing" data-snippet="snippets/pricing" data-product-id="{{ product.id }}">
                     <div class="pricing">
                         Carregando...
@@ -69,29 +95,31 @@
                 {% else %}
                     {{ productHelper.pricing() }}
                 {% endif %}
-                {{ productHelper.variants() }}
-                {{ product.additional_information }}
-                {{ productHelper.gifts() }}
-                {{ productHelper.kit() }}
-                {% if not product.upon_request %}
-                    {% element 'snippets/botoes_qty' %}
-                    {{ productHelper.wishlist() }}
-                    {{ productHelper.shipping() }}
-                {% endif %}
                 
-                <div class="shipping-result"></div>
-    
+                {{ productHelper.variants() }}
+                {{ productHelper.gifts() }}
+                {{ product.additional_information }}
+                <div>
+                {{ productHelper.form() }}
+                </div>
+                {{ productHelper.kit() }}
+                {% if not product.upon_request and product.available %}
+                    {{ productHelper.wishlist() }}
+                {% endif %}
+                {{ productHelper.shipping() }}
+
+                {% if product.additional_message %}
+                <div class="additional-message">
+                    {{ product.additional_message }}
+                </div>
+                {% endif %}
             </form>
-            
-            {% if product.additional_message %}
-                <div class="mensagem_adicional">{{ product.additional_message }}</div>    
-            {% endif %}
-            
+
 			{% if settings.social_position == 1 %}
 				<div class="product-social">
 					{{ productHelper.social() }}
 				</div>
-			{% endif %} 
+			{% endif %}
         </div>
     </div>
 </section>
@@ -140,15 +168,15 @@
     {{ productTabs.downloads.content }}
 
     <div id="garantia" class="prodBox">
-        <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
+        <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg"  />
     </div>
-    <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;" ></div>
+    <div data-app="product.payment-methods" id="formasPagto" class="prodBox"  ></div>
 </section>
 
 {% if productHelper.bundle() %}
 <section class="product-cross-sell">
-    <h4>Aproveite tamb&eacute;m e</h4>
-    <h3>Compre Junto</h3>
+    <h4>{{ Translation('confira_tambem') }}</h4>
+    <h3>{{ Translation('compre_junto') }}</h3>
     {{ productHelper.bundle() }}
 </section>
 {% endif %}
@@ -157,8 +185,8 @@
 {% if product.related_products %}
 <div id="prognoos_lsi"></div>
 <section class="products-related">
-    <h4>Quem viu, viu tamb&eacute;m!</h4>
-    <h3 class="related-title">Produtos Relacionados</h3>
+    <h4>{{ Translation('confira_tambem') }}</h4>
+    <h3 class="related-title">{{ Translation('produtos_relacionados') }}</h3>
     <div class="row">
         {% for related in product.related_products %}
             <div class="col-sm-3">
@@ -169,12 +197,17 @@
 </section>
 {% endif %}
 
+<div id="prognoos_ib"></div>
 {% if settings.history_position == 1 %}
-    <div id="prognoos_ib"></div>
-    <section class="products-visited">
-        <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>      
-        {% element 'snippets/history' %} 
-    </section> 
+    <section class="products-visited col-sm-12">
+        <h4>{{ Translation('confira_tambem') }}</h4>
+        <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>
+        {% element 'snippets/history' {
+            'store.id': store.id,
+            'pages.current': pages.current,
+            'category.id': category.id
+        } %}
+    </section>
 {% endif %}
 
 {% if banner.bottom %}
