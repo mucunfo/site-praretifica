@@ -2,7 +2,7 @@
 <!doctype html>
 <html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}" data-theme-name="Tema Padr&atilde;o" data-theme-version="11.0.11">
 <head>
-    <!-- tray charset -->
+    <!--  tray charset  -->
     {{ html.charset() }}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
-    {% if settings.extension_id == '222' %}
-        <link rel="stylesheet" href="{{ asset('css/saude-e-beleza.css') }}" type="text/css">
-    {% endif %}
+
     <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
 
     <!-- tray analytics -->

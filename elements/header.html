@@ -1,7 +1,79 @@
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 col-xs-12">
+<header class="main-header">
+    <!--  Menu Lateral  -->
+    <button class="menu-lateral-toggle" onclick="toggleMenuLateral()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-lateral-overlay" onclick="toggleMenuLateral()"></div>
+
+    <aside class="menu-lateral">
+      <div class="menu-lateral-header">
+        <h3>Categorias</h3>
+      </div>
+      
+      <div class="menu-lateral-search">
+        <input type="text" placeholder="Buscar categorias..." onkeyup="filterMenu(this.value)">
+      </div>
+      
+      <nav class="menu-lateral-nav">
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          {% for cat in categories %}
+          <li class="menu-lateral-item">
+            <a href="{{ cat.link }}" class="menu-lateral-link">
+              <i class="fa fa-chevron-right menu-lateral-icon"></i>
+              <span>{{ cat.name }}</span>
+              <span class="menu-lateral-count">({{ cat.count | default(0) }})</span>
+            </a>
+            
+            {% if cat.children %}
+            <ul class="menu-lateral-submenu" style="list-style: none; padding: 0;">
+              {% for subcat in cat.children %}
+              <li>
+                <a href="{{ subcat.link }}" class="menu-lateral-sublink">
+                  {{ subcat.name }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+
+    <script>
+    function toggleMenuLateral() {
+      document.querySelector('.menu-lateral').classList.toggle('active');
+      document.querySelector('.menu-lateral-overlay').classList.toggle('active');
+      document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+    }
+
+    function filterMenu(value) {
+      const items = document.querySelectorAll('.menu-lateral-item');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(value.toLowerCase()) ? '' : 'none';
+      });
+    }
+
+    // Expandir submenus
+    document.querySelectorAll('.menu-lateral-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const submenu = this.nextElementSibling;
+        if (submenu && submenu.classList.contains('menu-lateral-submenu')) {
+          e.preventDefault();
+          submenu.classList.toggle('active');
+        }
+      });
+    });
+    </script>
+
+    <div class="header-container">
+        <!-- Logotipo -->
+        <div class="header-logo">
             {% if pages.current == 'home' %}
                 <h1 class="site-logo" alt="{{ store.name }}">
                     <a href="{{ links.home }}" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
@@ -9,41 +81,92 @@
             {% else %}
                 <a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
             {% endif %}
-            </div>
-            
-            <div class="col-sm-9 col-xs-12">
-                {% element 'snippets/customer' %}
-                <div class="row">
-                    {% if settings.structure == 1 %}
-                    <div class="col-md-9 col-sm-8 hidden-xs">
-                    {% elseif settings.structure == 2 %}
-                    <div class="col-md-8 col-sm-8 hidden-xs">
-                    {% endif %}    
-                        {% element 'snippets/search' %}
+        </div>
+
+        <!-- Campo de Busca -->
+        <div class="header-search">
+            <div class="search-container">
+                <form role="form" action="{{ links.search }}" method="get" data-search="suggestion">
+                    <input type="hidden" name="loja" value="{{ store.id }}">
+                    <div class="search-input-group">
+                        <input class="search-input" type="text" data-input="suggestion" placeholder="{{ Translation('buscar') }}" name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
+                        <button class="search-button" type="submit" tabindex="2" data-tray-tst="botao_buscar">
+                            <svg fill="{{ settings.color_icons }}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 425.2 425.199">
+                                <path d="M414.792 364.542l-92.371-92.37c-.49-.491-1.066-.834-1.58-1.291 18.176-27.571 28.785-60.575 28.785-96.067C349.624 78.267 271.358 0 174.812 0 78.267 0 0 78.267 0 174.812s78.265 174.813 174.811 174.813c35.494 0 68.496-10.608 96.067-28.784.457.512.799 1.088 1.289 1.578l92.375 92.374c13.875 13.875 36.373 13.875 50.25 0 13.875-13.877 13.875-36.375 0-50.251zm-239.98-75.519c-63.078 0-114.212-51.134-114.212-114.211C60.6 111.734 111.735 60.6 174.812 60.6c63.075 0 114.21 51.136 114.21 114.212 0 63.077-51.135 114.211-114.21 114.211z"/>
+                            </svg>
+                        </button>
                     </div>
-                    
-                    {% if settings.structure == 1 %}
-                    <div class="col-md-3 col-sm-4 hidden-xs">
-                    {% elseif settings.structure == 2 %}
-                    <div class="col-md-4 col-sm-4 hidden-xs">
-                    {% endif %} 
-                        {% element 'snippets/cart' %}
+                </form>
+            </div>
+        </div>
+
+        <!-- Canal de Contato (WhatsApp) -->
+        <div class="header-contact">
+            <div class="contact-channel">
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                </div>
+                <div class="contact-info">
+                    <span class="contact-label">WhatsApp</span>
+                    <span class="contact-number">(11) 99999-9999</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acesso à Conta -->
+        <div class="header-account">
+            <div class="account-access">
+                <div class="account-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="account-info">
+                    <span class="tray-hide" data-logged-user="true">
+                        <span data-customer="name"></span>
+                    </span>
+                    <span class="tray-hide" data-logged-user="false">
+                        <a href="{{ links.login }}" data-tray-tst="login" class="{{ utils.is_https ? 'modal-login' }}">{{ Translation('login') }}</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrinho de Compras -->
+        <div class="header-cart">
+            <a href="{{ links.cart }}" class="cart-button" data-tray-tst="link_qtde_carrinho">
+                <div class="cart-icon">
+                    <svg fill="{{ settings.color_icons }}" xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 25.621 25.601">
+                        <path d="M25.597.605a.8.8 0 0 0-.969-.582l-3.203.801a.803.803 0 0 0-.598.652l-.406 2.567L.702 6.406c-.015.004-.027.012-.043.016-.019.003-.035 0-.055.003-.046.013-.082.04-.121.055-.046.02-.089.035-.129.063a.885.885 0 0 0-.144.136c-.023.029-.055.039-.074.067-.004.008-.004.015-.008.024a.808.808 0 0 0-.09.218c-.008.027-.023.052-.027.078a.843.843 0 0 0 .011.328l2.403 9.602.801 3.199c.003.022.019.043.027.063.012.039.031.074.047.109a.755.755 0 0 0 .097.144c.024.032.051.055.079.082a.766.766 0 0 0 .152.106c.031.016.055.034.086.047.09.031.187.054.285.054h16.82a.799.799 0 0 0 .797-.8.798.798 0 0 0-.797-.801H4.624L4.226 17.6h14.992a.832.832 0 0 0 .281-.051c.035-.015.063-.039.094-.058.051-.024.102-.047.145-.082.031-.027.051-.067.082-.099.031-.039.07-.073.098-.121.023-.043.031-.09.047-.137.016-.043.035-.082.047-.125l.004-.019v-.009L22.327 2.25l2.688-.672a.802.802 0 0 0 .582-.973zM3.823 16L1.792 7.886l2.484-.296L5.479 16H3.823zm3.274 0L5.866 7.398l2.496-.297L8.769 16H7.097zm4.945 0h-1.668l-.418-9.09 2.496-.301-.41 9.391zm3.266 0h-1.661l.415-9.582 2.48-.297L15.308 16zm3.207 0h-1.594l1.262-10.078 1.703-.204L18.515 16zM7.202 22.398c-.883 0-1.601.72-1.601 1.603a1.6 1.6 0 1 0 3.203 0c0-.883-.715-1.603-1.602-1.603zm10.414 0a1.603 1.603 0 1 0 .001 3.205 1.603 1.603 0 0 0-.001-3.205zm0 0"/>
+                    </svg>
+                    <span class="cart-badge" data-cart="amount" data-tray-tst="carrinho_qtde">{{ cart.amount }}</span>
+                </div>
+                <div class="cart-info hidden-xs">
+                    <div class="cart-amount">
+                        <span data-cart="amount" data-tray-tst="carrinho_qtde">{{ cart.amount }}</span> {{ Translation('itens') }}
+                    </div>
+                    <div class="cart-total">
+                        {{ settings.currency }} <span data-cart="price" data-tray-tst="carrinho_valor">{{ cart.price }}</span>
                     </div>
                 </div>
-            </div>
-            <div class="wrapper-nav clearfix visible-xs-block">
-                <div class="col-xs-2">
-                    <button class="trigger-menu">
-                        <img src="{{ asset('img/menu.svg') }}" alt="Menu">
-                    </button>
-                </div>
-                <div class="col-xs-8">
-                    {% element 'snippets/search' %}
-                </div>
-                <div class="col-xs-2 wrapp-cart">
-                    {% element 'snippets/cart' %}
-                </div>
-            </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="wrapper-nav clearfix visible-xs-block">
+        <div class="col-xs-2">
+            <button class="trigger-menu">
+                <img src="{{ asset('img/menu.svg') }}" alt="Menu">
+            </button>
+        </div>
+        <div class="col-xs-8">
+            {% element 'snippets/search' %}
+        </div>
+        <div class="col-xs-2 wrapp-cart">
+            {% element 'snippets/cart' %}
         </div>
     </div>
 </header>
