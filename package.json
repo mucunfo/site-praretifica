@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "todo:bem": "rg --no-heading --line-number \"TODO: BEM\" css/sass"
+    "todo:bem": "rg --no-heading --line-number \"TODO: BEM\" css"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",

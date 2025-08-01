@@ -3,11 +3,11 @@
     <div class="news-full visible-xs-block .visible-sm-block">
         {% element 'snippets/newsletter' %}
     </div>
-    <div class="foo-content">
+    <div class="footer__content">
         <div class="container">
             <div class="col-sm-6 col-md-2 col-xs-12">
                 <h3>{{ Translation('institucional') }}</h3>
-                <ul class="links-list">
+                <ul class="footer__links-list">
                     {% for custom in pages.custom %}
                         <li>
                             <a href="{{ custom.url }}">{{ custom.name }}</a>
@@ -27,7 +27,7 @@
                 Translation('ag_email_1') != '' or 
                 Translation('ag_email_2') != ''
             %}
-            <div class="col-sm-6 col-md-4 col-xs-12 foo-contact">
+            <div class="col-sm-6 col-md-4 col-xs-12 footer__contact">
                 <h3>{{ Translation('contato') }}</h3>
                 <ul>
                     {% if Translation('ag_atendimento') != '' %}
@@ -75,19 +75,19 @@
                   settings.social_youtube or 
                   settings.social_instagram
             %}
-            <div class="col-sm-6 col-md-3 col-xs-12 social-list">
+            <div class="col-sm-6 col-md-3 col-xs-12 footer__social-list">
                 <h3 class="social-title">{{ Translation('redes_sociais') }}</h3>
                 {% element 'snippets/social-list' %}
             </div>
             {% endif %}
             
-            <div class="col-sm-6 col-md-3 col-xs-12 payment-gateways">
+            <div class="col-sm-6 col-md-3 col-xs-12 footer__payment-gateways">
                 <h3>{{ Translation('pagamento') }}</h3>
                 {% element 'snippets/payment-list' %}
                 
                 {% if (seals.ebit or seals.hackersafe) or settings.enable_seal %}
                     <h3 class="security-title">{{ Translation('seguranca') }}</h3>
-                    <ul class="foo-seals">
+                    <ul class="footer__seals">
                         {% if seals.ebit %}
                             <li class="seal-ebit pull-left">{{ seals.ebit }}</li>
                         {% endif %}
@@ -104,7 +104,7 @@
     </div>
     
     {% if Translation('ag_mensagem_rodape') != '' %}
-    <div class="foo-message">
+            <div class="footer__message">
         <div class="container">
             <span class="message-footer">
                 {{ Translation('ag_mensagem_rodape') }}

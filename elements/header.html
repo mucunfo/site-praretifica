@@ -75,11 +75,11 @@
         <!-- Logotipo -->
         <div class="header-logo">
             {% if pages.current == 'home' %}
-                <h1 class="site-logo" alt="{{ store.name }}">
+                <h1 class="header__logo" alt="{{ store.name }}">
                     <a href="{{ links.home }}" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
                 </h1>
             {% else %}
-                <a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
+                <a href="{{ links.home }}" class="header__logo" data-tray-tst="logotipo_loja">{{ Image('logo') }}</a>
             {% endif %}
         </div>
 
@@ -156,7 +156,7 @@
     </div>
 
     <!-- Menu Mobile -->
-    <div class="wrapper-nav clearfix visible-xs-block">
+    <div class="header__nav clearfix visible-xs-block">
         <div class="col-xs-2">
             <button class="trigger-menu">
                 <img src="{{ asset('img/menu.svg') }}" alt="Menu">
