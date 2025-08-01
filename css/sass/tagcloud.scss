@@ -1,12 +1,14 @@
+@use "core/variables" as *;
+
 .tagcloud{
-    background: #fff;
-    border: 1px solid #e2e2e2;
-    margin-top: 30px;
-    padding: 15px;
+    background: $bg-white;
+    border: $border-width solid $border-gray;
+    margin-top: $spacing-xxxl;
+    padding: $spacing-lg;
     
     a{
         display: inline-block;
-        font-size: 16px !important;
+        font-size: $font-size-xl !important;
         text-decoration: none;
         
         &:hover{
@@ -15,10 +17,10 @@
     }
     
     > h4{
-        color: #000;
-        margin-bottom: 5px;
+        color: $text-black;
+        margin-bottom: $spacing-sm;
         text-transform: uppercase;
-        @include typo(1.3rem, 400, $font, 1.3rem);
+        @include typo(1.3rem, $font-weight-normal, $font, 1.3rem);
         
         @media (min-width: 768px) and (max-width: 991px){
             margin-bottom: 0;
@@ -27,8 +29,8 @@
     
     > h3{
         text-transform: uppercase;
-        @include typo(2.2rem, 400, $font, 2.2rem);
-        margin-bottom: 10px;
+        @include typo(2.2rem, $font-weight-normal, $font, 2.2rem);
+        margin-bottom: $spacing-md;
         
         @media (min-width: 768px) and (max-width: 991px){
             @include typo(2rem, 400, $font, 2rem);
@@ -47,7 +49,7 @@
         }
         
         a{
-            color: #a2a2a2;
+            color: $text-muted;
         }
     }
 }

@@ -1,48 +1,65 @@
-.sidebar{
+@use "core/variables" as *;
+
+/**
+ * Sidebar
+ * TODO: Update HTML to use BEM classes:
+ * - .sidebar -> .sidebar (already follows BEM)
+ * - .main-menu -> .sidebar__menu
+ * - .level1 -> .sidebar__level1
+ * - .level2 -> .sidebar__level2
+ * - .level3 -> .sidebar__level3
+ * - .item-level1 -> .sidebar__item-level1
+ * - .item-level2 -> .sidebar__item-level2
+ * - .link-level1 -> .sidebar__link-level1
+ * - .store-rating -> .sidebar__rating
+ * - .tagcloud -> .sidebar__tagcloud
+ */
+
+.sidebar {
     position: relative;
-    z-index: 10;
+    z-index: $z-index-dropdown;
     
-    .main-menu{
-        border: 1px solid #e2e2e2;
-        
-        > h4{
-            color: #000;
-            margin-bottom: 5px;
-            padding: 15px;
+    &__menu {
+        border: $border-width solid $border-gray;
+    
+        > h4 {
+            color: $text-black;
+            margin-bottom: $spacing-sm;
+            padding: $spacing-lg;
             padding-bottom: 0;
             text-transform: uppercase;
-            @include typo(1.3rem, 400, $font, 1.3rem);
+            @include typo(1.3rem, $font-weight-normal, $font, 1.3rem);
             
-            @media (min-width: 768px) and (max-width: 991px){
+            @media (min-width: 768px) and (max-width: 991px) {
                 margin-bottom: 0;
             }
         }
         
-        > h3{
-            color: #000;
-            padding: 15px 15px 0;
+        > h3 {
+            color: $text-black;
+            padding: $spacing-lg $spacing-lg 0;
             padding-top: 0;
             text-transform: uppercase;
-            @include typo(2.2rem, 400, $font, 2.2rem);
+            @include typo(2.2rem, $font-weight-normal, $font, 2.2rem);
             
-            @media (min-width: 768px) and (max-width: 991px){
+            @media (min-width: 768px) and (max-width: 991px) {
                 @include typo(2rem, 400, $font, 2rem);
             }
         }
         
-        a{
+        a {
             display: block;
-            font-size: 1.5rem;
-            padding: 12px 15px;
+            font-size: $font-size-lg;
+            padding: 12px $spacing-lg;
             text-decoration: none;
         }
         
-        .level1{
-            padding: 15px 0;
+        .sidebar__level1 {
+            padding: $spacing-lg 0;
         }
         
-        .level2{
-            background: #ccc;
+        .sidebar__level2 {
+            background: $border-dark;
             display: none;
             left: 100%;
             position: absolute;
@@ -50,8 +67,8 @@
             min-width: 300px;
         }
         
-        .level3{
-            background: #ccc;
+        .sidebar__level3 {
+            background: $border-dark;
             display: none;
             left: 100%;
             position: absolute;
@@ -59,38 +76,36 @@
             min-width: 300px;
         }
         
-        .item-level1{
-            margin-bottom: 5px;
+        .sidebar__item-level1 {
+            margin-bottom: $spacing-sm;
             position: relative;
             
-            &:hover{
-                background: #ccc;
+            &:hover {
+                background: $border-dark;
                 
-                .link-level1{
-                    color: #fff;
+                .sidebar__link-level1 {
+                    color: $text-white;
                 }
                 
-                .level2{
+                .sidebar__level2 {
                     display: block;
                 }
             }
         }
         
-        .item-level2{
+        .sidebar__item-level2 {
             position: relative;
             
-            &:hover{
-                
-                .level3{
+            &:hover {
+                .sidebar__level3 {
                     display: block;
                 }
             }
         }
     }
     
-    .store-rating{
-        
-        a{
+    &__rating {
+        a {
             display: block;
             font-size: 1.4rem;
             padding: 8px 15px;
@@ -98,7 +113,45 @@
         }
     }
 
-    .tagcloud a{
+    &__tagcloud a {
         word-break: break-all;
-      }
+    }
+}
+
+// Legacy selectors for backward compatibility
+// TODO: Remove after HTML is updated
+.main-menu {
+    @extend .sidebar__menu;
+}
+
+.level1 {
+    @extend .sidebar__level1;
+}
+
+.level2 {
+    @extend .sidebar__level2;
+}
+
+.level3 {
+    @extend .sidebar__level3;
+}
+
+.item-level1 {
+    @extend .sidebar__item-level1;
+}
+
+.item-level2 {
+    @extend .sidebar__item-level2;
+}
+
+.link-level1 {
+    @extend .sidebar__link-level1;
+}
+
+.store-rating {
+    @extend .sidebar__rating;
+}
+
+.tagcloud {
+    @extend .sidebar__tagcloud;
 }

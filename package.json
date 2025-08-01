@@ -1,5 +1,31 @@
 {
+  "name": "site-praretifica",
+  "version": "1.0.0",
+  "description": "Site Praretifica - Ambiente de build moderno",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "todo:bem": "rg --no-heading --line-number \"TODO: BEM\" css/sass"
+  },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^7.0.2"
-  }
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.32",
+    "sass": "^1.69.0",
+    "vite": "^7.0.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "vite",
+    "sass",
+    "postcss",
+    "build-tool"
+  ],
+  "author": "",
+  "license": "MIT"
 }

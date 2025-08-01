@@ -1,7 +1,9 @@
+@use "core/variables" as *;
+
 .tray-kit {
-    border: 1px solid #e1e1e1;
-    margin-bottom: 15px;
-    padding: 15px;
+    border: $border-width solid $border-light;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-lg;
     
     
     div[style="clear:both;"] {
@@ -10,8 +12,8 @@
 }
 
 .tray-kit-item {
-    border-top: 1px solid #e1e1e1;
-    padding: 15px 0 25px;
+    border-top: $border-width solid $border-light;
+    padding: $spacing-lg 0 $spacing-xxl;
     
     &:first-child {
         border-top: none;
@@ -30,14 +32,14 @@
 
 .tray-kit-image {
     float: left;
-    width: 90px;
-    margin-right: 15px;
-    border: 1px solid #e1e1e1;
+    width: $image-max-width;
+    margin-right: $spacing-lg;
+    border: $border-width solid $border-light;
 }
 
 .tray-kit-name {
-    font-weight: 700;
-    padding: 5px 0;
+    font-weight: $font-weight-bold;
+    padding: $spacing-sm 0;
 }
 
 .tray-kit-info {
@@ -51,27 +53,27 @@
     position: absolute;
     left: 0;
     top: 95px;
-    width: 90px;
+    width: $image-max-width;
     text-align: center;
 }
 
 .tray-kit-show-all {
-    font-size: 1.2rem;
+    font-size: $font-size-sm;
     text-align: center;
-    margin-top: 10px;
+    margin-top: $spacing-md;
 }
 
 .tray-kit-title h3 {
-    font-weight: 700;
-    border-bottom: 1px solid #e1e1e1;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    font-weight: $font-weight-bold;
+    border-bottom: $border-width solid $border-light;
+    padding-bottom: $spacing-md;
+    margin-bottom: $spacing-md;
 }
 
 .tray-kit-additional-info .onVar,
 .tray-kit-additional-info .onVar:hover{
-    color: #000;
-    font-size: 1.2rem;
+    color: $text-black;
+    font-size: $font-size-sm;
 }
 
 .tray-kit-additional-info {
@@ -88,25 +90,25 @@
     
     .text,
     .textarea{
-        margin-bottom: 5px !important;
+        margin-bottom: $spacing-sm !important;
     }
     
     .dd .ddTitle span.ddTitleText{
-        font-weight: 400;
-        font-size: 1.2rem;
+        font-weight: $font-weight-normal;
+        font-size: $font-size-sm;
     }
     
     .select,
     .ddTitle,
     .textarea{
-        border: 1px solid #e1e1e1;
-        font-weight: 400;
-        font-size: 1.2rem;
-        height: 24px;
+        border: $border-width solid $border-light;
+        font-weight: $font-weight-normal;
+        font-size: $font-size-sm;
+        height: $input-height;
     }
     
     .varCont > *{
-        color: #222;
+        color: $text-dark;
         display: block;
     }
 }
@@ -115,19 +117,19 @@
     
     img {
         display: block;
-        height: 30px;
+        height: $button-height;
         overflow: hidden;
-        width: 30px;
+        width: $button-height;
     }
     
     li {
-        border: 1px solid #e1e1e1;
+        border: $border-width solid $border-light;
         display: inline-block;
-        font-size: 1.4rem;
-        line-height: 30px;
-        margin: 0 5px 5px 0;
-        min-height: 30px;
-        min-width: 30px;
+        font-size: $font-size-md;
+        line-height: $button-height;
+        margin: 0 $spacing-sm $spacing-sm 0;
+        min-height: $button-height;
+        min-width: $button-min-width;
         text-align: center;
     }
 }

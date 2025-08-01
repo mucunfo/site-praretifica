@@ -1,14 +1,16 @@
+@use "core/variables" as *;
+
 .store-rating{
-    background: #fff;
-    border: 1px solid #e2e2e2;
-    margin-top: 30px;
-    padding: 15px;
+    background: $bg-white;
+    border: $border-width solid $border-gray;
+    margin-top: $spacing-xxxl;
+    padding: $spacing-lg;
     
     > h4{
-        color: #000;
-        margin-bottom: 5px;
+        color: $text-black;
+        margin-bottom: $spacing-sm;
         text-transform: uppercase;
-        @include typo(1.3rem, 400, $font, 1.3rem);
+        @include typo(1.3rem, $font-weight-normal, $font, 1.3rem);
         
         @media (min-width: 768px) and (max-width: 991px){
             margin-bottom: 0;
@@ -16,9 +18,9 @@
     }
     
     > h3{
-        color: #000;
+        color: $text-black;
         text-transform: uppercase;
-        @include typo(2.5rem, 400, $font, 2.5rem);
+        @include typo(2.5rem, $font-weight-normal, $font, 2.5rem);
         
         @media (min-width: 768px) and (max-width: 991px){
             @include typo(2rem, 400, $font, 2rem);
@@ -27,17 +29,17 @@
     
     .dep_lista{
         font-size: 0;
-        margin: 15px -15px 0;
+        margin: $spacing-lg -$spacing-lg 0;
     }
     
     .dep_item{
         display: block;
-        font-size: 1.2rem;
+        font-size: $font-size-sm;
         line-height: 1.6rem;
     }
     
     .dep_dados{
-        padding: 15px;
+        padding: $spacing-lg;
         
         > li{
             
@@ -48,14 +50,14 @@
     }
     
     .dep_link{
-        margin-top: 15px;
+        margin-top: $spacing-lg;
         font-size: 0;
         text-align: center;
         
         a{
-            background: #a2a2a2;
-            color: #fff;
-            font-size: 1.4rem;
+            background: $text-muted;
+            color: $text-white;
+            font-size: $font-size-md;
             padding: 9px 0;
             text-align: center;
             text-transform: uppercase;

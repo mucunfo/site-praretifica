@@ -1,5 +1,7 @@
+@use "core/variables" as *;
+
 // fonts
-$font: 'Roboto', sans-serif;
+$font: $font-family-roboto;
 
 // vendor prefix
 @mixin prefix($name, $argument) {
@@ -26,56 +28,56 @@ $font: 'Roboto', sans-serif;
 }
 
 // default transition
-.transition{
+.transition {
     @include prefix('transition', '300ms all ease 0s');
 }
 
 // queries
-$sm: 767px;
-$md: 992px;
+$sm: $breakpoint-md - 1px;
+$md: $breakpoint-lg;
 
 // rem ajust
 html,
-body{
-    @include typo(10px, 400, $font, 1);
+body {
+    @include typo($font-size-xs, $font-weight-normal, $font, 1);
 }
 
-.application{
+.application {
     background-attachment: fixed;
-    background-color: #f1f1f1;
+    background-color: $bg-light;
     background-position: center top;
 }
 
-.container{
-    @media (min-width: 768px) and (max-width: 991px){
+.container {
+    @media (min-width: 768px) and (max-width: 991px) {
         width: 95%;
     }
 }
 
-.content-split{
-    border-color: #ccc;
-    margin-bottom: 30px;
+.content-split {
+    border-color: $border-dark;
+    margin-bottom: $spacing-xxxl;
     margin-top: 0;
 }
 
-.page-content{
-    z-index: 5;
-    background-color: #fff;
-    padding: 15px;
-    
-    .container{
-        padding: 0;
-        width: 100%;
-    }   
-}
-
-.page-home, .page-catalog, .page-product, .page-search{
-    .page-content{
-        background-color: transparent;
+.page {
+    &__content {
+        z-index: $z-index-base + 4;
+        background-color: $bg-white;
+        padding: $spacing-lg;
+        
+        .container {
+            padding: 0;
+            width: 100%;
+        }   
     }
 }
 
-
+.page-home, .page-catalog, .page-product, .page-search {
+    .page__content {
+        background-color: transparent;
+    }
+}
 
 .site-main {
     position: relative;
@@ -84,18 +86,24 @@ body{
 
 /* centered columns styles */
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
 
-.col-centered{
+.col-centered {
     display: inline-block;
-    float:none;
+    float: none;
     /* reset the text-align */
-    text-align:left;
+    text-align: left;
     /* inline-block space fix */
-    margin-right:-4px;
+    margin-right: -4px;
 }
 
-#miniad{
+#miniad {
     width: auto;
+}
+
+// Legacy selectors for backward compatibility
+// TODO: Remove after HTML is updated
+.page-content {
+    @extend .page__content;
 }
