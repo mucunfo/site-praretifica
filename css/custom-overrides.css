@@ -1,0 +1,400 @@
+/*
+ * Custom Overrides CSS
+ * 
+ * Este arquivo contém APENAS sobrescritas de estilo
+ * Carregado APÓS todos os outros CSS para garantir prioridade
+ * 
+ * IMPORTANTE: Não alterar estrutura, apenas estilos
+ */
+
+/* ===== CONFIGURAÇÕES GLOBAIS ===== */
+/* Transições e efeitos base reutilizáveis */
+:root {
+  --transition-fast: all 0.3s ease;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-light: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-heavy: 0 15px 35px rgba(0,0,0,0.15);
+  --border-radius-small: 6px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+}
+
+/* ===== HEADER ===== */
+/* Ajuste para evitar sobreposição com o header */
+.main-header {
+  position: relative;
+  z-index: 998;
+}
+
+/* Garantir que o conteúdo principal não seja afetado */
+.application {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== MENU LATERAL ===== */
+/* Botão hambúrguer fixo */
+.menu-lateral-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.menu-lateral-toggle:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+.menu-lateral-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: var(--transition-fast);
+  border-radius: 2px;
+}
+
+.menu-lateral-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-lateral-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-lateral-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Overlay do menu */
+.menu-lateral-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-fast);
+}
+
+.menu-lateral-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Menu lateral */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.menu-lateral.active {
+  left: 0;
+}
+
+/* Header do menu */
+.menu-lateral-header {
+  background: #f8f9fa;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.menu-lateral-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Campo de busca do menu */
+.menu-lateral-search {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.menu-lateral-search input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.menu-lateral-search input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Navegação do menu */
+.menu-lateral-nav {
+  padding: 0;
+}
+
+.menu-lateral-item {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.menu-lateral-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.menu-lateral-link:hover {
+  background: #f8f9fa;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.menu-lateral-icon {
+  margin-right: 10px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.menu-lateral-link.active .menu-lateral-icon {
+  transform: rotate(90deg);
+}
+
+.menu-lateral-count {
+  margin-left: auto;
+  color: #6c757d;
+  font-size: 12px;
+}
+
+/* Submenu */
+.menu-lateral-submenu {
+  background: #f8f9fa;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.menu-lateral-submenu.active {
+  max-height: 2000px;
+}
+
+.menu-lateral-sublink {
+  display: block;
+  padding: 10px 20px 10px 50px;
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-lateral-sublink:hover {
+  background: #e9ecef;
+  color: #333;
+  text-decoration: none;
+}
+
+/* ===== BOTÕES ===== */
+/* Estilos base para todos os botões */
+.btn, 
+button[type="submit"], 
+.button,
+.page-catalog .button-compare,
+.page-search .button-compare,
+.btn-remove,
+.btn-primary,
+.btn-secondary {
+  border-radius: var(--border-radius-medium);
+  transition: var(--transition-fast);
+  border: none;
+  font-weight: 500;
+}
+
+/* Efeito hover para botões principais */
+.btn:hover, 
+button[type="submit"]:hover, 
+.button:hover,
+.page-catalog .button-compare:hover,
+.page-search .button-compare:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Efeito hover para botões secundários */
+.btn-remove:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Botões de paginação */
+.page-catalog .btns-paginator,
+.page-catalog .page-link,
+.page-search .btns-paginator,
+.page-search .page-link,
+.page-depoimentos .page-content .btns-paginator {
+  border-radius: var(--border-radius-small);
+  transition: var(--transition-fast);
+}
+
+.page-catalog .btns-paginator:hover,
+.page-catalog .page-link:hover,
+.page-search .btns-paginator:hover,
+.page-search .page-link:hover,
+.page-depoimentos .page-content .btns-paginator:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== PRODUTOS ===== */
+/* Cards de produto com sombras suaves */
+.product {
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition-smooth);
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* Efeito hover aprimorado */
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
+  border-color: rgba(0,0,0,0.1);
+}
+
+/* Imagem do produto com transição suave */
+.product .image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+.product .image img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  height: auto;
+}
+
+.product:hover .image img {
+  transform: scale(1.08);
+}
+
+/* Informações do produto */
+.product .product-info {
+  padding: 15px;
+  transition: var(--transition-fast);
+}
+
+.product:hover .product-info {
+  background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+}
+
+/* Nome do produto */
+.product .product-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.product:hover .product-name {
+  color: #7b1f29;
+}
+
+/* Preço do produto */
+.product .product-price {
+  font-weight: 700;
+  color: #7b1f29;
+  font-size: 1.1em;
+  transition: var(--transition-fast);
+}
+
+.product:hover .product-price {
+  transform: scale(1.05);
+}
+
+/* Botões dentro do produto */
+.product .product-buy-button,
+.product .product-compare-button {
+  border-radius: var(--border-radius-small);
+  transition: var(--transition-fast);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product .product-buy-button:hover,
+.product .product-compare-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Badge de desconto */
+.product .product-discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4757;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  z-index: 2;
+  transition: var(--transition-fast);
+}
+
+.product:hover .product-discount {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .menu-lateral {
+    width: 280px;
+    left: -280px;
+  }
+  
+  .menu-lateral-toggle {
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .menu-lateral-toggle span {
+    width: 22px;
+    height: 2px;
+  }
+} 

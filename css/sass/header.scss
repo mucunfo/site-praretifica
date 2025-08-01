@@ -1,54 +1,37 @@
-@use "core/variables" as *;
-
 /**
  * Header
- * TODO: Update HTML to use BEM classes:
- * - .wrapper-nav -> .header__nav
- * - .site-logo -> .header__logo
  */
-
-.header {
-    &__nav {
-        background: $bg-white;
-        clear: both;
-        margin: $spacing-lg 0 $spacing-xxxl;
-        
-        > div:first-child {
-            padding-right: 0;
-            text-align: center;
-        }
-    }
-
-    &__logo {
-        height: $header-height;
-        display: block;
-        font-size: 0;
+ 
+.wrapper-nav{
+    background: #fff;
+    clear: both;
+    margin: 15px 0 30px;
+    
+    > div:first-child{
+        padding-right: 0;
         text-align: center;
-        
-        &:before {
-            content: '';
-            display: inline-block;
-            height: $header-height;
-            margin-right: -1%;
-            vertical-align: middle;
-            width: 1%;
-        }
-        
-        img {
-            display: inline-block;
-            max-height: $logo-height;
-            max-width: $logo-width;
-            vertical-align: middle;
-        }
     }
-}
-
-// Legacy selectors for backward compatibility
-// TODO: Remove after HTML is updated
-.wrapper-nav {
-    @extend .header__nav;
 }
 
 .site-logo {
-    @extend .header__logo;
+    height: 120px;
+    display: block;
+    font-size: 0;
+    text-align: center;
+    
+    &:before{
+        content: '';
+        display: inline-block;
+        height: 120px;
+        margin-right: -1%;
+        vertical-align: middle;
+        width: 1%;
+    }
+    
+    img{
+        display: inline-block;
+        max-height: 100px;
+        max-width: 99%;
+        vertical-align: middle;
+    }
 }

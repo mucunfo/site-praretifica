@@ -4,10 +4,10 @@
 
 // tabs
 .carrinho-tabs{
-    background: $bg-white;
-    border: $border-width solid $border-gray;
-    margin: 0 0 $spacing-xxxl;
-    padding: $spacing-xl 0;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    margin: 0 0 30px;
+    padding: 20px 0;
         
     ol{
         text-align: center;
@@ -27,8 +27,8 @@
             }
         }
         
-        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl){
-            margin-left: $spacing-xxxl;
+        @media (min-width: 768px) and (max-width: 1200px){
+            margin-left: 30px;
         }
         
         &.active{
@@ -47,13 +47,13 @@
     }
     
     .passo-num{
-        color: $text-black;
+        color: #000;
         display: inline;
-        font-size: $font-size-md;
-        font-weight: $font-weight-normal;
+        font-size: 14px;
+        font-weight: 400;
         
-        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl){
-            font-size: $font-size-xs;
+        @media (min-width: 768px) and (max-width: 1200px){
+            font-size: 10px;
         }
         
         &:after{
@@ -64,13 +64,13 @@
     }
     
     .passo-text{
-        color: $text-black;
+        color: #000;
         display: inline;
-        font-size: $font-size-md;
-        font-weight: $font-weight-normal;
+        font-size: 14px;
+        font-weight: 400;
         
-        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl){
-            font-size: $font-size-xs;
+        @media (min-width: 768px) and (max-width: 1200px){
+            font-size: 10px;
         }
     }
 }

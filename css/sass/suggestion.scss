@@ -1,9 +1,7 @@
-@use "core/variables" as *;
-
 .suggestion {
-    background: $bg-white;
-    border: $border-width solid $border-medium;
-    box-shadow: $shadow-light;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
     display: block;
     left: 0;
     max-width: none;
@@ -25,28 +23,28 @@
     }
 }
 
-        .suggestion-title{
-            background: none !important;
-            border-bottom: $border-width solid $border-medium;
-            color: $text-black;
+.suggestion-title{
+    background: none !important;
+    border-bottom: 1px solid #ebebeb;
+    color: #010101;
     display: block;
-    margin: 0 0 $spacing-md;
-    padding-bottom: $spacing-md;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
     text-indent: 0;
     text-transform: uppercase;
-    @include typo($font-size-xl, $font-weight-normal, $font, 1.7rem);
+    @include typo(1.6rem, 400, $font, 1.7rem);
 }
 
 .suggestion-words {
-    padding: $spacing-lg;
+    padding: 15px;
     width: 100%;
     
     span {
         border: none;
-        color: $text-gray;
+        color: #5a5a5a;
         display: block;
-        margin: 0 0 $spacing-md;
-        @include typo($font-size-lg, $font-weight-normal, $font, $font-size-lg);
+        margin: 0 0 10px;
+        @include typo(1.5rem, 400, $font, 1.5rem);
         
         &:hover{
             cursor: pointer;
@@ -56,8 +54,8 @@
 
 
 .suggestion-products {
-    background-color: $bg-white;
-    padding: $spacing-lg;
+    background-color: #fff;
+    padding: 15px;
     width: 100%;
     
     @media (max-width: $sm){
@@ -70,28 +68,28 @@
         padding: 15px 0;
         
         &:hover{
-            background: $bg-gray;
+            background: #f7f7f7;
             text-decoration: none;
         }
     }
     
     span{
-        color: $text-gray;
+        color: #5a5a5a;
         display: block;
-        @include typo($font-size-lg, $font-weight-normal, $font, $font-size-lg);
+        @include typo(1.5rem, 400, $font, 1.5rem);
     }
     
     .suggestion-img {
-        background: $bg-white;
-        border: $border-width solid $border-medium;
+        background: #fff;
+        border: 1px solid #ebebeb;
         height: 90px;
-        margin: 0 $spacing-lg 0 0;
+        margin: 0 15px 0 0;
         overflow: hidden;
         text-align: center;
         width: 90px;
         
         img{
-            border: $border-width solid $border-medium;
+            border: 1px solid #ebebeb;
             max-height: 90px;
         }
     }

@@ -46,8 +46,13 @@
 
     <script>
     function toggleMenuLateral() {
-      document.querySelector('.menu-lateral').classList.toggle('active');
-      document.querySelector('.menu-lateral-overlay').classList.toggle('active');
+      const menu = document.querySelector('.menu-lateral');
+      const overlay = document.querySelector('.menu-lateral-overlay');
+      const toggle = document.querySelector('.menu-lateral-toggle');
+      
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      toggle.classList.toggle('active');
       document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
     }
 
@@ -55,19 +60,41 @@
       const items = document.querySelectorAll('.menu-lateral-item');
       items.forEach(item => {
         const text = item.textContent.toLowerCase();
-        item.style.display = text.includes(value.toLowerCase()) ? '' : 'none';
+        const searchValue = value.toLowerCase().trim();
+        
+        if (searchValue === '') {
+          // Se o campo estiver vazio, mostra todos os itens
+          item.style.display = '';
+        } else {
+          // Filtra baseado no texto da categoria
+          item.style.display = text.includes(searchValue) ? '' : 'none';
+        }
       });
     }
 
     // Expandir submenus
-    document.querySelectorAll('.menu-lateral-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const submenu = this.nextElementSibling;
-        if (submenu && submenu.classList.contains('menu-lateral-submenu')) {
-          e.preventDefault();
-          submenu.classList.toggle('active');
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.menu-lateral-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const submenu = this.nextElementSibling;
+          if (submenu && submenu.classList.contains('menu-lateral-submenu')) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.classList.toggle('active');
+            submenu.classList.toggle('active');
+          }
+        });
       });
+    });
+
+    // Fechar menu com ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const menu = document.querySelector('.menu-lateral');
+        if (menu.classList.contains('active')) {
+          toggleMenuLateral();
+        }
+      }
     });
     </script>
 

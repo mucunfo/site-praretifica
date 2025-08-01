@@ -1,39 +1,27 @@
-/**
- * Product
- * TODO: Update HTML to use BEM classes:
- * - .product -> .product (already follows BEM)
- * - .product-image -> .product__image
- * - .product-name -> .product__name
- * - .product-price -> .product__price
- * - .product-payment -> .product__payment
- * - .product-discount-recursive-tag -> .product__discount-tag
- * - .product-discount-recursive-desc -> .product__discount-desc
- */
-
-.product {
-    background: $bg-white;
-    border: $border-width solid $border-gray;
+.product{
+    background: #fff;
+    border: 1px solid #e2e2e2;
     display: block;
-    margin: $spacing-lg 0;
-    padding: $spacing-lg;
+    margin: 15px 0;
+    padding: 15px;
 
     a,
-    a:hover,
+    a:hover
     a:focus,
-    a:active {
+    a:active{
         outline: none;
         text-decoration: none;
     }
 
-    &__image {
+    .product-image{
         position: relative;
-        border-bottom: $border-width solid $border-light;
+        border-bottom: 1px solid #eee;
         font-size: 0;
         height: 200px;
-        margin-bottom: $spacing-lg;
+        margin-bottom: 15px;
         text-align: center;
 
-        &:before {
+        &:before{
             content: '';
             display: inline-block;
             height: 200px;
@@ -41,157 +29,127 @@
             width: 1%;
         }
 
-        img {
+        img{
             display: inline-block;
             max-height: 100%;
             max-width: 99%;
             vertical-align: middle;
         }
 
-        .discount {
+        .discount{
             position: absolute;
-            top: $spacing-sm;
-            right: $spacing-sm;
-            padding: $spacing-md;
-            border-radius: $border-radius-lg;
+            top: 5px;
+            right: 5px;
+            padding: 10px;
+            border-radius: 5px;
             font-size: 1.1rem;
-            color: $text-white;
+            color: #fff;
             opacity: .9;
         }
     }
 
-    &__name {
-        color: $brand-primary;
+    .product-name{
+        color: #3d4445;
         display: block;
         height: 55px;
-        margin-bottom: $spacing-lg;
+        margin-bottom: 15px;
         overflow: hidden;
-        @include typo($font-size-lg, $font-weight-normal, $font, $font-size-xxxl);
+        @include typo(1.5rem, 400, $font, 1.8rem);
 
-        @media screen and (max-width: $sm) {
+        @media screen and (max-width: $sm){
             margin-bottom: 7px;
-            @include typo($font-size-lg, $font-weight-normal, $font, 1.3rem);
+            @include typo(1.5rem, 400, $font, 1.3rem);
             text-align: center;
         }
     }
 
-    &__price {
-        color: $text-black;
+    .product-price{
+        color: #000;
         display: block;
         height: 35px;
         position: relative;
-        z-index: $z-index-base;
-        @include typo($font-size-lg, $font-weight-bold, $font, $font-size-xxxl);
+        z-index: 1;
+        @include typo(1.5rem, 700, $font, 1.8rem);
 
-        @media screen and (max-width: $sm) {
-            @include typo($font-size-sm, $font-weight-bold, $font, 1.3rem);
+        @media screen and (max-width: $sm){
+            @include typo(1.2rem, 700, $font, 1.3rem);
             text-align: center;
         }
 
-        .price {
-            color: $text-black;
-            font-size: $font-size-display-sm;
-            font-weight: $font-weight-normal;
+        .price{
+            color: #000;
+            font-size: 2rem;
+            font-weight: 400;
             left: 0;
             position: absolute;
             text-decoration: line-through;
             top: -18px;
         }
 
-        .price-various {
+        .price-various{
             display: none;
         }
 
         .price-before {
-            font-size: $font-size-lg;
-            color: $border-dark;
-            font-weight: $font-weight-normal;
+            font-size: 1.5rem;
+            color: #ccc;
+            font-weight: 400;
 
-            &.strike { 
-                text-decoration: line-through; 
-            }
+            &.strike{ text-decoration: line-through; }
         }
     }
-
-    .pricing {
+    .pricing{
         text-align: center;
-        font-size: $font-size-lg;
+        font-size: 15px;
         padding: 5%;
-        color: $text-muted;
+        color: #aaa;
     }
 
-    &__discount-tag {
-        background: $brand-primary;
+    .product-discount-recursive-tag{
+        background: #3d4445;
         text-align: center;
         border-radius: 2px;
-        padding: 10px 10px; 
+        padding:10px 10px; 
         border: none;
         font-weight: 600;
         color: #fff;
         margin-bottom: 2px;
     }
-
-    &__discount-desc {
+    .product-discount-recursive-desc{
         background: #626262;
         text-align: center;
         border-radius: 2px;
-        padding: 10px 10px; 
+        padding:10px 10px; 
         border: none;
         font-weight: 600;
         color: #fff;
         margin-bottom: 26px;
     } 
 
-    &__payment {
+    .product-payment{
         color: #000;
         display: block;
         height: auto;
         overflow: hidden;
         @include typo(1.2rem, 400, $font, 1.4rem);
 
-        @media screen and (max-width: $sm) {
+        @media screen and (max-width: $sm){
             margin-bottom: 7px;
             text-align: center;
         }
 
-        > br:first-child {
+        > br:first-child{
             display: none;
         }
 
         span,
-        strong {
+        strong{
             color: #000;
             @include typo(1.2rem, 400, $font, 1.4rem);
 
-            @media screen and (max-width: $sm) {
+            @media screen and (max-width: $sm){
                 @include typo(1rem, 400, $font, 1rem);
             }
         }
     }
-}
-
-// Legacy selectors for backward compatibility
-// TODO: Remove after HTML is updated
-.product-image {
-    @extend .product__image;
-}
-
-.product-name {
-    @extend .product__name;
-}
-
-.product-price {
-    @extend .product__price;
-}
-
-.product-payment {
-    @extend .product__payment;
-}
-
-.product-discount-recursive-tag {
-    @extend .product__discount-tag;
-}
-
-.product-discount-recursive-desc {
-    @extend .product__discount-desc;
 }

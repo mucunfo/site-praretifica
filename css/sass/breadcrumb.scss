@@ -1,56 +1,35 @@
-/**
- * Breadcrumb
- * TODO: Update HTML to use BEM classes:
- * - .breadcrumb -> .breadcrumb (already follows BEM)
- * - .breadcrumb-text -> .breadcrumb__text
- * - .breadcrumb-item -> .breadcrumb__item
- * - .icon-breadcrumb -> .breadcrumb__icon
- */
-
 // breadcrumb
-.breadcrumb {
+.breadcrumb-text,
+.breadcrumb-text + .icon-breadcrumb{
+    display: none;
+}
+
+.breadcrumb{
     margin-bottom: 30px;
     padding: 0 15px;
     
     a, 
-    .breadcrumb__icon {
+    .icon-breadcrumb{
         color: #9c9c9c;
         @include typo(1.2rem, 400, $font, 1.2rem);
     }
+}
 
-    &__text,
-    &__text + .breadcrumb__icon {
-        display: none;
-    }
-
-    &__item {
-        @include typo(1.2rem, 400, $font, 1.2rem);
+.breadcrumb-item{
+    @include typo(1.2rem, 400, $font, 1.2rem);
+    
+    &:last-child{
         
-        &:last-child {
-            a {
-                color: #c2a26f;    
-            }
-        }
-    }
-
-    &__icon {
-        &:before {
-            content: '/';
-            padding: 0 3px;
+        a{
+            color: #c2a26f;    
         }
     }
 }
 
-// Legacy selectors for backward compatibility
-// TODO: Remove after HTML is updated
-.breadcrumb-text {
-    @extend .breadcrumb__text;
-}
-
-.breadcrumb-item {
-    @extend .breadcrumb__item;
-}
-
-.icon-breadcrumb {
-    @extend .breadcrumb__icon;
+.icon-breadcrumb{
+    
+    &:before{
+        content: '/';
+        padding: 0 3px;
+    }
 }

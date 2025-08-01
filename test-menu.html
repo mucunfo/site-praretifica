@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Menu Lateral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/custom-overrides.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .test-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <button class="menu-lateral-toggle" onclick="toggleMenuLateral()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-lateral-overlay" onclick="toggleMenuLateral()"></div>
+
+    <aside class="menu-lateral">
+      <div class="menu-lateral-header">
+        <h3>Categorias</h3>
+      </div>
+      
+      <div class="menu-lateral-search">
+        <input type="text" placeholder="Buscar categorias..." onkeyup="filterMenu(this.value)">
+      </div>
+      
+      <nav class="menu-lateral-nav">
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li class="menu-lateral-item">
+            <a href="#" class="menu-lateral-link">
+              <i class="fa fa-chevron-right menu-lateral-icon"></i>
+              <span>Eletrônicos</span>
+              <span class="menu-lateral-count">(15)</span>
+            </a>
+                         <ul class="menu-lateral-submenu" style="list-style: none; padding: 0;">
+               <li><a href="#" class="menu-lateral-sublink">Smartphones</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Notebooks</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Tablets</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Smart TVs</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Fones de Ouvido</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Câmeras</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Video Games</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Acessórios</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Carregadores</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Cabos</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Peliculas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Capas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Suportes</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Adaptadores</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Baterias</a></li>
+             </ul>
+          </li>
+          <li class="menu-lateral-item">
+            <a href="#" class="menu-lateral-link">
+              <i class="fa fa-chevron-right menu-lateral-icon"></i>
+              <span>Roupas</span>
+              <span class="menu-lateral-count">(23)</span>
+            </a>
+                         <ul class="menu-lateral-submenu" style="list-style: none; padding: 0;">
+               <li><a href="#" class="menu-lateral-sublink">Camisetas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Calças</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Sapatos</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Bermudas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Vestidos</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Blusas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Jaquetas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Casacos</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Meias</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Cintos</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Bonés</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Óculos</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Relógios</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Bolsas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Mochilas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Carteiras</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Lenços</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Gravatas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Lingerie</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Pijamas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Roupas de Banho</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Uniformes</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Fantasias</a></li>
+             </ul>
+          </li>
+                     <li class="menu-lateral-item">
+             <a href="#" class="menu-lateral-link">
+               <i class="fa fa-chevron-right menu-lateral-icon"></i>
+               <span>Casa e Jardim</span>
+               <span class="menu-lateral-count">(8)</span>
+             </a>
+             <ul class="menu-lateral-submenu" style="list-style: none; padding: 0;">
+               <li><a href="#" class="menu-lateral-sublink">Móveis</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Decoração</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Cozinha</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Banheiro</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Jardim</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Iluminação</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Cortinas</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Tapetes</a></li>
+             </ul>
+           </li>
+           <li class="menu-lateral-item">
+             <a href="#" class="menu-lateral-link">
+               <i class="fa fa-chevron-right menu-lateral-icon"></i>
+               <span>Esportes</span>
+               <span class="menu-lateral-count">(12)</span>
+             </a>
+             <ul class="menu-lateral-submenu" style="list-style: none; padding: 0;">
+               <li><a href="#" class="menu-lateral-sublink">Futebol</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Basquete</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Tênis</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Natação</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Corrida</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Ciclismo</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Musculação</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Yoga</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Pilates</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Boxe</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Jiu-Jitsu</a></li>
+               <li><a href="#" class="menu-lateral-sublink">Surf</a></li>
+             </ul>
+           </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="test-content">
+        <h1>Teste do Menu Lateral</h1>
+        <p>Este é um arquivo de teste para verificar se o menu lateral está funcionando corretamente.</p>
+        <p>Clique no botão hambúrguer no canto superior esquerdo para abrir o menu.</p>
+        <p>Funcionalidades testadas:</p>
+        <ul>
+            <li>Botão hambúrguer fixo</li>
+            <li>Menu deslizante da esquerda</li>
+            <li>Overlay para fechar o menu</li>
+            <li>Campo de busca no menu</li>
+            <li>Submenus expansíveis</li>
+            <li>Responsividade</li>
+        </ul>
+        <p>Pressione ESC para fechar o menu rapidamente.</p>
+    </div>
+
+    <script>
+    function toggleMenuLateral() {
+      const menu = document.querySelector('.menu-lateral');
+      const overlay = document.querySelector('.menu-lateral-overlay');
+      const toggle = document.querySelector('.menu-lateral-toggle');
+      
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      toggle.classList.toggle('active');
+      document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+    }
+
+    function filterMenu(value) {
+      const items = document.querySelectorAll('.menu-lateral-item');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const searchValue = value.toLowerCase().trim();
+        
+        if (searchValue === '') {
+          // Se o campo estiver vazio, mostra todos os itens
+          item.style.display = '';
+        } else {
+          // Filtra baseado no texto da categoria
+          item.style.display = text.includes(searchValue) ? '' : 'none';
+        }
+      });
+    }
+
+    // Expandir submenus
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.menu-lateral-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const submenu = this.nextElementSibling;
+          if (submenu && submenu.classList.contains('menu-lateral-submenu')) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.classList.toggle('active');
+            submenu.classList.toggle('active');
+          }
+        });
+      });
+    });
+
+    // Fechar menu com ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const menu = document.querySelector('.menu-lateral');
+        if (menu.classList.contains('active')) {
+          toggleMenuLateral();
+        }
+      }
+    });
+    </script>
+</body>
+</html> 

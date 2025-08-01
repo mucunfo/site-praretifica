@@ -1,59 +1,46 @@
 /**
  * Search
- * TODO: Update HTML to use BEM classes:
- * - .search -> .search (already follows BEM)
- * - .search-button -> .search__button
- * - .search-key -> .search__input
  */
 
-.search {
-    @media screen and (max-width: $sm) {
-        padding: $spacing-md 0;
+.search{
+    
+    @media screen and (max-width: $sm){
+        padding: 10px 0;
     }
     
-    form {
+    form{
         position: relative;
-        background: $bg-white;
+        background: #fff;
         height: 55px;
         
-        > div {
+        > div{
             overflow: hidden;
         }
     }
     
-    &__button {
-        background: $text-muted;
+    .search-button{
+        background: #a2a2a2;
         border: none;
         border-right: none;
         height: 55px;
         padding: 0 11px;
     }
     
-    &__input {
+    .search-key{
         background: none;
-        border: $border-width solid $border-gray;
+        border: 1px solid #e2e2e2;
         border-right: none;
         font-size: 1.3rem;
         height: 55px;
         padding: 19px 25px;
         width: 100%;
         
-        @media screen and (max-width: $sm) {
-            border: $border-width solid $text-muted;
+        @media screen and (max-width: $sm){
+            border: 1px solid #a2a2a2;
             border-right: none;
-            font-size: $font-size-xl;
+            font-size: 1.6rem;
             height: 55px;
             padding: 17px 25px;
         }
     }
-}
-
-// Legacy selectors for backward compatibility
-// TODO: Remove after HTML is updated
-.search-button {
-    @extend .search__button;
-}
-
-.search-key {
-    @extend .search__input;
 }

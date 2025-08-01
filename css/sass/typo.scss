@@ -1,13 +1,10 @@
-@use "core/variables" as *;
-@use "base" as *;
-
 /**
  * Typography
  */
 
 a,
 a:hover {
-    color: $text-gray;
+    color: #666;
 }
 
 h1,
@@ -17,5 +14,5 @@ h4,
 h5,
 h6 {
     font-family: $font;
-    font-weight: $font-weight-normal;
+    font-weight: 400;
 } 

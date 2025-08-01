@@ -1,22 +1,4 @@
-/**
- * Menu Mobile
- * TODO: Update HTML to use BEM classes:
- * - .menu-mobile -> .menu-mobile (already follows BEM)
- * - .trigger-menu -> .menu-mobile__trigger
- * - .close-menu -> .menu-mobile__close
- * - .menu-mobile-backdrop -> .menu-mobile__backdrop
- * - .level1 -> .menu-mobile__level1
- * - .level2 -> .menu-mobile__level2
- * - .item-level1 -> .menu-mobile__item-level1
- * - .item-level2 -> .menu-mobile__item-level2
- * - .level1-check -> .menu-mobile__level1-check
- * - .link-level1 -> .menu-mobile__link-level1
- * - .link-level2 -> .menu-mobile__link-level2
- * - .link-level3 -> .menu-mobile__link-level3
- * - .arrow-menu-mobile -> .menu-mobile__arrow
- */
-
-.menu-mobile {
+.menu-mobile{
     background: #3d4445;
     height: 100%;
     left: 0;
@@ -31,7 +13,7 @@
     left: -100vw;
     @extend .transition;
     
-    > h5 {
+    > h5{
         color: #fff;
         margin-bottom: 10px;
         text-transform: uppercase;
@@ -50,87 +32,96 @@
         }
     }
     
-    &__level1 {
+    .level1{
         position: relative;
         height: 90vh;
         overflow-y: scroll;
     }
     
-    &__level2 {
+    .level2{
         display: none;
         margin-top: 1px;
     }
     
-    &__item-level1 {
+    .item-level1{
         border-top: 1px solid rgba(255, 255, 255, 0.25);
         
-        &:first-child {
+        &:first-child{
             border-top: none;
         }
     }
     
-    &__item-level2 {
+    .item-level1{
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        margin-top: 1px;
+        
+        &:first-child{
+            border-top: none;
+        }
+    }
+    
+    .item-level2{
         margin-top: 1px;
     }
     
-    &__level1-check {
+    .level1-check{
         display: none;
         
-        &:checked ~ .menu-mobile__level2 {
+        &:checked ~ .level2{
             display: block;
         }
         
-        &:checked ~ .menu-mobile__link-level1 {
+        &:checked ~ .link-level1{
             background: rgba(255,255,255,.3);
             border-bottom: 1px solid transparent;
         }
         
-        &:checked ~ .menu-mobile__link-level1 .menu-mobile__arrow {
+        &:checked ~ .link-level1 .arrow-menu-mobile{
             @include prefix('transform', 'rotate(90deg)');
         }
     }
     
-    &__link-level1,
-    &__link-level2,
-    &__link-level3 {
+    .link-level1,
+    .link-level2,
+    .link-level3{
         color: #fff;
         display: block;
         padding: 10px 5px;
         @include typo(1.6rem, 400, $font);
         
-        &:hover {
+        &:hover{
             text-decoration: none;
         }
         
-        &:active {
+        &:active{
             background: rgba(255,255,255,.3);
         }
     }
     
-    &__link-level2 {
+    .link-level2{
         background: rgba(255,255,255,.3);
         padding-left: 15px;
     }
     
-    &__link-level3 {
+    .link-level3{
         background: rgba(255,255,255,.3);
         padding-left: 30px;
     }
 }
 
-.menu-mobile__trigger {
+.trigger-menu{
     background: #a2a2a2;
     border: none;
     height: 55px;
     margin: 10px 0;
     width: 100%;
     
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px){
         padding: 0;
     }
 }
 
-.menu-mobile__close {
+.close-menu{
     position: absolute;
     top: 0;
     left: 100%;
@@ -145,8 +136,9 @@
     color: #fff;
 }
 
-html {
-    .menu-mobile__backdrop {
+html{
+    
+    .menu-mobile-backdrop{
         background: rgba(0, 0, 0, 0);
         bottom: 0;
         content: '';
@@ -158,88 +150,39 @@ html {
         width: 100%;
         z-index: 10;
         @extend .transition;
+        
     }
     
-    .application {
+    .application{
         @include prefix('transform', 'translateX(0)');
         @extend .transition;
     }
     
-    &.menu-open {
+    &.menu-open{
         overflow: hidden;
         
-        .application {
+        .application{
             @include prefix('transform', 'translateX(260px)');
         }
         
-        body {
+        body{
             overflow-x: hidden;
         } 
         
-        .menu-mobile {
+        .menu-mobile{
             // @include prefix('transform', 'translateX(0)');
             left: 0;
         }
 
-        .menu-mobile__backdrop {
+        .menu-mobile-backdrop {
             background: rgba(0, 0, 0, 0.85);
             opacity: 1;
             visibility: visible;
         }
         
-        .backdrop-icon {
+        .backdrop-icon{
             opacity: 1;
             visibility: visible;
         }
     }
-}
-
-// Legacy selectors for backward compatibility
-// TODO: Remove after HTML is updated
-.trigger-menu {
-    @extend .menu-mobile__trigger;
-}
-
-.close-menu {
-    @extend .menu-mobile__close;
-}
-
-.menu-mobile-backdrop {
-    @extend .menu-mobile__backdrop;
-}
-
-.level1 {
-    @extend .menu-mobile__level1;
-}
-
-.level2 {
-    @extend .menu-mobile__level2;
-}
-
-.item-level1 {
-    @extend .menu-mobile__item-level1;
-}
-
-.item-level2 {
-    @extend .menu-mobile__item-level2;
-}
-
-.level1-check {
-    @extend .menu-mobile__level1-check;
-}
-
-.link-level1 {
-    @extend .menu-mobile__link-level1;
-}
-
-.link-level2 {
-    @extend .menu-mobile__link-level2;
-}
-
-.link-level3 {
-    @extend .menu-mobile__link-level3;
-}
-
-.arrow-menu-mobile {
-    @extend .menu-mobile__arrow;
 }
