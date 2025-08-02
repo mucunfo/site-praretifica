@@ -3,11 +3,11 @@
         <ul class="row" itemscope itemtype="https://schema.org/SomeProducts">
         {% for product in products %}
             {% set ranking = product.ranking %}
-            <li class="col-sm-4">
+            <li class="col-sm-2">
                 {% element 'snippets/product' {"product": product} %}
             </li>
             
-            {% if loop.index is divisible by(3) %}
+            {% if loop.index is divisible by(5) %}
             </ul><ul class="row" itemscope itemtype="https://schema.org/SomeProducts">
             {% endif %}
         {% endfor %}

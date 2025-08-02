@@ -1,53 +1,77 @@
 /**
- * Banners
+ * Banners - Otimizado para performance e responsividade
  */
 
-.banner{
+.banner {
     border: 2px solid #e2e2e2;
+    max-width: 100%;
+    height: auto;
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
-.banner-ruler{
+.banner-ruler {
     background: #fff;
     margin-bottom: 30px;
-    width: 849px;
-    @media screen and (max-width: 1200px){ 
-        width: auto;
+    width: 100%;
+    max-width: 849px;
+    
+    @media screen and (max-width: 1200px) { 
+        width: 100%;
+        max-width: none;
     }
-
+    
+    @media screen and (max-width: 768px) {
+        margin-bottom: 20px;
+    }
 }
 
-.banner-sidebar{
+.banner-sidebar {
     margin-top: 30px;
+    
+    @media screen and (max-width: 768px) {
+        margin-top: 20px;
+        display: block !important; // Força exibição no mobile
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .banner-js {
     margin: 0;
     padding-bottom: 0;
     
-    .box_skitter_large{
-    	left: 50% !important;
-    	-webkit-transform: translateX(-50%);
-    	   -moz-transform: translateX(-50%);
-    	    -ms-transform: translateX(-50%);
-    	     -o-transform: translateX(-50%);
-        		transform: translateX(-50%);
+    .box_skitter_large {
+        left: 50% !important;
+        transform: translateX(-50%);
+        max-width: 100%;
     }
     
-    .box_skitter .info_slide_dots{
-    	bottom: 0;
-    	padding: 20px;
+    .box_skitter .info_slide_dots {
+        bottom: 0;
+        padding: 20px;
     }
-
 }
 
-.banner-home{
+.banner-home {
     margin-bottom: 30px;
     position: relative;
     z-index: 10;
     
+    @media screen and (max-width: 768px) {
+        margin-bottom: 20px;
+    }
+    
     .prev_button, 
     .next_button {
-        display: none!important; 
+        display: none !important; 
     }
     
     .info_slide {
@@ -57,7 +81,7 @@
         background: none;
         
         .image_number {
-            float: none!important;
+            float: none !important;
             font-size: 0;
             width: 15px;
             height: 15px;
@@ -66,51 +90,133 @@
         }
     }
     
-    .slick-slide{
-        img{ margin: 0 auto; }
+    .banner-slide {
+        position: relative;
+        
+        img { 
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            display: block;
+            text-decoration: none;
+        }
     }
 
-    .slick-arrow{
+    .slick-arrow {
         cursor: pointer;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+        
+        @media screen and (max-width: 768px) {
+            display: none !important;
+        }
     }
 
-    .arrow-next{
+    .arrow-next {
         right: 15px;
     }
 
-    .arrow-prev{
+    .arrow-prev {
         left: 15px;
     }
 
-    .slick-dots{
+    .slick-dots {
         bottom: 15px;
         left: 0;
         margin-top: 5px;
         position: absolute;
         text-align: center;
         width: 100%;
+        z-index: 10;
 
-        li{
+        li {
             display: inline-block;
             margin: 0 3px;
+            
+            &.slick-active button {
+                background-color: #fff;
+            }
         }
 
-        button{
+        button {
             border-radius: 15px;
             border: none;
             font-size: 0;
             height: 15px;
             width: 15px;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+    
+    // Otimizações para mobile
+    @media screen and (max-width: 768px) {
+        .slick-dots {
+            bottom: 10px;
+            
+            button {
+                height: 12px;
+                width: 12px;
+            }
         }
     }
 }
 
-.banner-bottom{ margin-top: 15px; }
+.banner-title {
+    margin-bottom: 20px;
+    
+    @media screen and (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+}
 
-.mobile-off{
-    @media screen and (max-width: $sm){ display: none; }
+.banner-bottom { 
+    margin-top: 15px;
+    
+    @media screen and (max-width: 768px) {
+        margin-top: 10px;
+    }
+}
+
+// Classes utilitárias para banners
+.mobile-off {
+    @media screen and (max-width: 768px) { 
+        display: none; 
+    }
+}
+
+.desktop-off {
+    @media screen and (min-width: 769px) { 
+        display: none; 
+    }
+}
+
+// Otimizações de performance
+.banner img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    &.loaded {
+        opacity: 1;
+    }
+}
+
+// Fallback para navegadores sem suporte a lazy loading
+.banner img:not([loading="lazy"]) {
+    opacity: 1;
 }

@@ -5,29 +5,42 @@
     <ul class="categories-mobile level1">
         {% for level1 in categories %}
             {% if loop.index <= limit or not limit %}
-                <li class="item-level1">
-                    {% if level1.children %}
-                    <input type="checkbox" id="mobile-item-{{ level1.id }}" class="level1-check"/>
-                    <label class="link-level1" for="mobile-item-{{ level1.id }}" data-tray-tst="categoria_lvl_1">
-                        <i class="pull-right arrow-menu-mobile"><img src="{{ asset('img/arrow-right.svg') }}" height="16" width="16" alt="Seta"></i>
-                        {{ level1.name }}
-                    </label>
-                    {% else %}
-                    <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
-                    {% endif %}
+                <li class="item-level1" data-level="1" data-id="{{ level1.id }}">
+                    <div class="menu-item-wrapper">
+                        {% if level1.children %}
+                            <button class="menu-expand-btn mobile" aria-label="Expandir {{ level1.name }}" aria-expanded="false">
+                                <img src="{{ asset('img/arrow-right.svg') }}" alt="Expandir" class="expand-icon">
+                            </button>
+                        {% endif %}
+                        <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                    </div>
                     
                     {% if level1.children %}
                         <div class="level2">
                             <ul>
                                 {% for level2 in level1.children %}
-                                    <li class="item-level2">
-                                        <a href="{{ level2.link }}" class="link-level2" data-tray-tst="categoria_lvl_2">{{ level2.name }}</a>
+                                    <li class="item-level2" data-level="2" data-id="{{ level2.id }}">
+                                        <div class="menu-item-wrapper">
+                                            {% if level2.children %}
+                                                <button class="menu-expand-btn mobile" aria-label="Expandir {{ level2.name }}" aria-expanded="false">
+                                                    <img src="{{ asset('img/arrow-right.svg') }}" alt="Expandir" class="expand-icon">
+                                                </button>
+                                            {% endif %}
+                                            <a href="{{ level2.link }}" class="link-level2" data-tray-tst="categoria_lvl_2">{{ level2.name }}</a>
+                                        </div>
                                         {% if level2.children %}
                                             <div class="level3">
                                                 <ul>
                                                     {% for level3 in level2.children %}
-                                                        <li class="item-level3">
-                                                            <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                        <li class="item-level3" data-level="3" data-id="{{ level3.id }}">
+                                                            <div class="menu-item-wrapper">
+                                                                {% if level3.children %}
+                                                                    <button class="menu-expand-btn mobile" aria-label="Expandir {{ level3.name }}" aria-expanded="false">
+                                                                        <img src="{{ asset('img/arrow-right.svg') }}" alt="Expandir" class="expand-icon">
+                                                                    </button>
+                                                                {% endif %}
+                                                                <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                            </div>
                                                             {% if level3.children %}
                                                             {% endif %}
                                                         </li>

@@ -1,17 +1,17 @@
 {% set checkout = "checkout" in pages.current ? "true" : "false" %}
 <footer>
-    <div class="news-full visible-xs-block .visible-sm-block">
-        {% element 'snippets/newsletter' %}
-    </div>
+
     <div class="foo-content">
         <div class="container">
             <div class="col-sm-6 col-md-2 col-xs-12">
                 <h3>{{ Translation('institucional') }}</h3>
                 <ul class="links-list">
                     {% for custom in pages.custom %}
-                        <li>
-                            <a href="{{ custom.url }}">{{ custom.name }}</a>
-                        </li>
+                        {% if custom.name not in ['Como comprar', 'Seguranca', 'Envio', 'Pagamento', 'Trocas e devoluções'] %}
+                            <li>
+                                <a href="{{ custom.url }}">{{ custom.name }}</a>
+                            </li>
+                        {% endif %}
                     {% endfor %}
                     <li>
                         <a href="{{ links.contact }}" data-tray-tst="fale_conosco">{{ Translation('contato') }}</a>
@@ -68,16 +68,24 @@
             </div>
             {% endif %}
             
-            {% if settings.social_facebook or 
-                  settings.social_twitter or 
-                  settings.whatsapp or
-                  settings.social_pinterest or 
-                  settings.social_youtube or 
-                  settings.social_instagram
-            %}
+            {% if settings.whatsapp or settings.social_instagram %}
             <div class="col-sm-6 col-md-3 col-xs-12 social-list">
                 <h3 class="social-title">{{ Translation('redes_sociais') }}</h3>
-                {% element 'snippets/social-list' %}
+                <div class="social-links">
+                    {% if settings.whatsapp %}
+                    <a href="https://wa.me/{{ settings.whatsapp }}" target="_blank" class="social-link whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    {% endif %}
+                    
+                    {% if settings.social_instagram %}
+                    <a href="{{ settings.social_instagram }}" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    {% endif %}
+                </div>
             </div>
             {% endif %}
             

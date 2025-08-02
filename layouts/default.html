@@ -15,11 +15,12 @@
 
     <!-- theme styles -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
+    <!-- Typography - Montserrat + Open Sans -->
+    <link rel="stylesheet" href="{{ asset('css/typography.css') }}" type="text/css">
+    
     <link rel="stylesheet" href="{{ asset('css/custom-overrides.css') }}" type="text/css">
 
     <!-- tray analytics -->
@@ -70,15 +71,7 @@
 
         {% element 'footer' %}
 
-        {% if settings.hottags_position == 2 %}
-            <div class="tagcloud">
-                <h4>As palavras</h4>
-                <h3>{{ Translation('tags_mais_buscadas') }}</h3>
-                {% for tag in tags %}
-                  <a href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%">{{ tag.word }}</a>
-                {% endfor %}
-            </div>
-        {% endif %}
+
 
         {% if pages.current in ['catalog', 'search', 'product'] %}
             {% if settings.history_position == 2 %}

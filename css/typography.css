@@ -1,0 +1,1171 @@
+/* ===== TIPOGRAFIA PRA RETIFICA - CORREÇÃO COMPLETA ===== */
+
+/* Importação das fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ===== RESET E BASE ===== */
+
+/* Reset completo da tipografia */
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== TÍTULOS - CORREÇÃO ===== */
+
+h1, .h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+h2, .h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.875rem 0;
+    color: #333;
+}
+
+h3, .h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.75rem 0;
+    color: #333;
+}
+
+h4, .h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.625rem 0;
+    color: #333;
+}
+
+h5, .h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+h6, .h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+/* ===== TEXTO PADRÃO - CORREÇÃO ===== */
+
+p, .text-body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.text-small {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.text-large {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ===== PREÇOS - CORREÇÃO ===== */
+
+.price, .product-price, .price-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #7b1f29;
+}
+
+.price-small {
+    font-size: 18px;
+}
+
+.price-large {
+    font-size: 28px;
+}
+
+.old-price {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: #666;
+}
+
+/* ===== BOTÕES - CORREÇÃO ===== */
+
+.btn, button, .button, .botao-commerce {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.btn-large, .button-large {
+    font-size: 16px;
+}
+
+.btn-small, .button-small {
+    font-size: 12px;
+}
+
+/* ===== LINKS - CORREÇÃO ===== */
+
+a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #7b1f29;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #5c151e;
+    text-decoration: underline;
+}
+
+/* ===== ELEMENTOS ESPECÍFICOS - CORREÇÃO ===== */
+
+/* Nomes de produtos - CORRIGIDO */
+.product-name, .product-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #333;
+}
+
+/* Descrições de produtos - MANTIDO (está funcionando) */
+.product-description, .description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Labels e campos de formulário - CORREÇÃO */
+label, input, textarea, select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Navegação - CORREÇÃO */
+.nav-link, .menu-link {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Breadcrumb - CORREÇÃO */
+.breadcrumb {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* ===== RESPONSIVIDADE - CORREÇÃO ===== */
+
+/* Desktop */
+@media (min-width: 768px) {
+    h1, .h1 {
+        font-size: 36px;
+    }
+    
+    h2, .h2 {
+        font-size: 28px;
+    }
+    
+    .price, .product-price, .price-value {
+        font-size: 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    h1, .h1 {
+        font-size: 28px;
+    }
+    
+    h2, .h2 {
+        font-size: 24px;
+    }
+    
+    h3, .h3 {
+        font-size: 20px;
+    }
+    
+    .price, .product-price, .price-value {
+        font-size: 18px;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+    
+    p, .text-body {
+        font-size: 14px;
+    }
+}
+
+/* ===== SOBRESCRITAS ESPECÍFICAS - CORREÇÃO COMPLETA ===== */
+
+/* Produtos - CORREÇÃO */
+.product .product-name {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+    color: #333 !important;
+}
+
+.product .product-price {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #7b1f29 !important;
+}
+
+/* Showcase - CORREÇÃO */
+.showcase > h2 strong,
+.showcase > h2 small {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #333 !important;
+}
+
+/* Menu - CORREÇÃO (mantendo sidebar que está funcionando) */
+.sidebar .main-menu > h3,
+.sidebar .main-menu > h4 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Newsletter - CORREÇÃO */
+.newsletter h2 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Store Rating - CORREÇÃO */
+.store-rating > h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Tag Cloud - CORREÇÃO */
+.tagcloud > h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Botões - CORREÇÃO */
+.botao-commerce,
+.botao-comprar,
+.search-button,
+.cart-button {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Preços principais - CORREÇÃO */
+.page-product #preco .PrecoPrincipal {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    color: #7b1f29 !important;
+}
+
+/* Preços de produtos visitados - CORREÇÃO */
+.page-product .products-visited .ValoresLista .precoAvista {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    color: #7b1f29 !important;
+}
+
+/* Footer - CORREÇÃO */
+.foo-content h3,
+.foo-content h5 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.foo-content,
+.foo-message {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Customer - CORREÇÃO */
+.customer {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Cart - CORREÇÃO */
+.cart .cart-amount,
+.cart .cart-total {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Menu mobile - CORREÇÃO */
+.menu-mobile > h5 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Breadcrumb - CORREÇÃO */
+.breadcrumb {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Search - CORREÇÃO */
+.search .search-key {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Newsletter - CORREÇÃO */
+.newsletter input {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Product tabs - CORREÇÃO */
+.page-product .product-tabs #ProdAbas a {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* Product description - MANTIDO (está funcionando) */
+.page-product .product-tabs .prodBox {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+}
+
+/* Category description - CORREÇÃO */
+.page-catalog .category-description,
+.page-search .category-description {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Catalog display - CORREÇÃO */
+.page-catalog .catalogo-display,
+.page-search .catalogo-display {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Smart filter - CORREÇÃO */
+.page-catalog .smart-filter h3,
+.page-search .smart-filter h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Products visited title - CORREÇÃO */
+.page-catalog .products-visited > h3,
+.page-product .product-cross-sell > h3,
+.page-product .products-related > h3,
+.page-product .products-visited > h3,
+.page-search .products-visited > h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Checkout - CORREÇÃO */
+.page-checkout_cart .caixa-total h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Register - CORREÇÃO */
+.page-register .botao-prosseguir-cadastro {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+}
+
+/* Contact - CORREÇÃO */
+.page-contact h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Central pages - CORREÇÃO */
+.page-central_anteriores .page-content h1,
+.page-central_bonus .page-content h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Newsletter page - CORREÇÃO */
+.page-newsletter h1.color {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.page-newsletter .board,
+.page-newsletter p {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Payment page - CORREÇÃO */
+.page-checkout_payment .caixa-detalhes-compra .valores_carrinho h3 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Product page specific - CORREÇÃO */
+.page-product .product-name {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.page-product .product-price {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    color: #7b1f29 !important;
+}
+
+.page-product .product-payment {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Suggestion - CORREÇÃO */
+.suggestion-products span,
+.suggestion-words span {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Cart preview - CORREÇÃO */
+.cart-preview .related-product-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* ===== CORREÇÕES ESPECÍFICAS PARA PROBLEMAS IDENTIFICADOS ===== */
+
+/* Corrigir tamanhos de fonte que estavam muito grandes */
+.page-product #preco .PrecoPrincipal {
+    font-size: 28px !important;
+}
+
+.page-product .products-visited .ValoresLista .precoAvista {
+    font-size: 18px !important;
+}
+
+/* Corrigir espaçamento de linha */
+.product .product-name {
+    line-height: 1.3 !important;
+}
+
+.product .product-price {
+    line-height: 1.2 !important;
+}
+
+/* Corrigir cores */
+.price, .product-price, .price-value {
+    color: #7b1f29 !important;
+}
+
+/* Corrigir botões */
+.btn, button, .button, .botao-commerce {
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+}
+
+/* Corrigir links */
+a {
+    color: #7b1f29 !important;
+}
+
+a:hover {
+    color: #5c151e !important;
+}
+
+/* Corrigir formulários */
+input, textarea, select {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+/* Corrigir navegação */
+.nav-link, .menu-link {
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Corrigir breadcrumb */
+.breadcrumb {
+    font-size: 12px !important;
+    color: #666 !important;
+}
+
+/* Corrigir newsletter */
+.newsletter input {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+/* Corrigir product tabs */
+.page-product .product-tabs #ProdAbas a {
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir category description */
+.page-catalog .category-description,
+.page-search .category-description {
+    line-height: 1.6 !important;
+}
+
+/* Corrigir catalog display */
+.page-catalog .catalogo-display,
+.page-search .catalogo-display {
+    line-height: 1.6 !important;
+}
+
+/* Corrigir smart filter */
+.page-catalog .smart-filter h3,
+.page-search .smart-filter h3 {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir products visited title */
+.page-catalog .products-visited > h3,
+.page-product .product-cross-sell > h3,
+.page-product .products-related > h3,
+.page-product .products-visited > h3,
+.page-search .products-visited > h3 {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir checkout */
+.page-checkout_cart .caixa-total h3 {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir register */
+.page-register .botao-prosseguir-cadastro {
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir contact */
+.page-contact h1 {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir central pages */
+.page-central_anteriores .page-content h1,
+.page-central_bonus .page-content h1 {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir newsletter page */
+.page-newsletter h1.color {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.page-newsletter .board,
+.page-newsletter p {
+    line-height: 1.6 !important;
+}
+
+/* Corrigir payment page */
+.page-checkout_payment .caixa-detalhes-compra .valores_carrinho h3 {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir product page specific */
+.page-product .product-name {
+    line-height: 1.3 !important;
+}
+
+.page-product .product-price {
+    color: #7b1f29 !important;
+}
+
+.page-product .product-payment {
+    line-height: 1.5 !important;
+}
+
+/* Corrigir suggestion */
+.suggestion-products span,
+.suggestion-words span {
+    line-height: 1.5 !important;
+}
+
+/* Corrigir cart preview */
+.cart-preview .related-product-title {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* ===== GARANTIAS FINAIS ===== */
+
+/* Garantir que tudo use as fontes corretas */
+body, html {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Garantir que preços usem Montserrat */
+.price, .product-price, .price-value {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Garantir que botões usem Montserrat */
+.btn, button, .button, .botao-commerce {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* ===== CORREÇÕES PARA ARQUIVOS SASS ===== */
+
+/* Corrigir configurações de tray-kit */
+.tray-kit-name {
+    font-size: 16px !important;
+}
+
+.tray-kit-info {
+    font-size: 14px !important;
+}
+
+.tray-kit-unity {
+    font-size: 14px !important;
+}
+
+.tray-kit-title h3 {
+    font-size: 18px !important;
+}
+
+/* Corrigir configurações de store-rating */
+.store-rating .dep_link a {
+    font-size: 14px !important;
+}
+
+.store-rating .dep_dados > li > span {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de sidebar */
+.sidebar .main-menu > h4 {
+    font-size: 18px !important;
+}
+
+.sidebar .main-menu > h3 {
+    font-size: 20px !important;
+}
+
+/* Corrigir configurações de search */
+.search .search-key {
+    font-size: 14px !important;
+}
+
+.search-button {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de product */
+.product .product-name {
+    font-size: 16px !important;
+}
+
+.product .product-price {
+    font-size: 24px !important;
+}
+
+.product .product-payment {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-product */
+.page-product .product-name {
+    font-size: 16px !important;
+}
+
+.page-product .product-price {
+    font-size: 24px !important;
+}
+
+.page-product .product-payment {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-cart */
+.page-cart .cart-amount {
+    font-size: 14px !important;
+}
+
+.page-cart .cart-total {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-catalog */
+.page-catalog .catalog-name {
+    font-size: 20px !important;
+}
+
+.page-catalog .catalogo-display {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de newsletter */
+.newsletter h2 {
+    font-size: 20px !important;
+}
+
+.newsletter input {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de new-filter */
+.new-smart-filter .filter__title {
+    font-size: 16px !important;
+}
+
+.new-smart-filter .filter__label {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-register */
+.page-register .botao-prosseguir-cadastro {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-login */
+.page-login h1 {
+    font-size: 20px !important;
+}
+
+.page-login input {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-contact */
+.page-contact h1 {
+    font-size: 20px !important;
+}
+
+.page-contact input {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-payment */
+.page-payment h3 {
+    font-size: 16px !important;
+}
+
+.page-payment input {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-visitados */
+.page-visitados h2 {
+    font-size: 20px !important;
+}
+
+.page-visitados .product-name {
+    font-size: 16px !important;
+}
+
+/* Corrigir configurações de page-noticia */
+.page-noticia h1 {
+    font-size: 20px !important;
+}
+
+.page-noticia p {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-depoimentos */
+.page-depoimentos h1 {
+    font-size: 20px !important;
+}
+
+.page-depoimentos .depoimento {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-comparador */
+.page-comparador h3 {
+    font-size: 16px !important;
+}
+
+.page-comparador .product-name {
+    font-size: 16px !important;
+}
+
+/* Corrigir configurações de page-central_cliente */
+.page-central_cliente h1 {
+    font-size: 20px !important;
+}
+
+.page-central_cliente p {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-listas */
+.page-listas h1 {
+    font-size: 20px !important;
+}
+
+/* Corrigir configurações de page-implantacao */
+.page-implantacao h1 {
+    font-size: 20px !important;
+}
+
+.page-implantacao p {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de page-extra */
+.page-extra h1 {
+    font-size: 20px !important;
+}
+
+/* Corrigir configurações de tagcloud */
+.tagcloud a {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de suggestion */
+.suggestion-products span {
+    font-size: 14px !important;
+}
+
+.suggestion-words span {
+    font-size: 14px !important;
+}
+
+/* Corrigir configurações de showcase */
+.showcase > h2 strong {
+    font-size: 24px !important;
+}
+
+.showcase > h2 small {
+    font-size: 20px !important;
+}
+
+/* Corrigir configurações de cart-preview */
+.cart-preview .related-product-title {
+    font-size: 16px !important;
+}
+
+/* Garantir que todas as configurações em rem sejam sobrescritas */
+[style*="font-size"] {
+    font-size: inherit !important;
+}
+
+/* Garantir que todas as configurações de fonte sejam respeitadas */
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.price, .product-price, .price-value {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.btn, button, .button, .botao-commerce {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Garantir que descrições usem Open Sans (mantendo o que está funcionando) */
+.product-description, .description {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Garantir que sidebar use as fontes corretas (mantendo o que está funcionando) */
+.sidebar .main-menu > h3,
+.sidebar .main-menu > h4 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* ===== CORREÇÕES ESPECÍFICAS PARA CONFLITOS DO THEME.CSS ===== */
+
+/* Corrigir configurações de input */
+input {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Corrigir configurações de botões */
+.botao-commerce,
+.botao-comprar,
+.search-button,
+.cart-button {
+    font-size: 14px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Corrigir configurações de preços */
+.price,
+.product-price,
+.price-value,
+.precoAvista,
+.precoparc {
+    font-size: 24px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    color: #7b1f29 !important;
+}
+
+/* Corrigir configurações de nomes de produtos */
+.product-name,
+.product-title,
+.NomeProdLista {
+    font-size: 16px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+}
+
+/* Corrigir configurações de descrições */
+.product-description,
+.description {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+}
+
+/* Corrigir configurações de navegação */
+.nav-link,
+.menu-link,
+.sidebar .main-menu a {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* Corrigir configurações de breadcrumb */
+.breadcrumb {
+    font-size: 12px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de newsletter */
+.newsletter input {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de formulários */
+label,
+textarea,
+select {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de tabelas */
+.tablePage th,
+.tablePage td {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de mensagens */
+.blocoAlerta,
+.blocoSucesso,
+.message,
+.bonus_cupom,
+.mensagensErro {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de paginação */
+.paginate-links,
+.page-link,
+.btns-paginator {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de filtros */
+.smart-filter a,
+.smart-filter label {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de carrinho */
+.cart .cart-amount,
+.cart .cart-total {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de footer */
+.foo-content,
+.foo-message {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de customer */
+.customer {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de search */
+.search .search-key {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de suggestion */
+.suggestion-products span,
+.suggestion-words span {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de store-rating */
+.store-rating .dep_link a {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de tagcloud */
+.tagcloud a {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de showcase */
+.showcase > h2 strong,
+.showcase > h2 small {
+    font-size: 24px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Corrigir configurações de tray-kit */
+.tray-kit-name {
+    font-size: 16px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.tray-kit-info {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de new-smart-filter */
+.new-smart-filter .filter__title {
+    font-size: 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.new-smart-filter .filter__label {
+    font-size: 14px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* Corrigir configurações de cart-preview */
+.cart-preview .related-product-title {
+    font-size: 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Garantir que todas as fontes usem as configurações corretas */
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.price, .product-price, .price-value {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.btn, button, .button, .botao-commerce {
+    font-family: 'Montserrat', sans-serif !important;
+} 

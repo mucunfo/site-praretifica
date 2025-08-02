@@ -16,12 +16,8 @@
         {% endif %}
     {% endif %}
 
-    <div class="news-full hidden-xs">
-        {% element 'snippets/newsletter' %}
-    </div>
-    
     {% if banner.side %}
-    <div class="banner banner-sidebar hidden-xs">
+    <div class="banner banner-sidebar">
         {{ banner.side }}
     </div>
     {% endif %}
@@ -33,14 +29,49 @@
         {% element 'CustomerReview.reviews' %}
     </div>
     {% endif %}
-    
-    {% if settings.hottags_position == 1 %}
-    <div class="tagcloud hidden-xs">
-        <h4>As palavras</h4>
-        <h3>{{ Translation('tags_mais_buscadas') }}</h3>    
-        {% for tag in tags %}
-          <a href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%">{{ tag.word }}</a>
-        {% endfor %}     
-    </div>
-    {% endif %}
+
 </aside>
+
+<script>
+// Tornar grupos de filtros colapsáveis
+document.addEventListener('DOMContentLoaded', function() {
+    // Colapsar/expandir grupos de filtros
+    const filterTitles = document.querySelectorAll('.filter-title');
+    filterTitles.forEach(title => {
+        title.addEventListener('click', function() {
+            const group = this.closest('.filter-group');
+            group.classList.toggle('collapsed');
+            
+            const content = this.nextElementSibling;
+            if (content) {
+                content.style.display = group.classList.contains('collapsed') ? 'none' : 'block';
+            }
+        });
+    });
+    
+    // Contador de filtros aplicados
+    const checkboxes = document.querySelectorAll('.smart-filter input[type="checkbox"]');
+    function updateFilterCount() {
+        const checked = document.querySelectorAll('.smart-filter input[type="checkbox"]:checked').length;
+        const filterButton = document.querySelector('.btn-filter');
+        if (filterButton && checked > 0) {
+            filterButton.textContent = `Aplicar Filtros (${checked})`;
+        } else if (filterButton) {
+            filterButton.textContent = 'Aplicar Filtros';
+        }
+    }
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateFilterCount);
+    });
+    
+    // Feedback visual ao aplicar filtros
+    const filterButton = document.querySelector('.btn-filter');
+    if (filterButton) {
+        filterButton.addEventListener('click', function() {
+            this.innerHTML = '<span class="loading-spinner"></span> Aplicando...';
+            this.disabled = true;
+        });
+    }
+});
+</script>

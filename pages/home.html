@@ -56,13 +56,16 @@
 
 {% element 'snippets/banner-home' %}
 
-<!--banner regua -->
+<!-- Banner régua - Desktop -->
 {% if not utils.is_mobile and banner.extra1 %}
-    <div class="banner banner-ruler">
+    <div class="banner banner-ruler desktop-only">
         {{ banner.extra1 }}
     </div>
-{% elseif utils.is_mobile and banner.extra8 %}
-    <div class="banner banner-ruler">
+{% endif %}
+
+<!-- Banner régua - Mobile -->
+{% if utils.is_mobile and banner.extra8 %}
+    <div class="banner banner-ruler mobile-only">
         {{ banner.extra8 }}
     </div>
 {% endif %}
@@ -73,11 +76,11 @@
 } %}
 
 {% if banner.bottom %}
-    <div class="banner banner-bottom ">
+    <div class="banner banner-bottom">
         {{ banner.bottom }}
     </div>
 {% endif %}
 
 {% if pages.current == 'home' %}
-	{{ banner.popup ~ banner.floating }}
+    {{ banner.popup ~ banner.floating }}
 {% endif %}

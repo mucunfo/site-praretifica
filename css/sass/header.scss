@@ -1,37 +1,347 @@
 /**
  * Header
  */
- 
-.wrapper-nav{
-    background: #fff;
-    clear: both;
-    margin: 15px 0 30px;
+
+.main-header {
+    background: #ffffff;
+    border-bottom: 2px solid #7dc9c5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+// Logo
+.header-logo {
+    flex-shrink: 0;
     
-    > div:first-child{
-        padding-right: 0;
+    .site-logo {
+        height: 80px;
+        display: block;
+        font-size: 0;
         text-align: center;
+        
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 80px;
+            margin-right: -1%;
+            vertical-align: middle;
+            width: 1%;
+        }
+        
+        img {
+            display: inline-block;
+            max-height: 70px;
+            max-width: 99%;
+            vertical-align: middle;
+        }
     }
 }
 
-.site-logo {
-    height: 120px;
-    display: block;
-    font-size: 0;
-    text-align: center;
+// Busca
+.header-search {
+    flex: 1;
+    max-width: 500px;
     
-    &:before{
-        content: '';
-        display: inline-block;
-        height: 120px;
-        margin-right: -1%;
-        vertical-align: middle;
-        width: 1%;
+    .search-container {
+        width: 100%;
     }
     
-    img{
-        display: inline-block;
-        max-height: 100px;
-        max-width: 99%;
-        vertical-align: middle;
+    .search-input-group {
+        display: flex;
+        border: 2px solid #7dc9c5;
+        border-radius: 25px;
+        overflow: hidden;
+        background: #ffffff;
+        transition: all 0.3s ease;
+        
+        &:focus-within {
+            border-color: #28a527;
+            box-shadow: 0 0 0 3px rgba(40, 165, 39, 0.1);
+        }
+    }
+    
+    .search-input {
+        flex: 1;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        color: #333333;
+        background: transparent;
+        
+        &::placeholder {
+            color: #999999;
+        }
+        
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    .search-button {
+        background: #7dc9c5;
+        border: none;
+        padding: 12px 20px;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background: #28a527;
+        }
+        
+        svg {
+            fill: #ffffff;
+        }
+    }
+}
+
+// Contato
+.header-contact {
+    .contact-channel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        background: #f8f9fa;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+    }
+    
+    .contact-icon {
+        color: #28a527;
+        font-size: 20px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        
+        .contact-label {
+            font-size: 12px;
+            color: #666666;
+            font-weight: 500;
+        }
+        
+        .contact-number {
+            font-size: 14px;
+            color: #333333;
+            font-weight: 600;
+        }
+    }
+}
+
+// Conta
+.header-account {
+    .account-access {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        background: #f8f9fa;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+    }
+    
+    .account-icon {
+        color: #7dc9c5;
+        font-size: 20px;
+    }
+    
+    .account-info {
+        a {
+            color: #333333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            
+            &:hover {
+                color: #28a527;
+            }
+        }
+        
+        span {
+            color: #333333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+}
+
+// Carrinho
+.header-cart {
+    .cart-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        background: #7dc9c5;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &:hover {
+            background: #28a527;
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: #ffffff;
+        }
+    }
+    
+    .cart-icon {
+        position: relative;
+        
+        svg {
+            fill: #ffffff;
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+    }
+    
+    .cart-info {
+        display: flex;
+        flex-direction: column;
+        
+        .cart-amount {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .cart-total {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}
+
+// Menu Mobile
+.wrapper-nav {
+    background: #ffffff;
+    border-top: 1px solid #e9ecef;
+    padding: 10px 0;
+    display: none;
+    
+    .trigger-menu {
+        background: none;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    
+    .wrapp-cart {
+        text-align: right;
+    }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px 15px;
+    }
+    
+    .header-logo {
+        order: 1;
+        flex: 1;
+        
+        .site-logo {
+            height: 60px;
+            
+            &:before {
+                height: 60px;
+            }
+            
+            img {
+                max-height: 50px;
+            }
+        }
+    }
+    
+    .header-search {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: none;
+    }
+    
+    .header-contact,
+    .header-account {
+        order: 2;
+        
+        .contact-channel,
+        .account-access {
+            padding: 8px 12px;
+        }
+        
+        .contact-info,
+        .account-info {
+            display: none;
+        }
+    }
+    
+    .header-cart {
+        order: 2;
+        
+        .cart-button {
+            padding: 8px 12px;
+        }
+        
+        .cart-info {
+            display: none;
+        }
+    }
+    
+    .wrapper-nav {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 10px;
+    }
+    
+    .header-contact,
+    .header-account {
+        display: none;
     }
 }

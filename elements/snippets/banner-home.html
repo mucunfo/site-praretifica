@@ -1,39 +1,58 @@
 {% if pages.current == 'home' %}
-    {% if settings.home_slick %}
-    <div class="banner-home">
-        {% if banners.home.slides and settings.home_slick %}
-            <div class="banner-home-slide" data-slick='{"autoplaySpeed": {{ ( settings.banner_interval ) }},
-                     "lazyLoad":     "{{ ( settings.banner_lazyload ) }}",
-                                      {{ ( settings.banner_arrows )             ? '"arrows":         true,' : '"arrows":         false,' }}
-                                      {{ ( settings.banner_dots )               ? '"dots":           true,' : '"dots":           false,' }}
-                                      {{ ( settings.banner_autoplay )           ? '"autoplay":       true,' : '"autoplay":       false,' }}
-                                      {{ ( settings.banner_adaptive_height )    ? '"adaptiveHeight": true,' : '"adaptiveHeight": false,' }}
-                                      {{ ( settings.banner_infinite )           ? '"infinite":       true,' : '"infinite":       false,' }}
-                                      {{ ( settings.banner_effect_fade )        ? '"fade":           true'  : '"fade":           false'  }} }'
-                data-autoplay="{{ settings.banner_autoplay ? 'true' : 'false' }}"
+    {% if settings.home_slick and banners.home.slides %}
+        <div class="banner-home">
+            <div class="banner-home-slide" 
+                 data-slick='{
+                     "autoplaySpeed": {{ settings.banner_interval|default(4000) }},
+                     "lazyLoad": "{{ settings.banner_lazyload|default('ondemand') }}",
+                     "arrows": {{ settings.banner_arrows ? 'true' : 'false' }},
+                     "dots": {{ settings.banner_dots ? 'true' : 'false' }},
+                     "autoplay": {{ settings.banner_autoplay ? 'true' : 'false' }},
+                     "adaptiveHeight": {{ settings.banner_adaptive_height ? 'true' : 'false' }},
+                     "infinite": {{ settings.banner_infinite ? 'true' : 'false' }},
+                     "fade": {{ settings.banner_effect_fade ? 'true' : 'false' }},
+                     "responsive": [
+                         {
+                             "breakpoint": 768,
+                             "settings": {
+                                 "arrows": false,
+                                 "dots": true
+                             }
+                         }
+                     ]
+                 }'
+                 data-autoplay="{{ settings.banner_autoplay ? 'true' : 'false' }}"
             >
                 {% for slide in banners.home.slides %}
-                <div{{ loop.index == 1 ? ' class="first-slide"' }}>
-                    <a href="{{ slide.link }}" target="{{ slide.target }}">
-                        <img data-lazy="{{ slide.image }}" alt="{{ slide.label }}">
-                    </a>
-                </div>
+                    <div class="banner-slide{{ loop.index == 1 ? ' first-slide' : '' }}">
+                        {% if slide.link %}
+                            <a href="{{ slide.link }}" target="{{ slide.target|default('_self') }}" rel="noopener">
+                        {% endif %}
+                        
+                        <img data-lazy="{{ slide.image }}" 
+                             alt="{{ slide.label|default('Banner') }}"
+                             loading="lazy"
+                             width="100%"
+                             height="auto">
+                        
+                        {% if slide.link %}
+                            </a>
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>
 
-            {% if settings.banner_arrows or settings.banner_dots  %}
-            <div class="banner-home-controls container">
-                <div class="slick-arrows"></div>
-            </div>
+            {% if settings.banner_arrows or settings.banner_dots %}
+                <div class="banner-home-controls container">
+                    {% if settings.banner_arrows %}
+                        <div class="slick-arrows"></div>
+                    {% endif %}
+                </div>
             {% endif %}
-
-        {% else %}
-            <div class="banner banner-home">
-                {{ banner.home }}
-            </div>
-        {% endif %}
-    </div>
-    {% else %}
-    <div class="banner banner-home">{{ banner.home }}</div>
+        </div>
+    {% elseif banner.home %}
+        <div class="banner banner-home">
+            {{ banner.home }}
+        </div>
     {% endif %}
 {% endif %}

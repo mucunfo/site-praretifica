@@ -41,23 +41,18 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
            
         li{
             background: #fff;
-            margin: 10px;
             min-height: 270px;
-            margin: 5px 0px;
-            max-width: 33%;
             position: relative;
             padding: 15px;
             vertical-align: top;
-            width: 33%;
             
-            -webkit-box-flex: 1 auto;
-            -moz-box-flex: 1 auto;
-            -webkit-flex: 1 auto;
-            -ms-flex: 1 1 auto;
-            flex: 1 auto;
+            flex: 0 0 calc(20% - 12.8px);
+            max-width: calc(20% - 12.8px);
             
             &:nth-child(2) {
                 margin: 5px 10px;
@@ -113,6 +108,25 @@
             }
        }
         
+    }
+    
+    /* Breakpoints responsivos para produtos visitados */
+    @media screen and (max-width: 1199px) and (min-width: 768px) {
+        .vitrineVisitados li {
+            flex: 0 0 calc(33.333% - 10.67px);
+            max-width: calc(33.333% - 10.67px);
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+        .vitrineVisitados {
+            gap: 15px;
+        }
+        
+        .vitrineVisitados li {
+            flex: 0 0 calc(50% - 7.5px);
+            max-width: calc(50% - 7.5px);
+        }
     }
     
     @media screen and (max-width: 480px){

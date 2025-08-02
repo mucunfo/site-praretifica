@@ -41,6 +41,25 @@
     .level2{
         display: none;
         margin-top: 1px;
+        opacity: 0;
+        @extend .transition;
+        
+        &.expanded{
+            display: block;
+            opacity: 1;
+        }
+    }
+    
+    .level3{
+        display: none;
+        margin-top: 1px;
+        opacity: 0;
+        @extend .transition;
+        
+        &.expanded{
+            display: block;
+            opacity: 1;
+        }
     }
     
     .item-level1{
@@ -64,11 +83,13 @@
         margin-top: 1px;
     }
     
+    // Manter compatibilidade com checkboxes antigos
     .level1-check{
         display: none;
         
         &:checked ~ .level2{
             display: block;
+            opacity: 1;
         }
         
         &:checked ~ .link-level1{
@@ -78,6 +99,57 @@
         
         &:checked ~ .link-level1 .arrow-menu-mobile{
             @include prefix('transform', 'rotate(90deg)');
+        }
+    }
+    
+    // Novos estilos para botões de expansão
+    .menu-item-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .link-level1,
+        .link-level2,
+        .link-level3{
+            flex: 1;
+            padding: 10px 5px;
+            margin: 0;
+        }
+    }
+    
+    .menu-expand-btn{
+        background: none;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        
+        &.mobile{
+            order: -1; // Botão à esquerda no mobile
+        }
+        
+        &:hover{
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+        
+        &:focus{
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+        
+        .expand-icon{
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+            filter: invert(1); // Tornar branco no fundo escuro
+        }
+        
+        &[aria-expanded="true"] .expand-icon{
+            transform: rotate(90deg);
         }
     }
     
@@ -106,6 +178,26 @@
     .link-level3{
         background: rgba(255,255,255,.3);
         padding-left: 30px;
+    }
+    
+    // Estados expandidos via JavaScript
+    .item-level1.expanded,
+    .item-level2.expanded,
+    .item-level3.expanded{
+        background: rgba(255,255,255,.1);
+        
+        .link-level1,
+        .link-level2,
+        .link-level3{
+            background: rgba(255,255,255,.3);
+        }
+    }
+    
+    // Melhorar acessibilidade
+    .menu-expand-btn[aria-expanded="true"] + .level2,
+    .menu-expand-btn[aria-expanded="true"] + .level3{
+        display: block;
+        opacity: 1;
     }
 }
 

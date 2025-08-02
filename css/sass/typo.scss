@@ -1,10 +1,21 @@
 /**
- * Typography
+ * Typography - Montserrat + Open Sans
+ * 
+ * NOTA: Este arquivo SASS é usado apenas para compilação.
+ * As configurações finais estão no arquivo typography.css
  */
 
 a,
 a:hover {
-    color: #666;
+    color: #7b1f29;
+    font-family: $font;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #5c151e;
+    text-decoration: underline;
 }
 
 h1,
@@ -13,6 +24,53 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font;
-    font-weight: 400;
+    font-family: $font-heading;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Responsive typography */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
 } 
