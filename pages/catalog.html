@@ -15,6 +15,7 @@
         {% endif %}
         
         <div class="system-filter">
+            <h2 class="visually-hidden">{{ Translation('filtros_produtos') }}</h2>
             {% if settings.compare %}
                 <a href="/loja/comparador.php?loja={{store.id}}&IdDep={{category.id}}" class="button-compare">{{ Translation("comparar_produto") }}</a>
             {% endif %}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo - Sistema de Lazy Loading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .demo-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .demo-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .image-item {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .controls button {
+            margin: 5px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .controls button:hover {
+            background: #0056b3;
+        }
+        
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .spacer {
+            height: 1000px;
+            background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Lazy Loading - Demonstração</h1>
+    
+    <div class="demo-section">
+        <h2>Controles</h2>
+        <div class="controls">
+            <button onclick="refreshLazyLoading()">Refresh Lazy Loading</button>
+            <button onclick="destroyLazyLoading()">Destroy Lazy Loading</button>
+            <button onclick="addNewImages()">Adicionar Novas Imagens</button>
+            <button onclick="scrollToBottom()">Rolar para Baixo</button>
+        </div>
+        
+        <div class="status" id="status">
+            Status: Aguardando carregamento...
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Exemplo 1: Loading="lazy" (Recomendado)</h2>
+        <p>Imagens com atributo loading="lazy" nativo:</p>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="https://picsum.photos/300/200?random=1" 
+                     alt="Imagem 1" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 1</p>
+            </div>
+            <div class="image-item">
+                <img src="https://picsum.photos/300/200?random=2" 
+                     alt="Imagem 2" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 2</p>
+            </div>
+            <div class="image-item">
+                <img src="https://picsum.photos/300/200?random=3" 
+                     alt="Imagem 3" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 3</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="demo-section">
+        <h2>Exemplo 2: Data-lazy</h2>
+        <p>Imagens usando data-lazy para carregamento controlado:</p>
+        <div class="image-grid">
+            <div class="image-item">
+                <img data-lazy="https://picsum.photos/300/200?random=4" 
+                     alt="Imagem 4" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 4</p>
+            </div>
+            <div class="image-item">
+                <img data-lazy="https://picsum.photos/300/200?random=5" 
+                     alt="Imagem 5" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 5</p>
+            </div>
+            <div class="image-item">
+                <img data-lazy="https://picsum.photos/300/200?random=6" 
+                     alt="Imagem 6" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 6</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="demo-section">
+        <h2>Exemplo 3: Classe lazy com data-original</h2>
+        <p>Imagens com placeholder e data-original:</p>
+        <div class="image-grid">
+            <div class="image-item">
+                <img data-original="https://picsum.photos/300/200?random=7" 
+                     class="lazy" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='100%25' height='100%25' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23999'%3EPlaceholder%3C/text%3E%3C/svg%3E" 
+                     alt="Imagem 7" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 7</p>
+            </div>
+            <div class="image-item">
+                <img data-original="https://picsum.photos/300/200?random=8" 
+                     class="lazy" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='100%25' height='100%25' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23999'%3EPlaceholder%3C/text%3E%3C/svg%3E" 
+                     alt="Imagem 8" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 8</p>
+            </div>
+            <div class="image-item">
+                <img data-original="https://picsum.photos/300/200?random=9" 
+                     class="lazy" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='100%25' height='100%25' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23999'%3EPlaceholder%3C/text%3E%3C/svg%3E" 
+                     alt="Imagem 9" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem 9</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="demo-section">
+        <h2>Exemplo 4: Imagens com Erro</h2>
+        <p>Imagens que falharão ao carregar (para testar fallback):</p>
+        <div class="image-grid">
+            <div class="image-item">
+                <img data-lazy="https://imagem-inexistente.com/erro.jpg" 
+                     alt="Imagem com Erro" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Imagem com Erro</p>
+            </div>
+            <div class="image-item">
+                <img data-original="https://outro-erro.com/teste.jpg" 
+                     class="lazy" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='100%25' height='100%25' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23999'%3EPlaceholder%3C/text%3E%3C/svg%3E" 
+                     alt="Outro Erro" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+                <p>Outro Erro</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="demo-section">
+        <h2>Exemplo 5: Imagens Dinâmicas</h2>
+        <p>Área para imagens adicionadas dinamicamente:</p>
+        <div class="image-grid" id="dynamic-images">
+            <!-- Imagens serão adicionadas aqui via JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Carregar o sistema de lazy loading -->
+    <script src="lazy-loading.js"></script>
+    
+    <!-- Script da demonstração movido para js/modules/lazy-loading-demo.js -->
+</body>
+</html> 

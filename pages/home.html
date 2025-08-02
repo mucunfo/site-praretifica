@@ -54,31 +54,37 @@
     {% endif %}
 {% endif %}
 
-{% element 'snippets/banner-home' %}
+<main>
+    {% element 'snippets/banner-home' %}
 
-<!-- Banner régua - Desktop -->
-{% if not utils.is_mobile and banner.extra1 %}
-    <div class="banner banner-ruler desktop-only">
-        {{ banner.extra1 }}
-    </div>
-{% endif %}
+    <h1 class="visually-hidden">{{ store.name }}</h1>
 
-<!-- Banner régua - Mobile -->
-{% if utils.is_mobile and banner.extra8 %}
-    <div class="banner banner-ruler mobile-only">
-        {{ banner.extra8 }}
-    </div>
-{% endif %}
+    <!-- Banner régua - Desktop -->
+    {% if not utils.is_mobile and banner.extra1 %}
+        <aside class="banner banner-ruler desktop-only">
+            {{ banner.extra1 }}
+        </aside>
+    {% endif %}
 
-{% element 'showcase' {
-    "products": products,
-    "showcaseTitle": showcaseText
-} %}
+    <!-- Banner régua - Mobile -->
+    {% if utils.is_mobile and banner.extra8 %}
+        <aside class="banner banner-ruler mobile-only">
+            {{ banner.extra8 }}
+        </aside>
+    {% endif %}
+
+    <section class="showcase-section">
+        {% element 'showcase' {
+            "products": products,
+            "showcaseTitle": showcaseText
+        } %}
+    </section>
+</main>
 
 {% if banner.bottom %}
-    <div class="banner banner-bottom">
+    <aside class="banner banner-bottom">
         {{ banner.bottom }}
-    </div>
+    </aside>
 {% endif %}
 
 {% if pages.current == 'home' %}

@@ -46,20 +46,22 @@
     
     // Função para otimizar lazy loading
     function initLazyLoading() {
-        // Lazy loading nativo para banners
-        if ('loading' in HTMLImageElement.prototype) {
-            const bannerImages = document.querySelectorAll('.banner img[loading="lazy"]');
-            bannerImages.forEach(img => {
-                img.addEventListener('load', function() {
-                    this.classList.add('loaded');
-                });
-            });
-        } else {
-            // Fallback para navegadores antigos
-            $("img.lazy").lazyload({
-                threshold: 200,
-                effect: 'fadeIn'
-            });
+        // O novo sistema de lazy loading será carregado automaticamente
+        // através do arquivo lazy-loading.js
+        
+        // Adicionar loading="lazy" a imagens que ainda não têm
+        const images = document.querySelectorAll('img:not([loading])');
+        images.forEach(img => {
+            // Não adicionar loading="lazy" em imagens acima do fold
+            if (!isAboveTheFold(img)) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+        
+        // Função auxiliar para verificar se imagem está acima do fold
+        function isAboveTheFold(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
         }
     }
 	

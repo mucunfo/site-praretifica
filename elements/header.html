@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header" role="banner">
     <!--  Menu Lateral - DESABILITADO TEMPORARIAMENTE
     <button class="menu-lateral-toggle" onclick="toggleMenuLateral()">
       <span></span>
@@ -18,7 +18,7 @@
       </div>
       
       <nav class="menu-lateral-nav">
-        <ul style="list-style: none; padding: 0; margin: 0;">
+        <ul class="menu-lateral-nav-list">
           {% for cat in categories %}
           <li class="menu-lateral-item">
             <a href="{{ cat.link }}" class="menu-lateral-link">
@@ -28,7 +28,7 @@
             </a>
             
             {% if cat.children %}
-            <ul class="menu-lateral-submenu" style="list-style: none; padding: 0;">
+            <ul class="menu-lateral-submenu">
               {% for subcat in cat.children %}
               <li>
                 <a href="{{ subcat.link }}" class="menu-lateral-sublink">
@@ -45,61 +45,7 @@
     </aside>
     -->
 
-    <!-- Script do Menu Lateral - DESABILITADO TEMPORARIAMENTE
-    <script>
-    function toggleMenuLateral() {
-      const menu = document.querySelector('.menu-lateral');
-      const overlay = document.querySelector('.menu-lateral-overlay');
-      const toggle = document.querySelector('.menu-lateral-toggle');
-      
-      menu.classList.toggle('active');
-      overlay.classList.toggle('active');
-      toggle.classList.toggle('active');
-      document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
-    }
-
-    function filterMenu(value) {
-      const items = document.querySelectorAll('.menu-lateral-item');
-      items.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        const searchValue = value.toLowerCase().trim();
-        
-        if (searchValue === '') {
-          // Se o campo estiver vazio, mostra todos os itens
-          item.style.display = '';
-        } else {
-          // Filtra baseado no texto da categoria
-          item.style.display = text.includes(searchValue) ? '' : 'none';
-        }
-      });
-    }
-
-    // Expandir submenus
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.menu-lateral-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-          const submenu = this.nextElementSibling;
-          if (submenu && submenu.classList.contains('menu-lateral-submenu')) {
-            e.preventDefault();
-            e.stopPropagation();
-            this.classList.toggle('active');
-            submenu.classList.toggle('active');
-          }
-        });
-      });
-    });
-
-    // Fechar menu com ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const menu = document.querySelector('.menu-lateral');
-        if (menu.classList.contains('active')) {
-          toggleMenuLateral();
-        }
-      }
-    });
-    </script>
-    -->
+    <!-- Script do Menu Lateral - DESABILITADO TEMPORARIAMENTE -->
 
     <div class="header-container">
         <!-- Logotipo -->
@@ -120,7 +66,7 @@
                     <input type="hidden" name="loja" value="{{ store.id }}">
                     <div class="search-input-group">
                         <input class="search-input" type="text" data-input="suggestion" placeholder="{{ Translation('buscar') }}" name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
-                        <button class="search-button" type="submit" tabindex="2" data-tray-tst="botao_buscar">
+                        <button class="search-button" type="submit" tabindex="2" data-tray-tst="botao_buscar" aria-label="Buscar produtos">
                             <svg fill="{{ settings.color_icons }}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 425.2 425.199">
                                 <path d="M414.792 364.542l-92.371-92.37c-.49-.491-1.066-.834-1.58-1.291 18.176-27.571 28.785-60.575 28.785-96.067C349.624 78.267 271.358 0 174.812 0 78.267 0 0 78.267 0 174.812s78.265 174.813 174.811 174.813c35.494 0 68.496-10.608 96.067-28.784.457.512.799 1.088 1.289 1.578l92.375 92.374c13.875 13.875 36.373 13.875 50.25 0 13.875-13.877 13.875-36.375 0-50.251zm-239.98-75.519c-63.078 0-114.212-51.134-114.212-114.211C60.6 111.734 111.735 60.6 174.812 60.6c63.075 0 114.21 51.136 114.21 114.212 0 63.077-51.135 114.211-114.21 114.211z"/>
                             </svg>
@@ -166,7 +112,7 @@
 
         <!-- Carrinho de Compras -->
         <div class="header-cart">
-            <a href="{{ links.cart }}" class="cart-button" data-tray-tst="link_qtde_carrinho">
+            <a href="{{ links.cart }}" class="cart-button" data-tray-tst="link_qtde_carrinho" aria-label="Carrinho de compras">
                 <div class="cart-icon">
                     <svg fill="{{ settings.color_icons }}" xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 25.621 25.601">
                         <path d="M25.597.605a.8.8 0 0 0-.969-.582l-3.203.801a.803.803 0 0 0-.598.652l-.406 2.567L.702 6.406c-.015.004-.027.012-.043.016-.019.003-.035 0-.055.003-.046.013-.082.04-.121.055-.046.02-.089.035-.129.063a.885.885 0 0 0-.144.136c-.023.029-.055.039-.074.067-.004.008-.004.015-.008.024a.808.808 0 0 0-.09.218c-.008.027-.023.052-.027.078a.843.843 0 0 0 .011.328l2.403 9.602.801 3.199c.003.022.019.043.027.063.012.039.031.074.047.109a.755.755 0 0 0 .097.144c.024.032.051.055.079.082a.766.766 0 0 0 .152.106c.031.016.055.034.086.047.09.031.187.054.285.054h16.82a.799.799 0 0 0 .797-.8.798.798 0 0 0-.797-.801H4.624L4.226 17.6h14.992a.832.832 0 0 0 .281-.051c.035-.015.063-.039.094-.058.051-.024.102-.047.145-.082.031-.027.051-.067.082-.099.031-.039.07-.073.098-.121.023-.043.031-.09.047-.137.016-.043.035-.082.047-.125l.004-.019v-.009L22.327 2.25l2.688-.672a.802.802 0 0 0 .582-.973zM3.823 16L1.792 7.886l2.484-.296L5.479 16H3.823zm3.274 0L5.866 7.398l2.496-.297L8.769 16H7.097zm4.945 0h-1.668l-.418-9.09 2.496-.301-.41 9.391zm3.266 0h-1.661l.415-9.582 2.48-.297L15.308 16zm3.207 0h-1.594l1.262-10.078 1.703-.204L18.515 16zM7.202 22.398c-.883 0-1.601.72-1.601 1.603a1.6 1.6 0 1 0 3.203 0c0-.883-.715-1.603-1.602-1.603zm10.414 0a1.603 1.603 0 1 0 .001 3.205 1.603 1.603 0 0 0-.001-3.205zm0 0"/>
@@ -188,7 +134,7 @@
     <!-- Menu Mobile -->
     <div class="wrapper-nav clearfix visible-xs-block">
         <div class="col-xs-2">
-            <button class="trigger-menu">
+            <button class="trigger-menu" aria-label="Abrir menu de navegação">
                 <img src="{{ asset('img/menu.svg') }}" alt="Menu">
             </button>
         </div>

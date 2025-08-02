@@ -234,7 +234,7 @@ button[type="submit"],
   border-radius: var(--border-radius-medium);
   transition: var(--transition-fast);
   border: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Efeito hover para botões principais */
@@ -348,7 +348,7 @@ button[type="submit"]:hover,
 .product .product-compare-button {
   border-radius: var(--border-radius-small);
   transition: var(--transition-fast);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -759,4 +759,83 @@ button[type="submit"]:hover,
   color: #999;
   font-size: 12px;
   margin-top: 10px;
+} 
+
+/* === ESTILOS INLINE EXTRAÍDOS === */
+/* Estilos extraídos de elements/header.html */
+.menu-lateral-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral-submenu {
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilos extraídos de elements/footer.html */
+.footer-svg-icon {
+  margin-top: -3px;
+}
+
+.footer-svg-enable-background {
+  enable-background: new 0 0 202.592 202.592;
+}
+
+/* Estilos extraídos de configs/settings.html */
+.editor-flex-right {
+  margin-top: -85px;
+}
+
+.editor-svg-enable-background {
+  enable-background: new 0 0 512 512;
+}
+
+.editor-svg-enable-background-438 {
+  enable-background: new 0 0 438.557 438.557;
+}
+
+.editor-label-block {
+  display: block;
+}
+
+.editor-input-group-addon {
+  background: #f1f1f1;
+}
+
+.editor-width-half {
+  margin-bottom: 10px;
+}
+
+.editor-tip {
+  margin-top: 8px;
+}
+
+.editor-input-group-addon-white {
+  background: rgb(255,255,255);
+}
+
+.editor-price-before-strike {
+  text-decoration: line-through;
+}
+
+.editor-link-small {
+  color: #333333;
+}
+
+.editor-hidden {
+  display: none;
+}
+
+.editor-svg-enable-background-459 {
+  enable-background: new 0 0 459 459;
+}
+
+.editor-svg-enable-background-467 {
+  enable-background: new 0 0 467.66 467.66;
+}
+
+.editor-svg-enable-background-470 {
+  enable-background: new 0 0 470.586 470.586;
 } 

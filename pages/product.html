@@ -11,7 +11,7 @@
 {% endfor %}
 
 
-<section id="product-container" class="produto-wrapper product-detail" itemscope itemtype="http://schema.org/Product">
+<article id="product-container" class="produto-wrapper product-detail" itemscope itemtype="http://schema.org/Product">
     {% element 'snippets/schema-product' %}
     <div class="clearfix">
 
@@ -122,9 +122,10 @@
 			{% endif %}
         </div>
     </div>
-</section>
+</article>
 
 <section id="ProdBlock" class="product-tabs">
+    <h2 class="visually-hidden">{{ Translation('informacoes_produto') }}</h2>
     <a name="formaPagto"></a>
     <div id="ProdAbas" class="abasProduto tab-panel">
         <ul class="clearfix">
@@ -174,19 +175,17 @@
 </section>
 
 {% if productHelper.bundle() %}
-<section class="product-cross-sell">
-    <h4>{{ Translation('confira_tambem') }}</h4>
-    <h3>{{ Translation('compre_junto') }}</h3>
+<aside class="product-cross-sell">
+    <h2>{{ Translation('compre_junto') }}</h2>
     {{ productHelper.bundle() }}
-</section>
+</aside>
 {% endif %}
 
 
 {% if product.related_products %}
 <div id="prognoos_lsi"></div>
-<section class="products-related">
-    <h4>{{ Translation('confira_tambem') }}</h4>
-    <h3 class="related-title">{{ Translation('produtos_relacionados') }}</h3>
+<aside class="products-related">
+    <h2 class="related-title">{{ Translation('produtos_relacionados') }}</h2>
     <div class="row">
         {% for related in product.related_products %}
             <div class="col-sm-3">
@@ -194,20 +193,19 @@
             </div>
         {% endfor %}
     </div>
-</section>
+</aside>
 {% endif %}
 
 <div id="prognoos_ib"></div>
 {% if settings.history_position == 1 %}
-    <section class="products-visited col-sm-12">
-        <h4>{{ Translation('confira_tambem') }}</h4>
-        <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>
+    <aside class="products-visited col-sm-12">
+        <h2 class="related-title">{{ Translation('produtos_visitados') }}</h2>
         {% element 'snippets/history' {
             'store.id': store.id,
             'pages.current': pages.current,
             'category.id': category.id
         } %}
-    </section>
+    </aside>
 {% endif %}
 
 {% if banner.bottom %}

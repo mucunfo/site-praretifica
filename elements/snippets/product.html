@@ -4,12 +4,12 @@
         <div class="product-image">
             {% if product.images %}
                 {% if utils.is_mobile %}
-                    <img itemprop="image" src="{{ product.images[0].large }}" alt="{{ product.name }}" title="{{ product.name }}">
+                    <img itemprop="image" src="{{ product.images[0].large }}" alt="{{ product.name }}" title="{{ product.name }}" loading="lazy">
                 {% else %}
-                    <img itemprop="image"  data-original="{{ product.images[0].large }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}" title="{{ product.name }}">
+                    <img itemprop="image" data-original="{{ product.images[0].large }}" class="lazy" src="{{ asset('img/loading.svg') }}" alt="{{ product.name }}" title="{{ product.name }}" loading="lazy">
                 {% endif %}
             {% else %}
-                <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
+                <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada para {{ product.name }}" width="100" title="{{ product.name }}" loading="lazy">
             {% endif %}
             
             {% if settings.discount %}
@@ -20,7 +20,7 @@
             {% endif %}             
         </div>
     
-        <div class="product-name" itemprop="name">{{ product.name }}</div>
+        <h3 class="product-name" itemprop="name">{{ product.name }}</h3>
 
         <meta itemprop="productID" content="{{ product.id }}"/>
         <meta itemprop="sku" content="{{ product.id }}"/>
@@ -61,16 +61,16 @@
     {% if (product.stock > 0 or settings.without_stock_sale) > 0 and product.available %}
         {% if not product.has_variation %}
             {% if (settings.buy_to_cart) and (not product.is_kit) and (not product.upon_request) %}
-                <a class="product-seemore" value="Comprar" onclick="addCart({{ product.id }})">
+                <button class="product-seemore" onclick="addCart({{ product.id }})" aria-label="Comprar {{ product.name }}">
                     Comprar
-                </a>    
+                </button>    
             {% else %}
-                <a href="{{ product.link }}" class="product-seemore">
+                <a href="{{ product.link }}" class="product-seemore" aria-label="Ver mais detalhes de {{ product.name }}">
                     Ver mais
                 </a>    
             {% endif %}
         {% else %}
-            <a href="{{ product.link }}" class="product-seemore">
+            <a href="{{ product.link }}" class="product-seemore" aria-label="Ver mais detalhes de {{ product.name }}">
                 Ver mais
             </a>   
         {% endif %}
@@ -80,12 +80,12 @@
     <div class="compare-buttons">
         {% set compareCSS = 'compare-hidden' %}
 
-        <a data-compare="remove" href="{{ links.compare_delete ~ product.id }}" class="{{ not product.compare ? compareCSS }}">
+        <a data-compare="remove" href="{{ links.compare_delete ~ product.id }}" class="{{ not product.compare ? compareCSS }}" aria-label="Remover {{ product.name }} da comparação">
             <span class="filter-checkbox checked"></span>
             {{ Translation("remover_comparar") }}
         </a>
         
-        <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="{{ product.compare ? compareCSS }}">
+        <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="{{ product.compare ? compareCSS }}" aria-label="Adicionar {{ product.name }} à comparação">
             <span class="filter-checkbox"></span>
             {{ Translation("comparar_produto") }}
         </a>
